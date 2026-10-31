@@ -3,7 +3,7 @@
 ## Showcase 0.3.0 — 2026-10-30
 
 - Documented private platform v0.3 protocol discovery, JSON workflows, client, MCP opt-in tools and S3 archive adapter.
-- Added a 31-reference integration map and an illustrative workflow contract.
+- Added a component integration map and an illustrative workflow contract.
 - Recorded 81 tests on each database and the synthetic localhost smoke run; live cloud acceptance remains pending.
 - Retained the technical brief as a clearly labeled v0.2 historical snapshot.
 
@@ -25,7 +25,7 @@ Initial public showcase for the private LuxLeaf v0.2 development foundation.
 - Architecture, development roadmap, and recorded validation scope.
 - Screenshots of a synthetic local knowledge and workflow demonstration.
 - Original illustrative business workflow.
-- Public-reference attribution and showcase-only licensing.
+- Showcase-only licensing.
 - Documentation contribution guidance and private security reporting instructions.
 - Automated publication-boundary and local-link checks.
 

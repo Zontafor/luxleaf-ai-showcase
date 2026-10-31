@@ -277,8 +277,8 @@ Possible measurements include supported-answer rate on a reviewed question set, 
 
 These decisions should be resolved against a concrete use case. Adding more provider samples alone does not resolve them.
 
-## Ownership, references, and change policy
+## Ownership and change policy
 
-Michelle L. Wu owns the original LuxLeaf materials subject to applicable third-party rights. The public [showcase license](../LICENSE) governs this repository's original materials; it grants no access to the private application. Public engineering references remain separately owned and licensed. The [reference register](REFERENCES.md) identifies reviewed projects and commits without implying endorsement or feature equivalence.
+Michelle L. Wu owns the original LuxLeaf materials subject to applicable third-party rights. The public [showcase license](../LICENSE) governs this repository's original materials; it grants no access to the private application.
 
 Update this brief when a capability changes, a new validation result is available, or a release gate is satisfied. Keep historical evidence dates and distinguish planned work from observed results. Sensitive reports belong in the private route described in [SECURITY.md](../SECURITY.md), not in public examples or issues.

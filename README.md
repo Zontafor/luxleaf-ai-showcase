@@ -14,7 +14,7 @@ LuxLeaf is being developed by Michelle L. Wu. This repository is its public prod
 
 ## Latest integration increment
 
-The private v0.3 foundation adds tenant capability/model discovery, a native JSON workflow interface, an async Python client, opt-in MCP workflow tools, and a contract-tested S3 metadata archive adapter. The [integration roadmap](docs/INTEGRATIONS.md) maps all 31 references to current behavior and remaining work; the [workflow example](examples/workflow-protocol.md) illustrates the contract.
+The private v0.3 foundation adds tenant capability/model discovery, a native JSON workflow interface, an async Python client, opt-in MCP workflow tools, and a contract-tested S3 metadata archive adapter. The [integration roadmap](docs/INTEGRATIONS.md) describes the LuxLeaf components and their development boundaries; the [workflow example](examples/workflow-protocol.md) illustrates the contract.
 
 ## Start with the detailed brief
 
@@ -80,8 +80,8 @@ Near-term priorities are reproducible deployment validation, workload identity, 
 
 Use [Issues](https://github.com/Zontafor/luxleaf-ai-showcase/issues) for product feedback and documentation corrections. Read [CONTRIBUTING.md](CONTRIBUTING.md) first. For sensitive security reports, follow [SECURITY.md](SECURITY.md).
 
-## Ownership and references
+## Ownership
 
 Copyright © 2026 Michelle L. Wu. The [showcase license](LICENSE) covers original materials in this repository. It does not grant access to or rights in the private application. This is not an open-source application release.
 
-LuxLeaf draws on public engineering references across application development, cloud AI, MCP, workflows, and operations. Upstream projects retain their own ownership and licenses. No affiliation with or endorsement by their maintainers is claimed. See [references and attribution](docs/REFERENCES.md).
+Original LuxLeaf materials are proprietary to Michelle L. Wu. Third-party dependencies retain their applicable licenses.

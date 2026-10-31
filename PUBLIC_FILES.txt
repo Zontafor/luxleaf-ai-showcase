@@ -16,7 +16,6 @@ assets/operations-demo.jpg
 docs/ARCHITECTURE.md
 docs/INTEGRATIONS.md
 docs/PRODUCT.md
-docs/REFERENCES.md
 docs/ROADMAP.md
 docs/TECHNICAL_BRIEF.md
 docs/VALIDATION.md
