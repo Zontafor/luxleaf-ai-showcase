@@ -1,5 +1,15 @@
 # Changelog
 
+## Showcase 0.2.0 — 2026-10-30
+
+Documentation expansion; the private platform remains v0.2.
+
+- Added a detailed Product & Technical Brief with capability status, actor authority, request flow, and explicit retry/cancellation behavior.
+- Explained reservations with a synthetic accounting example, plus retained-data and trust-boundary implications.
+- Added operating responsibilities, design tradeoffs, proposed release gates, and a business evaluation framework.
+- Expanded README navigation and operating boundaries; linked the existing guides to the detailed brief.
+- Preserved the historical validation scope without claiming new application tests, deployments, or production readiness.
+
 ## Showcase 0.1.0 — 2026-10-30
 
 Initial public showcase for the private LuxLeaf v0.2 development foundation.

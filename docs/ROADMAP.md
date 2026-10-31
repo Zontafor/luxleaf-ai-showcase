@@ -1,5 +1,7 @@
 # Roadmap
 
+For proposed release gates and the evidence each stage requires, read the [Product & Technical Brief](TECHNICAL_BRIEF.md).
+
 This roadmap describes development priorities. It is not a commitment to release dates or contractual availability.
 
 | Stage | Scope | Evidence required |

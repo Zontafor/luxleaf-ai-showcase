@@ -1,5 +1,7 @@
 # Product overview
 
+For capability status, actor responsibilities, and business evaluation, read the [Product & Technical Brief](TECHNICAL_BRIEF.md).
+
 LuxLeaf AI is a development-stage platform for organizations that want to connect business knowledge to model access with consistent tenant permissions, usage controls, and workflow execution.
 
 ## An initial business workflow

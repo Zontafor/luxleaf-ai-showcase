@@ -1,5 +1,7 @@
 # Development validation
 
+For the relationship between observed results, remaining uncertainty, and proposed release gates, read the [Product & Technical Brief](TECHNICAL_BRIEF.md).
+
 Recorded October 30, 2026 for the private LuxLeaf v0.2 development foundation.
 
 | Area | Recorded result |

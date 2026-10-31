@@ -10,7 +10,19 @@ LuxLeaf is being developed by Michelle L. Wu. This repository is its public prod
 
 **Status:** v0.2 development preview. There is no public hosted service or downloadable application in this repository.
 
-[Product overview](docs/PRODUCT.md) · [Architecture](docs/ARCHITECTURE.md) · [Roadmap](docs/ROADMAP.md) · [Validation](docs/VALIDATION.md) · [Security](SECURITY.md)
+[Product & technical brief](docs/TECHNICAL_BRIEF.md) · [Product overview](docs/PRODUCT.md) · [Architecture](docs/ARCHITECTURE.md) · [Roadmap](docs/ROADMAP.md) · [Validation](docs/VALIDATION.md) · [Security](SECURITY.md)
+
+## Start with the detailed brief
+
+The [Product & Technical Brief](docs/TECHNICAL_BRIEF.md) explains the system beyond its feature list: actors and authority, request flow, reservations and retries, cancellation, trust boundaries, retained data, operational responsibilities, and the evidence needed before a business release.
+
+| If you want to understand… | Read |
+|---|---|
+| The product and its current limits | [Product overview](docs/PRODUCT.md) |
+| How requests, failures, and accounting behave | [Detailed technical brief](docs/TECHNICAL_BRIEF.md) |
+| The main component boundaries | [Architecture overview](docs/ARCHITECTURE.md) |
+| What has been tested and what remains uncertain | [Validation record](docs/VALIDATION.md) |
+| What comes next and how progress should be assessed | [Roadmap](docs/ROADMAP.md) and [proposed release gates](docs/TECHNICAL_BRIEF.md#proposed-release-gates) |
 
 ## What LuxLeaf brings together
 
@@ -41,6 +53,16 @@ The screenshots below come from a local development demonstration using a synthe
 A workspace holds a tenant's documents and permissions. Interactive questions, approved workflow jobs, and MCP requests share the same gateway controls. Administrators can review usage and manage access without introducing a separate policy system for each model provider.
 
 Read the [illustrative business flow](examples/knowledge-workflow.md) for a synthetic example. Tenant-wide document access is the current boundary; per-document permissions and individual-user SSO are planned.
+
+## Important operating boundaries
+
+- **Source citations support review.** They identify retrieved passages; they do not prove a generated answer is correct.
+- **Retries preserve request identity.** A successful replay reuses the earlier result. An uncertain provider outcome keeps its reservation for review.
+- **Cancellation is not deletion.** A running provider call may still incur charges, and stored replay or historical records may remain.
+- **Remote inference changes the data boundary.** A configured provider receives the question and retrieved passages. Local excerpt mode does not make that model-provider call.
+- **Prepared infrastructure is not measured capacity.** Target runtime, recovery, and representative load tests remain ahead.
+
+See the brief's [failure behavior](docs/TECHNICAL_BRIEF.md#failure-behavior) and [data lifecycle](docs/TECHNICAL_BRIEF.md#data-lifecycle) sections for the implications.
 
 ## Development evidence
 

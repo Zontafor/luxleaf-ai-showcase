@@ -17,6 +17,7 @@ docs/ARCHITECTURE.md
 docs/PRODUCT.md
 docs/REFERENCES.md
 docs/ROADMAP.md
+docs/TECHNICAL_BRIEF.md
 docs/VALIDATION.md
 examples/knowledge-workflow.md
 scripts/verify_showcase.py

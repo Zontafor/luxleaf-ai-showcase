@@ -1,5 +1,7 @@
 # Architecture overview
 
+For request flow, accounting, trust boundaries, and failure behavior, read the [Product & Technical Brief](TECHNICAL_BRIEF.md).
+
 The private platform uses a shared tenant-aware API and model gateway. Its interfaces separate user access, model invocation, durable work, and operational evidence.
 
 ```mermaid
