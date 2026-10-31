@@ -74,7 +74,7 @@ sequenceDiagram
     participant Provider as Selected execution adapter
     User->>API: Submit question and request identity
     API->>Gateway: Authenticated tenant context
-    Gateway->>Data: Check for prior request; retrieve allowed passages
+    Gateway->>Data: Check prior request and retrieve allowed passages
     Gateway->>Data: Check admission and record reservation
     Data-->>Gateway: Admission accepted
     Gateway->>Provider: Execute local extraction or configured remote inference
