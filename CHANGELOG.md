@@ -1,5 +1,12 @@
 # Changelog
 
+## Showcase 0.3.0 — 2026-10-30
+
+- Documented private platform v0.3 protocol discovery, JSON workflows, client, MCP opt-in tools and S3 archive adapter.
+- Added a 31-reference integration map and an illustrative workflow contract.
+- Recorded 81 tests on each database and the synthetic localhost smoke run; live cloud acceptance remains pending.
+- Retained the technical brief as a clearly labeled v0.2 historical snapshot.
+
 ## Showcase 0.2.0 — 2026-10-30
 
 Documentation expansion; the private platform remains v0.2.

@@ -1,6 +1,14 @@
 # Development validation
 
+## v0.3 integration increment
+
 For the relationship between observed results, remaining uncertainty, and proposed release gates, read the [Product & Technical Brief](TECHNICAL_BRIEF.md).
+
+Recorded October 30, 2026: **81 tests passed with SQLite and the same 81 with isolated PostgreSQL 14.20**. New checks cover tenant discovery and redacted model catalogs; JSON/legacy workflow compatibility and provider-disable replay; the private async client; MCP tool discovery, explicit workflow opt-in and cross-tenant denial; S3 SDK contracts, private-bucket preflight, conflicting-object refusal, uncertain-write recovery, independent receipts, concurrent delivery and archive opt-in; metadata-envelope validation and forward-schema rejection.
+
+A backed-up local schema upgrade preserved the synthetic demonstration. The executable private discovery example and a local query/JSON workflow smoke run passed with zero recorded model cost. No live S3 or inference-provider call occurred. Remote archive retention, immutability, identity policies and deployment capacity are unverified. See [integration scope](INTEGRATIONS.md).
+
+## v0.2 historical record
 
 Recorded October 30, 2026 for the private LuxLeaf v0.2 development foundation.
 

@@ -19,6 +19,7 @@ flowchart TD
     GATEWAY --> DB
     DB --> EVENTS[Transactional metadata events]
     EVENTS --> EXPORT[Private local export]
+    EVENTS -. explicitly enabled .-> ARCHIVE[Preconfigured S3 archive]
     API -. opt-in metadata .-> TRACE[Trace endpoint]
 ```
 
@@ -37,3 +38,5 @@ Private deployment manifests have been prepared for review, but no production cl
 ## Public and private materials
 
 This repository publishes product-level architecture and synthetic examples. The application implementation, deployment credentials, database contents, customer material, and internal release bundles remain outside the showcase. The diagram describes the current foundation and does not imply that every cloud service shown is live.
+
+The v0.3 archive adapter records remote delivery receipts independently from local file exports. It is contract-tested with controlled S3 responses; no live archive deployment or retention policy has been validated. Native workflow clients and opt-in MCP workflow tools use the same admission path. See [integration status](INTEGRATIONS.md).

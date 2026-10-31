@@ -8,9 +8,13 @@
 
 LuxLeaf is being developed by Michelle L. Wu. This repository is its public product showcase: capabilities, architecture, synthetic demonstrations, and development direction. The application source is maintained privately.
 
-**Status:** v0.2 development preview. There is no public hosted service or downloadable application in this repository.
+**Status:** v0.3 development preview. There is no public hosted service or downloadable application in this repository.
 
-[Product & technical brief](docs/TECHNICAL_BRIEF.md) · [Product overview](docs/PRODUCT.md) · [Architecture](docs/ARCHITECTURE.md) · [Roadmap](docs/ROADMAP.md) · [Validation](docs/VALIDATION.md) · [Security](SECURITY.md)
+[Integration roadmap](docs/INTEGRATIONS.md) · [Product & technical brief](docs/TECHNICAL_BRIEF.md) · [Product overview](docs/PRODUCT.md) · [Architecture](docs/ARCHITECTURE.md) · [Roadmap](docs/ROADMAP.md) · [Validation](docs/VALIDATION.md) · [Security](SECURITY.md)
+
+## Latest integration increment
+
+The private v0.3 foundation adds tenant capability/model discovery, a native JSON workflow interface, an async Python client, opt-in MCP workflow tools, and a contract-tested S3 metadata archive adapter. The [integration roadmap](docs/INTEGRATIONS.md) maps all 31 references to current behavior and remaining work; the [workflow example](examples/workflow-protocol.md) illustrates the contract.
 
 ## Start with the detailed brief
 
@@ -32,8 +36,8 @@ The [Product & Technical Brief](docs/TECHNICAL_BRIEF.md) explains the system bey
 | Model access | A shared gateway for local excerpts and optional Azure, Amazon Bedrock, and Google Vertex adapters |
 | Usage governance | Tenant model permissions, inference rate limits, budget reservations, and a usage ledger |
 | Repeatable work | Durable knowledge-query workflows with status, cancellation, and operator recovery |
-| Tool access | A narrow MCP interface using the same tenant authentication and gateway policies |
-| Operations | Operational counts, optional metadata-only tracing, and durable local event export |
+| Tool access | Eight default MCP tools, plus opt-in workflow submission/cancellation using the same tenant policies |
+| Operations | Operational counts, optional metadata-only tracing, local event export, and an opt-in S3 archive adapter with delivery receipts |
 
 Local mode retrieves source passages; it does not generate an LLM answer. Cloud adapters require explicit configuration and have been tested with synthetic provider responses. Live provider acceptance testing remains ahead.
 
@@ -66,7 +70,7 @@ See the brief's [failure behavior](docs/TECHNICAL_BRIEF.md#failure-behavior) and
 
 ## Development evidence
 
-The private v0.2 test suite recorded **57 passing tests against SQLite and 57 against an isolated PostgreSQL instance** on October 30, 2026. Coverage includes tenant separation, access revocation, spending reservations, replay protection, workflow behavior, MCP access, and event export.
+The private v0.3 test suite recorded **81 passing tests against SQLite and the same 81 against an isolated PostgreSQL instance** on October 30, 2026. Coverage includes tenant separation, access revocation, spending reservations, replay protection, workflow behavior, MCP access, and event export.
 
 These are recorded development results, not a production benchmark, independent security audit, or compliance certification. This repository's CI checks the showcase's publication boundaries and local links; it does not run the private platform suite. See [validation scope and limitations](docs/VALIDATION.md).
 

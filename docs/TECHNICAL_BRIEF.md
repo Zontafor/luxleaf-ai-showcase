@@ -1,5 +1,7 @@
 # LuxLeaf AI — Product and Technical Brief
 
+**Historical platform snapshot:** this brief describes v0.2. For the v0.3 protocol, client, tool and archive additions, see the [integration roadmap](INTEGRATIONS.md). Its original evidence dates and limitations are retained below.
+
 **Document version:** 1.0 · **Platform described:** private v0.2 development foundation · **Evidence date:** October 30, 2026
 
 **Purpose:** explain what LuxLeaf does, how its main boundaries behave, what has been tested, and what must be established before a business deployment.
