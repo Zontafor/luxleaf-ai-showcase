@@ -1,0 +1,61 @@
+![LuxLeaf AI: intelligence rooted in your business](assets/luxleaf-banner.svg)
+
+# LuxLeaf AI
+
+[![Showcase checks](https://github.com/Zontafor/luxleaf-ai-showcase/actions/workflows/showcase.yml/badge.svg)](https://github.com/Zontafor/luxleaf-ai-showcase/actions/workflows/showcase.yml)
+
+**A business AI platform bringing private knowledge, governed model access, and repeatable workflows into one workspace.**
+
+LuxLeaf is being developed by Michelle L. Wu. This repository is its public product showcase: capabilities, architecture, synthetic demonstrations, and development direction. The application source is maintained privately.
+
+**Status:** v0.2 development preview. There is no public hosted service or downloadable application in this repository.
+
+[Product overview](docs/PRODUCT.md) · [Architecture](docs/ARCHITECTURE.md) · [Roadmap](docs/ROADMAP.md) · [Validation](docs/VALIDATION.md) · [Security](SECURITY.md)
+
+## What LuxLeaf brings together
+
+| Capability | Current development implementation |
+|---|---|
+| Business knowledge | Tenant-scoped text ingestion, passage retrieval, and source citations |
+| Model access | A shared gateway for local excerpts and optional Azure, Amazon Bedrock, and Google Vertex adapters |
+| Usage governance | Tenant model permissions, inference rate limits, budget reservations, and a usage ledger |
+| Repeatable work | Durable knowledge-query workflows with status, cancellation, and operator recovery |
+| Tool access | A narrow MCP interface using the same tenant authentication and gateway policies |
+| Operations | Operational counts, optional metadata-only tracing, and durable local event export |
+
+Local mode retrieves source passages; it does not generate an LLM answer. Cloud adapters require explicit configuration and have been tested with synthetic provider responses. Live provider acceptance testing remains ahead.
+
+## A look inside
+
+The screenshots below come from a local development demonstration using a synthetic onboarding policy. They contain no customer documents or live provider credentials.
+
+<table>
+<tr>
+<td width="30%" valign="top"><img src="assets/knowledge-demo.jpg" alt="Mobile knowledge view retrieving a synthetic onboarding policy with a source citation" width="290" /></td>
+<td valign="top"><img src="assets/operations-demo.jpg" alt="Operations view showing two completed synthetic workflows, zero recorded model spend, and no unsettled requests or pending exports" width="780" /><p><strong>Knowledge with context.</strong> Inspect the retrieved passage behind an answer.</p><p><strong>Operations with visibility.</strong> Review workflow state, usage records, and outstanding settlement or export work.</p></td>
+</tr>
+</table>
+
+## How it fits a business
+
+A workspace holds a tenant's documents and permissions. Interactive questions, approved workflow jobs, and MCP requests share the same gateway controls. Administrators can review usage and manage access without introducing a separate policy system for each model provider.
+
+Read the [illustrative business flow](examples/knowledge-workflow.md) for a synthetic example. Tenant-wide document access is the current boundary; per-document permissions and individual-user SSO are planned.
+
+## Development evidence
+
+The private v0.2 test suite recorded **57 passing tests against SQLite and 57 against an isolated PostgreSQL instance** on October 30, 2026. Coverage includes tenant separation, access revocation, spending reservations, replay protection, workflow behavior, MCP access, and event export.
+
+These are recorded development results, not a production benchmark, independent security audit, or compliance certification. This repository's CI checks the showcase's publication boundaries and local links; it does not run the private platform suite. See [validation scope and limitations](docs/VALIDATION.md).
+
+## Roadmap and feedback
+
+Near-term priorities are reproducible deployment validation, workload identity, stronger identity and document permissions, representative retrieval evaluation, and measured operational targets. [The roadmap](docs/ROADMAP.md) separates implemented capabilities from planned work and makes no delivery-date commitments.
+
+Use [Issues](https://github.com/Zontafor/luxleaf-ai-showcase/issues) for product feedback and documentation corrections. Read [CONTRIBUTING.md](CONTRIBUTING.md) first. For sensitive security reports, follow [SECURITY.md](SECURITY.md).
+
+## Ownership and references
+
+Copyright © 2026 Michelle L. Wu. The [showcase license](LICENSE) covers original materials in this repository. It does not grant access to or rights in the private application. This is not an open-source application release.
+
+LuxLeaf draws on public engineering references across application development, cloud AI, MCP, workflows, and operations. Upstream projects retain their own ownership and licenses. No affiliation with or endorsement by their maintainers is claimed. See [references and attribution](docs/REFERENCES.md).

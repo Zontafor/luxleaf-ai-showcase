@@ -1,0 +1,17 @@
+name: Documentation correction
+description: Report unclear, inaccurate, or inaccessible showcase content.
+title: "[Docs] "
+body:
+  - type: input
+    id: location
+    attributes:
+      label: Public file or page
+    validations:
+      required: true
+  - type: textarea
+    id: correction
+    attributes:
+      label: Suggested correction
+      description: Describe the problem and suggested wording. Do not include sensitive information.
+    validations:
+      required: true

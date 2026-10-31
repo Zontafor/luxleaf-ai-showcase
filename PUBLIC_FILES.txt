@@ -1,0 +1,22 @@
+# Exact public showcase contents; additions require explicit review.
+.github/ISSUE_TEMPLATE/config.yml
+.github/ISSUE_TEMPLATE/documentation.yml
+.github/ISSUE_TEMPLATE/feedback.yml
+.github/workflows/showcase.yml
+.gitignore
+CHANGELOG.md
+CONTRIBUTING.md
+LICENSE
+PUBLIC_FILES.txt
+README.md
+SECURITY.md
+assets/knowledge-demo.jpg
+assets/luxleaf-banner.svg
+assets/operations-demo.jpg
+docs/ARCHITECTURE.md
+docs/PRODUCT.md
+docs/REFERENCES.md
+docs/ROADMAP.md
+docs/VALIDATION.md
+examples/knowledge-workflow.md
+scripts/verify_showcase.py
