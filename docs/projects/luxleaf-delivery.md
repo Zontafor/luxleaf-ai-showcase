@@ -59,6 +59,12 @@ Hash each supplied UTF-8 text file and a canonical manifest. Reject traversal, h
 
 This module reads no arbitrary local paths and publishes nothing. It does not run the declared checks, discover all secrets, sign artifacts or attest to who produced evidence. Connect verified CI results and an artifact-signing authority before automated release. Binary packaging is outside this initial scope.
 
+## Connected demonstration
+
+[Evidence before release](../demonstrations/evidence-before-release.md)
+
+These journeys contain recorded executions that include this component.
+
 ## Where it connects
 
 [security](luxleaf-security.md) · [rollouts](luxleaf-rollouts.md)

@@ -61,6 +61,12 @@ Filter candidates by tenant permission, remote-execution consent, region, capaci
 
 A result is a proposal, not a reservation. The integrating gateway must atomically reserve budget and capacity and recheck current policy immediately before execution. Caller-supplied health and pricing can be stale; this module alone does not guarantee availability or cost ceilings.
 
+## Connected demonstration
+
+[Knowledge with permission](../demonstrations/knowledge-with-permission.md)
+
+These journeys contain recorded executions that include this component.
+
 ## Where it connects
 
 [metering](luxleaf-metering.md) · [inference](luxleaf-inference.md)

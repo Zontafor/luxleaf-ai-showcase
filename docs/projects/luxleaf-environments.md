@@ -58,6 +58,12 @@ Validate a deployment intent before infrastructure generation. Production requir
 
 The result explicitly marks provisioned=false. No credentials are accepted, cloud APIs called or infrastructure changed. Pair this policy with runtime manifests and live acceptance evidence before deployment.
 
+## Connected demonstration
+
+[Deployment planning and recovery](../demonstrations/deployment-planning-and-recovery.md)
+
+These journeys contain recorded executions that include this component.
+
 ## Where it connects
 
 [runtime](luxleaf-runtime.md) · [security](luxleaf-security.md)

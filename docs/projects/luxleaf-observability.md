@@ -59,6 +59,12 @@ Availability counts responses below HTTP 500 as successful under this explicit p
 
 The caller defines and collects a representative window; the module has no live metric backend. Client errors, timeouts without responses, tenant fairness and end-to-end availability may require a different SLI definition. No alert is sent.
 
+## Connected demonstration
+
+[Operational evidence and response](../demonstrations/operational-evidence-and-response.md)
+
+These journeys contain recorded executions that include this component.
+
 ## Where it connects
 
 [telemetry](luxleaf-telemetry.md) · [rollouts](luxleaf-rollouts.md)

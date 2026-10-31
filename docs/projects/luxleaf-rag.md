@@ -58,6 +58,12 @@ The Python pipeline accepts retrieval and inference callbacks. It checks tenant 
 
 A citation-substring check is not a semantic faithfulness proof: a generated answer may still contradict its citations. Callback implementations are trusted code, not supplied source strings. Integration tests connect this pipeline to the independent knowledge and inference repositories.
 
+## Connected demonstration
+
+[Knowledge with permission](../demonstrations/knowledge-with-permission.md)
+
+These journeys contain recorded executions that include this component.
+
 ## Where it connects
 
 [knowledge](luxleaf-knowledge.md) · [inference](luxleaf-inference.md) · [workflows](luxleaf-workflows.md)

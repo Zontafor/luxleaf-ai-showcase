@@ -62,6 +62,12 @@ The runtime owns its function registry and permits only two local read-only text
 
 No remote or mutating tool can be enabled through payload fields. The database transaction is suitable for bounded local operations only. Adding external side effects requires durable checkpoints, approvals bound to plan hashes, and explicit uncertain-outcome handling before extending this registry.
 
+## Connected demonstration
+
+[Controlled agent work](../demonstrations/controlled-agent-work.md)
+
+These journeys contain recorded executions that include this component.
+
 ## Where it connects
 
 [agent-plans](luxleaf-agent-plans.md) · [events](luxleaf-events.md)

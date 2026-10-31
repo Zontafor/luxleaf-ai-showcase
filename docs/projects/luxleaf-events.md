@@ -54,6 +54,12 @@ Append assigns stable content hashes to tenant-scoped event identifiers. Reusing
 
 Pending reads do not lease events, so concurrent consumers may receive duplicates. Consumers must handle them idempotently. This is a local durable outbox with explicit acknowledgements, not an exactly-once delivery service. Producers are responsible for excluding sensitive content from payloads.
 
+## Connected demonstration
+
+[Operational evidence and response](../demonstrations/operational-evidence-and-response.md)
+
+These journeys contain recorded executions that include this component.
+
 ## Where it connects
 
 [archives](luxleaf-archives.md) · [observability](luxleaf-observability.md)

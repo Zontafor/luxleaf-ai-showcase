@@ -64,6 +64,12 @@ An operator-supplied policy bounds account identifiers, read-only inventory acti
 
 This module holds no cloud credentials, uses no provider SDK and performs no remote action. An eventual executor must revalidate the plan against verified workload identity and provider-specific resource naming; the generic names here are not IAM resource identifiers.
 
+## Connected demonstration
+
+[Controlled agent work](../demonstrations/controlled-agent-work.md)
+
+These journeys contain recorded executions that include this component.
+
 ## Where it connects
 
 [service-policy](luxleaf-service-policy.md) · [agent-plans](luxleaf-agent-plans.md)

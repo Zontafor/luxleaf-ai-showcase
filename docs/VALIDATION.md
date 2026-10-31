@@ -1,5 +1,9 @@
 # Development validation
 
+## Connected demonstrations
+
+Recorded October 30, 2026: five synthetic journeys executed 35 recorded steps across all 31 components and passed 29 executable checks. The local portfolio suite now passes 9 tests, including complete coverage, evidence-output privacy and a deliberate budget-bypass fault that must stop recording. The developer-kit component’s 4 existing tests and compilation of the new runner passed. The runner uses disposable databases and no network calls. Configuration assertions, approvals, metric samples, image identifiers and compute capacity are synthetic fixtures; the SQLite migration and backup check execute locally. [Inspect the demonstrations](DEMONSTRATIONS.md).
+
 ## Independent components 0.1.0
 
 Recorded October 30, 2026 on macOS arm64 / Python 3.14.3: 129 component tests across 31 separate repositories, 6 portfolio integration tests, and 31 CLI examples passed. Each CLI also rejected invalid envelopes and excessive JSON nesting. Python lint/format checks, local documentation links and source artifact boundaries were checked. Integration tests cover authenticated retrieval through local inference, workflow completion, budget settlement, archive acknowledgement, model governance, local tools, concurrent reservations and rollback. All 31 component GitHub workflows subsequently passed on their exact uploaded commits. Private visibility, non-fork status and remote commit identity were verified for all 31 repositories. The six portfolio integration tests remain local evidence; each component workflow runs that repository’s own unit suite. No cloud or production deployment was performed.

@@ -54,6 +54,12 @@ Seven explicit deployment controls are evaluated. Missing values fail, and truth
 
 The engine evaluates assertions, not infrastructure. A passing result does not prove the assertions are true, establish compliance or replace threat modeling, dependency inspection or penetration testing. Bind evidence collection to each control before using this as a release gate.
 
+## Connected demonstration
+
+[Evidence before release](../demonstrations/evidence-before-release.md)
+
+These journeys contain recorded executions that include this component.
+
 ## Where it connects
 
 [environments](luxleaf-environments.md) · [delivery](luxleaf-delivery.md)

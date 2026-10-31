@@ -65,6 +65,12 @@ A candidate's artifact hash binds its review. Four explicit boolean checks and i
 
 Identity and evidence authenticity must be established by the host. This engine evaluates structured records; it does not verify signatures, certify compliance or replace a release authority. Integrate approved decisions with the model registry's promotion gate.
 
+## Connected demonstration
+
+[Evidence before release](../demonstrations/evidence-before-release.md)
+
+These journeys contain recorded executions that include this component.
+
 ## Where it connects
 
 [evaluations](luxleaf-evaluations.md) · [model-lifecycle](luxleaf-model-lifecycle.md)

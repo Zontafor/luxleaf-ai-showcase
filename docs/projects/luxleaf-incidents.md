@@ -58,6 +58,12 @@ Incidents move through open, acknowledged, contained, resolved and closed. Only 
 
 The host must verify the actor identity. This local journal does not notify responders, enforce staffing, provide immutable evidence or establish response-time guarantees. Do not place secrets or customer records in summaries or evidence fields.
 
+## Connected demonstration
+
+[Operational evidence and response](../demonstrations/operational-evidence-and-response.md)
+
+These journeys contain recorded executions that include this component.
+
 ## Where it connects
 
 [events](luxleaf-events.md) · [archives](luxleaf-archives.md)

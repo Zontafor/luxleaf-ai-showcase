@@ -71,6 +71,12 @@ Jobs are sorted by priority, memory, CPU and identifier. Each is placed on the t
 
 This is a deterministic placement calculation over a supplied capacity snapshot, not a cluster scheduler or compute executor. A real executor needs atomic resource reservations, isolated containers, cancellation and reconciliation of actual worker capacity.
 
+## Connected demonstration
+
+[Deployment planning and recovery](../demonstrations/deployment-planning-and-recovery.md)
+
+These journeys contain recorded executions that include this component.
+
 ## Where it connects
 
 [workflows](luxleaf-workflows.md) · [runtime](luxleaf-runtime.md)

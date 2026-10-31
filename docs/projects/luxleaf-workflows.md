@@ -54,6 +54,12 @@ Submission keys and canonical input hashes prevent conflicting reuse. Claims pro
 
 Queued cancellation is terminal. Cancellation after execution starts marks uncertainty because external effects cannot be recalled. No arbitrary code is run by this queue. An integrating worker selects an approved handler and separately reconciles external effects. This v1 implementation intentionally omits automatic uncertain-job recovery and heartbeats.
 
+## Connected demonstration
+
+[Knowledge with permission](../demonstrations/knowledge-with-permission.md)
+
+These journeys contain recorded executions that include this component.
+
 ## Where it connects
 
 [rag](luxleaf-rag.md) · [events](luxleaf-events.md)

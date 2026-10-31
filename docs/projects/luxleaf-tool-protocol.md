@@ -66,6 +66,12 @@ LuxLeaf tools/1 provides discovery and invocation for a deliberately small local
 
 The caller supplies a policy derived from trusted identity. This JSON contract is not MCP and does not advertise MCP compatibility. A future MCP adapter can translate protocol discovery and calls while retaining host approval and authorization behavior. No network listener or arbitrary code execution is included.
 
+## Connected demonstration
+
+[Controlled agent work](../demonstrations/controlled-agent-work.md)
+
+These journeys contain recorded executions that include this component.
+
 ## Where it connects
 
 [api](luxleaf-api.md) · [agent-runtime](luxleaf-agent-runtime.md)

@@ -53,6 +53,12 @@ Credit is represented by integer millionths of a currency unit. Reservations ser
 
 Verified actual usage may exceed its estimate: settlement records the real cost and reports an over-limit balance instead of concealing the overage. Further reservations are denied. Configure and settle are trusted operator operations; this engine is not an invoice system or a hard provider-spend ceiling. Currency and pricing policy belong to the integrating service.
 
+## Connected demonstration
+
+[Knowledge with permission](../demonstrations/knowledge-with-permission.md)
+
+These journeys contain recorded executions that include this component.
+
 ## Where it connects
 
 [model-router](luxleaf-model-router.md) · [workflows](luxleaf-workflows.md)

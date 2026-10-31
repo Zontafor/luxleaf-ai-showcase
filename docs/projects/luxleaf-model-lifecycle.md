@@ -51,6 +51,12 @@ Candidates bind a stable identifier, artifact digest and evaluated quality score
 
 Governance decisions and evaluation scores must be supplied by trusted services. This local registry does not train models, store binaries, verify signatures, collect drift data or perform live deployment. Keep actual artifacts in access-controlled storage and bind their checksum to this registry.
 
+## Connected demonstration
+
+[Evidence before release](../demonstrations/evidence-before-release.md)
+
+These journeys contain recorded executions that include this component.
+
 ## Where it connects
 
 [model-governance](luxleaf-model-governance.md) · [evaluations](luxleaf-evaluations.md)

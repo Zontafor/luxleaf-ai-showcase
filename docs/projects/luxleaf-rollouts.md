@@ -47,6 +47,12 @@ A rollout begins with a digest-pinned candidate and limited traffic percentage. 
 
 Thresholds and observations come from a trusted release controller. The decision engine does not switch traffic or prove that observations describe the candidate image. Persist and bind external observation evidence before using decisions for automatic deployment.
 
+## Connected demonstration
+
+[Deployment planning and recovery](../demonstrations/deployment-planning-and-recovery.md)
+
+These journeys contain recorded executions that include this component.
+
 ## Where it connects
 
 [observability](luxleaf-observability.md) · [delivery](luxleaf-delivery.md)

@@ -66,6 +66,12 @@ Each labeled case contains distinct relevant document identifiers and a ranked r
 
 These metrics evaluate retrieval ordering, not answer truthfulness or business value. Empty datasets and duplicate identifiers are rejected to avoid misleading aggregates. Use authorized representative labels before interpreting quality results.
 
+## Connected demonstration
+
+[Evidence before release](../demonstrations/evidence-before-release.md)
+
+These journeys contain recorded executions that include this component.
+
 ## Where it connects
 
 [model-governance](luxleaf-model-governance.md) · [model-lifecycle](luxleaf-model-lifecycle.md)

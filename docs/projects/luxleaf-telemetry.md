@@ -59,6 +59,12 @@ Produce bounded operational spans with an allowlist of numeric attributes. Quest
 
 Without persistent state, pseudonyms change between calls. Protect the state database, and define key rotation and retention before deployment. Pseudonyms are not proof of anonymization. Only the span object is intended for export; the surrounding local request envelope still contains the caller's tenant and request identifiers. No collector transport is included.
 
+## Connected demonstration
+
+[Operational evidence and response](../demonstrations/operational-evidence-and-response.md)
+
+These journeys contain recorded executions that include this component.
+
 ## Where it connects
 
 [observability](luxleaf-observability.md) · [incidents](luxleaf-incidents.md)

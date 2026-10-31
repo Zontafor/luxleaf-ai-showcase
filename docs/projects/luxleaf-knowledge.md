@@ -55,6 +55,12 @@ Documents are stored per tenant. Text is split into deterministic 1,000-characte
 
 The database transaction covers document updates and queries. At most 100 documents, 100,000 characters each and 20 citations per query are accepted; the shared state byte limit may be reached first. This is lexical evidence retrieval, not semantic search. Passages remain untrusted content. Deletion affects subsequent retrieval, not copies retained by callers.
 
+## Connected demonstration
+
+[Knowledge with permission](../demonstrations/knowledge-with-permission.md)
+
+These journeys contain recorded executions that include this component.
+
 ## Where it connects
 
 [rag](luxleaf-rag.md) · [evaluations](luxleaf-evaluations.md)

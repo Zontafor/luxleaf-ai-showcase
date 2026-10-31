@@ -50,6 +50,12 @@ The Boundary class separates authentication, route lookup, role checks and handl
 
 This is an in-process HTTP-style dispatcher with no socket listener. Tokens are testable service credentials, not a full identity platform. Production transport, TLS, rate limits, expiration, rotation and external identity verification remain host responsibilities. The command-line example describes the contract without accepting credentials.
 
+## Connected demonstration
+
+[Knowledge with permission](../demonstrations/knowledge-with-permission.md)
+
+These journeys contain recorded executions that include this component.
+
 ## Where it connects
 
 [workspace](luxleaf-workspace.md) · [service-policy](luxleaf-service-policy.md)

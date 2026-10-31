@@ -131,6 +131,12 @@ Generate a Deployment and internal ClusterIP Service with matching selectors, bo
 
 These are manifest objects only. The image must support the chosen UID, filesystem and port. Namespace creation, secrets, readiness probes, egress policy, database connectivity, admission and cluster-side validation remain deployment work. Field semantics follow the [Kubernetes pod security documentation](https://kubernetes.io/docs/concepts/security/pod-security-standards/); no cluster deployment is performed.
 
+## Connected demonstration
+
+[Deployment planning and recovery](../demonstrations/deployment-planning-and-recovery.md)
+
+These journeys contain recorded executions that include this component.
+
 ## Where it connects
 
 [environments](luxleaf-environments.md) · [containers](luxleaf-containers.md)

@@ -56,6 +56,12 @@ The JSON interface generates an additive migration plan from bounded table/colum
 
 The backup function uses SQLite's online backup API into an exclusively created destination and runs integrity_check. It refuses overwrite. Migration sets must be retained unchanged; this initial version does not hash applied migration definitions or support destructive changes. Paths are supplied by trusted operator code, never by remote requests.
 
+## Connected demonstration
+
+[Deployment planning and recovery](../demonstrations/deployment-planning-and-recovery.md)
+
+These journeys contain recorded executions that include this component.
+
 ## Where it connects
 
 [knowledge](luxleaf-knowledge.md) · [workflows](luxleaf-workflows.md)

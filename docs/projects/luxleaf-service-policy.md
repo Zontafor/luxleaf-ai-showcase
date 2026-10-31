@@ -59,6 +59,12 @@ Service requests require an exact source, target, action and tenant match. Deny 
 
 Policies are supplied by a trusted control plane. Source identifiers must come from verified workload identity; request strings alone do not authenticate a service. Decisions do not install network rules or establish TLS. Integrate with the API boundary and runtime before exposing service traffic.
 
+## Connected demonstration
+
+[Controlled agent work](../demonstrations/controlled-agent-work.md)
+
+These journeys contain recorded executions that include this component.
+
 ## Where it connects
 
 [api](luxleaf-api.md) · [cloud-tools](luxleaf-cloud-tools.md)

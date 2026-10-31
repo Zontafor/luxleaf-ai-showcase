@@ -117,6 +117,33 @@ def verify(root=ROOT):
             errors.append("Invalid public project catalog")
     else:
         errors.append("Public project catalog is missing")
+    demonstration_path = root / "docs/demonstrations/record.json"
+    if demonstration_path.is_file():
+        try:
+            record_text = demonstration_path.read_text()
+            record = json.loads(record_text)
+            journeys = record["scenarios"]
+            components = {row["name"] for row in json.loads(catalog_path.read_text())}
+            observed = {step["component"] for journey in journeys for step in journey["steps"]}
+            checks = [check for journey in journeys for check in journey["checks"]]
+            if len(journeys) != 5 or observed != components or set(record["coverage"]) != components:
+                errors.append("Connected demonstrations must cover all 31 components in five journeys")
+            if record["checks_passed"] != len(checks) or not all(check["passed"] is True for check in checks):
+                errors.append("Demonstration check totals or outcomes are inconsistent")
+            if record["live_cloud_calls"] is not False or record["production_measurements"] is not False:
+                errors.append("Demonstration evidence must retain its synthetic execution boundary")
+            if any(value in record_text for value in (
+                "demo-local-only", "Bearer ", "lease_token", "pseudonym_key", *private_paths
+            )):
+                errors.append("Private execution detail found in demonstration evidence")
+            for journey in journeys:
+                page = f"docs/demonstrations/{journey['id']}.md"
+                if page not in allowed or not (root / page).is_file():
+                    errors.append("Demonstration is missing its reviewed public page")
+        except (ValueError, KeyError, TypeError):
+            errors.append("Invalid connected demonstration record")
+    else:
+        errors.append("Connected demonstration record is missing")
     return errors, len(actual)
 
 

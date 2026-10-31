@@ -45,6 +45,12 @@ Archive entries form a SHA-256 chain over canonical JSON, sequence and previous 
 
 This detects accidental corruption or changes relative to a trusted head digest. A database administrator can rewrite the entire chain; without a separately retained signed head this is not tamper-proof storage. No encryption, Object Lock, external signing, retention deletion or remote delivery is provided.
 
+## Connected demonstration
+
+[Operational evidence and response](../demonstrations/operational-evidence-and-response.md)
+
+These journeys contain recorded executions that include this component.
+
 ## Where it connects
 
 [events](luxleaf-events.md) · [incidents](luxleaf-incidents.md)

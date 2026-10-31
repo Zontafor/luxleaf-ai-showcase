@@ -12,6 +12,12 @@ LuxLeaf is being developed by Michelle L. Wu. This repository is its public prod
 
 [Integration roadmap](docs/INTEGRATIONS.md) · [Product & technical brief](docs/TECHNICAL_BRIEF.md) · [Product overview](docs/PRODUCT.md) · [Architecture](docs/ARCHITECTURE.md) · [Roadmap](docs/ROADMAP.md) · [Validation](docs/VALIDATION.md) · [Security](SECURITY.md)
 
+## See LuxLeaf capabilities working together
+
+**[Explore five connected demonstrations →](docs/DEMONSTRATIONS.md)**
+
+Follow permission-aware knowledge, controlled agents, release governance, deployment planning and operational response across all 31 components. Inspect 35 recorded steps and 29 passing checks, including denied requests and a disposable database backup. Examples use synthetic data; generated infrastructure and cloud proposals are not executed.
+
 ## Explore the public projects
 
 **[Browse all 31 public project pages →](docs/INTEGRATIONS.md)**

@@ -1,5 +1,11 @@
 # Changelog
 
+## Connected demonstrations — 2026-10-30
+
+- Published five synthetic business journeys with execution evidence covering all 31 components.
+- Added 29 checked expectations, explicit fixture/proposal boundaries, and per-project links to connected demonstrations.
+- Recorded nine local portfolio tests, including a deliberate fault and evidence privacy checks.
+
 ## Public project pages — 2026-10-30
 
 - Added 31 independently readable public project pages with executed synthetic request/result examples.

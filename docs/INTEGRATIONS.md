@@ -4,6 +4,8 @@
 
 Every project below opens a public page with its purpose, current behavior, an actual synthetic request/result, integration relationships, validation and next work. You do not need access to the private implementation repositories to read these pages.
 
+**[See all 31 components in five connected demonstrations →](DEMONSTRATIONS.md)**
+
 Start with [Knowledge retrieval](projects/luxleaf-knowledge.md), [Usage metering](projects/luxleaf-metering.md), or [Workflow queue](projects/luxleaf-workflows.md).
 
 ## Business knowledge

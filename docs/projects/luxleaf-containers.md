@@ -72,6 +72,12 @@ Generate a Compose service for a supplied digest-pinned image. It runs under a n
 
 The JSON compose object can be written as a Compose file. This does not build or start an image, provision a registry, configure application credentials or verify the image supports these restrictions. Service fields follow the [Compose service specification](https://docs.docker.com/reference/compose-file/services/). Review target-host behavior before deployment.
 
+## Connected demonstration
+
+[Deployment planning and recovery](../demonstrations/deployment-planning-and-recovery.md)
+
+These journeys contain recorded executions that include this component.
+
 ## Where it connects
 
 [runtime](luxleaf-runtime.md) · [delivery](luxleaf-delivery.md)

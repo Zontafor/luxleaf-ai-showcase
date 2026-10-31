@@ -56,6 +56,12 @@ Templates accept only question and context slots. Substitution happens once, so 
 
 Character budgets are not token estimates. This module prepares messages and a reproducible hash; it performs no inference. Delimiters and instructions do not prove prompt-injection resistance.
 
+## Connected demonstration
+
+[Knowledge with permission](../demonstrations/knowledge-with-permission.md)
+
+These journeys contain recorded executions that include this component.
+
 ## Where it connects
 
 [knowledge](luxleaf-knowledge.md) · [inference](luxleaf-inference.md)

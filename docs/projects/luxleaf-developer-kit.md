@@ -60,6 +60,12 @@ Validate a closed component manifest and calculate a stable dependency-first bui
 
 This verifies graph shape, not dependency version compatibility or package authenticity. Dependencies here represent integration/build relationships; components otherwise run independently. Private registry publication and signed package resolution are separate future capabilities.
 
+## Connected demonstration
+
+[Evidence before release](../demonstrations/evidence-before-release.md)
+
+These journeys contain recorded executions that include this component.
+
 ## Where it connects
 
 [delivery](luxleaf-delivery.md) · [containers](luxleaf-containers.md)

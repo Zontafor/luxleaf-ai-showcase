@@ -45,6 +45,12 @@ A workspace contains active members with admin, editor or reader roles. Bootstra
 
 This is a local membership engine, not a login system. The host must derive tenant and actor from verified identity; supplied actor identifiers are not credentials. Integrate authorization decisions with luxleaf-api before exposing application operations. SSO, invitations and audit export are further work.
 
+## Connected demonstration
+
+[Knowledge with permission](../demonstrations/knowledge-with-permission.md)
+
+These journeys contain recorded executions that include this component.
+
 ## Where it connects
 
 [api](luxleaf-api.md) · [service-policy](luxleaf-service-policy.md)

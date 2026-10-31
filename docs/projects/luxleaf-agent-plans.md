@@ -66,6 +66,12 @@ Plans contain at most 50 uniquely identified steps. Every tool must be allowlist
 
 Effect classifications must come from a trusted tool registry when integrated, not from an untrusted model's declaration. This planner does not authorize or execute tools. The runtime must enforce tool policy again and bind any approval to the exact reviewed plan.
 
+## Connected demonstration
+
+[Controlled agent work](../demonstrations/controlled-agent-work.md)
+
+These journeys contain recorded executions that include this component.
+
 ## Where it connects
 
 [agent-runtime](luxleaf-agent-runtime.md) · [tool-protocol](luxleaf-tool-protocol.md)

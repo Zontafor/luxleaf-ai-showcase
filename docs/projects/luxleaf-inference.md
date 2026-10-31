@@ -59,6 +59,12 @@ The original local engine returns bounded evidence excerpts and zero model cost.
 
 The caller provides authorized retrieved passages, typically from luxleaf-knowledge. A later provider adapter must define its own request contract, uncertainty handling, identity and usage accounting; it must not silently replace local execution.
 
+## Connected demonstration
+
+[Knowledge with permission](../demonstrations/knowledge-with-permission.md)
+
+These journeys contain recorded executions that include this component.
+
 ## Where it connects
 
 [rag](luxleaf-rag.md) · [metering](luxleaf-metering.md)
