@@ -1,6 +1,7 @@
 """Check the public showcase boundary using only Python's standard library."""
 from pathlib import Path
 import os
+import json
 import re
 import sys
 from urllib.parse import unquote, urlsplit
@@ -78,6 +79,14 @@ def verify(root=ROOT):
         if path.suffix == ".md":
             for target in markdown_links.findall(text) + html_links.findall(text):
                 parsed = urlsplit(target)
+                github_path = unquote(parsed.path).strip("/").split("/")
+                if (
+                    parsed.hostname == "github.com"
+                    and len(github_path) >= 2
+                    and github_path[0].lower() == "zontafor"
+                    and github_path[1].lower() != "luxleaf-ai-showcase"
+                ):
+                    errors.append(f"Public navigation points outside the public showcase in {name}")
                 if parsed.scheme or parsed.netloc or not parsed.path:
                     continue
                 resolved = (path.parent / unquote(parsed.path)).resolve()
@@ -90,6 +99,24 @@ def verify(root=ROOT):
                     errors.append(f"Active SVG content is not permitted: {name}")
             except ET.ParseError:
                 errors.append(f"Invalid SVG syntax: {name}")
+    catalog_path = root / "docs/projects/catalog.json"
+    if catalog_path.is_file():
+        try:
+            catalog = json.loads(catalog_path.read_text())
+            pages = {entry["page"] for entry in catalog}
+            names = {entry["name"] for entry in catalog}
+            if len(catalog) != 31 or len(pages) != 31 or len(names) != 31:
+                errors.append("Public project catalog must contain 31 distinct projects")
+            for entry in catalog:
+                page = entry["page"]
+                if page not in allowed or not page.startswith("docs/projects/"):
+                    errors.append("Project page is outside the reviewed public file set")
+                if set(entry["example"]) != {"request", "result"}:
+                    errors.append("Project catalog is missing a recorded request/result example")
+        except (ValueError, KeyError, TypeError):
+            errors.append("Invalid public project catalog")
+    else:
+        errors.append("Public project catalog is missing")
     return errors, len(actual)
 
 

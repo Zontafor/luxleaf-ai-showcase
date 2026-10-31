@@ -1,5 +1,11 @@
 # Changelog
 
+## Public project pages — 2026-10-30
+
+- Added 31 independently readable public project pages with executed synthetic request/result examples.
+- Replaced catalog links to private repositories with public documentation destinations.
+- Added public-navigation checks to prevent that access regression.
+
 ## Independent component foundation — 2026-10-30
 
 - Reorganized the portfolio around 31 original LuxLeaf projects and their individual responsibilities.

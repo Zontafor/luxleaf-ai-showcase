@@ -1,45 +1,71 @@
-# LuxLeaf component portfolio
+# Explore LuxLeaf projects
 
-Michelle L. Wu’s original LuxLeaf projects have been implemented as 31 separate private GitHub repositories. Each has a defined responsibility and an explicit integration boundary. The existing v0.3 application remains a separate development demonstration.
+**31 public project pages · Original LuxLeaf components by Michelle L. Wu**
 
-| Project | Responsibility | Further development |
-|---|---|---|
-| [luxleaf-workspace](https://github.com/Zontafor/luxleaf-workspace) | Persistent tenant memberships and role-based access decisions | Identity-provider login and a dedicated user interface |
-| [luxleaf-knowledge](https://github.com/Zontafor/luxleaf-knowledge) | Persistent tenant documents, bounded passage retrieval and citations | Embedding search, document ACLs and binary document ingestion |
-| [luxleaf-inference](https://github.com/Zontafor/luxleaf-inference) | Deterministic local extractive answers with tenant-bound evidence | Live model-provider adapters and provider-specific accounting |
-| [luxleaf-metering](https://github.com/Zontafor/luxleaf-metering) | Durable credit reservations, replay checks and settlement | Provider invoice reconciliation and commercial billing |
-| [luxleaf-workflows](https://github.com/Zontafor/luxleaf-workflows) | Durable tenant jobs with leases, fencing and cancellation | Isolated remote execution and distributed load validation |
-| [luxleaf-environments](https://github.com/Zontafor/luxleaf-environments) | Validate deployment configuration against private-service requirements | Provisioning and live identity/network acceptance |
-| [luxleaf-evaluations](https://github.com/Zontafor/luxleaf-evaluations) | Precision, recall and reciprocal-rank evaluation against labeled cases | Representative business datasets and answer-faithfulness evaluation |
-| [luxleaf-model-router](https://github.com/Zontafor/luxleaf-model-router) | Deterministic selection by permissions, region, capacity and estimated cost | Live provider health and latency telemetry |
-| [luxleaf-generation](https://github.com/Zontafor/luxleaf-generation) | Bounded literal templates and untrusted evidence delimiters | Model generation, tokenizer-specific budgeting and injection evaluation |
-| [luxleaf-agent-plans](https://github.com/Zontafor/luxleaf-agent-plans) | Validate and order bounded tool plans with explicit approval requirements | An interactive plan review experience |
-| [luxleaf-tool-protocol](https://github.com/Zontafor/luxleaf-tool-protocol) | Versioned JSON tool discovery and permission-checked invocation | MCP transport/host interoperability via a dedicated adapter |
-| [luxleaf-cloud-tools](https://github.com/Zontafor/luxleaf-cloud-tools) | Evaluate narrowly scoped inventory actions against account/resource policy | Authenticated provider-specific execution adapters |
-| [luxleaf-agent-runtime](https://github.com/Zontafor/luxleaf-agent-runtime) | Execute approved local tool plans with step budgets and explicit failure records | Durable execution checkpoints and process isolation |
-| [luxleaf-rag](https://github.com/Zontafor/luxleaf-rag) | Compose tenant-filtered retrieval and local inference with verifiable citations | Live gateway integration and representative quality measurement |
-| [luxleaf-model-governance](https://github.com/Zontafor/luxleaf-model-governance) | Evaluate release evidence and separation-of-duty approvals | Signed evidence and organization-specific compliance processes |
-| [luxleaf-batch](https://github.com/Zontafor/luxleaf-batch) | Deterministic CPU/memory-constrained job placement with deferred-job reporting | Actual isolated compute execution and cluster scheduling |
-| [luxleaf-events](https://github.com/Zontafor/luxleaf-events) | Durable deduplicated tenant events with consumer-specific acknowledgements | Leases, remote delivery and backpressure metrics |
-| [luxleaf-rollouts](https://github.com/Zontafor/luxleaf-rollouts) | Canary promotion/rollback decisions using explicit observation gates | Actual traffic switching and deployment control |
-| [luxleaf-runtime](https://github.com/Zontafor/luxleaf-runtime) | Generate restricted Kubernetes workload and service manifests | Cluster-side validation, images and live runtime acceptance |
-| [luxleaf-archives](https://github.com/Zontafor/luxleaf-archives) | Local tenant event archive with chained hashes and tamper verification | Remote retention, signing and immutable storage |
-| [luxleaf-data](https://github.com/Zontafor/luxleaf-data) | Transactional versioned SQLite migrations, backups and integrity checks | Managed PostgreSQL adapters and production restore exercises |
-| [luxleaf-developer-kit](https://github.com/Zontafor/luxleaf-developer-kit) | Validate component dependency manifests and compute build order | Package registry distribution and developer onboarding UI |
-| [luxleaf-api](https://github.com/Zontafor/luxleaf-api) | Tenant-bound authenticated in-process HTTP-style request dispatch | Production HTTP hosting, OIDC and edge throttling |
-| [luxleaf-service-policy](https://github.com/Zontafor/luxleaf-service-policy) | Deny-by-default service-to-service action authorization | Workload identity verification and network enforcement |
-| [luxleaf-security](https://github.com/Zontafor/luxleaf-security) | Deterministic deployment posture checks with actionable findings | Independent audit, threat testing and organization policy integration |
-| [luxleaf-telemetry](https://github.com/Zontafor/luxleaf-telemetry) | Allowlisted bounded operational spans with tenant pseudonyms | Collector transport, key management and retention |
-| [luxleaf-observability](https://github.com/Zontafor/luxleaf-observability) | Latency percentiles, availability and error-budget calculations | Live metric ingestion and alert delivery |
-| [luxleaf-incidents](https://github.com/Zontafor/luxleaf-incidents) | Durable incident lifecycle with validated transitions and history | Notification integrations and staffed incident exercises |
-| [luxleaf-delivery](https://github.com/Zontafor/luxleaf-delivery) | Content-addressed release manifests and mandatory validation gates | Signed artifacts and remote build/deployment execution |
-| [luxleaf-containers](https://github.com/Zontafor/luxleaf-containers) | Generate restricted Compose service definitions from digest-pinned images | Image building/scanning and target-host acceptance |
-| [luxleaf-model-lifecycle](https://github.com/Zontafor/luxleaf-model-lifecycle) | Durable candidate registration and evidence-gated model promotion | External model artifact storage, drift monitoring and rollback automation |
+Every project below opens a public page with its purpose, current behavior, an actual synthetic request/result, integration relationships, validation and next work. You do not need access to the private implementation repositories to read these pages.
 
-## Validation and delivery
+Start with [Knowledge retrieval](projects/luxleaf-knowledge.md), [Usage metering](projects/luxleaf-metering.md), or [Workflow queue](projects/luxleaf-workflows.md).
 
-The initial component suite passed **129 component tests, 6 cross-component integration tests and all 31 command-line examples** on Python 3.14.3. Input rejection, tenant boundaries, concurrent metering, transaction rollback and archive replay were exercised. Each repository has its own package, README, design/contract documentation, license, example, tests and CI definition. All 31 GitHub component test workflows passed on the uploaded commits. Private visibility, independent non-fork status and commit identity were verified for every repository.
+## Business knowledge
 
-All repositories are committed locally and uploaded privately to the approved Zontafor account. The repository links above require authorized GitHub access. This showcase does not distribute their source. These are bounded working components, not 31 deployed commercial applications. Several infrastructure projects generate plans or manifests only. No production deployment, live provider/storage call or business-scale performance is claimed.
+| Public project page | What it does |
+|---|---|
+| [Workspace membership](projects/luxleaf-workspace.md) | Decide whether a workspace member may read, edit or manage business information. |
+| [Knowledge retrieval](projects/luxleaf-knowledge.md) | Find an authorized policy passage that answers a team member’s question. |
+| [Inference engine](projects/luxleaf-inference.md) | Return inspectable source excerpts when a local answer is sufficient. |
+| [Prompt construction](projects/luxleaf-generation.md) | Prepare a bounded question-and-evidence message for a later model adapter. |
+| [Knowledge orchestration](projects/luxleaf-rag.md) | Connect retrieval and inference while checking tenant identity and evidence excerpts. |
+| [API boundary](projects/luxleaf-api.md) | Derive tenant context from authenticated host credentials before calling a permitted operation. |
 
-The separate v0.3 integrated demonstration retains its own validation record. Its features and test results must not be assumed to exist in every new component. See [validation](VALIDATION.md).
+## Governance and workflow
+
+| Public project page | What it does |
+|---|---|
+| [Usage metering](projects/luxleaf-metering.md) | Reserve estimated usage before a request and keep uncertain spending visible. |
+| [Workflow queue](projects/luxleaf-workflows.md) | Keep approved work durable while distinguishing queued, running and uncertain execution. |
+| [Model routing](projects/luxleaf-model-router.md) | Choose an eligible model proposal within a tenant’s region and budget policy. |
+| [Retrieval evaluation](projects/luxleaf-evaluations.md) | Measure retrieval results against a small set of explicitly labeled expectations. |
+| [Model release governance](projects/luxleaf-model-governance.md) | Decide whether a particular model artifact has the required independent approvals. |
+| [Model registry](projects/luxleaf-model-lifecycle.md) | Maintain a candidate registry and promote an approved artifact that meets a quality gate. |
+
+## Agents and tools
+
+| Public project page | What it does |
+|---|---|
+| [Agent planning](projects/luxleaf-agent-plans.md) | Review tool steps and dependencies before an execution runtime receives them. |
+| [Tool protocol](projects/luxleaf-tool-protocol.md) | Expose a small, explicit local tool catalog with checked arguments. |
+| [Cloud action policy](projects/luxleaf-cloud-tools.md) | Decide whether an inventory action fits an account and resource policy. |
+| [Agent execution](projects/luxleaf-agent-runtime.md) | Execute a bounded sequence of registered local tools and retain its outcome. |
+
+## Infrastructure and delivery
+
+| Public project page | What it does |
+|---|---|
+| [Environment policy](projects/luxleaf-environments.md) | Review deployment requirements before an operator creates infrastructure. |
+| [Batch scheduling](projects/luxleaf-batch.md) | Fit proposed jobs into a supplied CPU and memory capacity snapshot. |
+| [Service runtime](projects/luxleaf-runtime.md) | Prepare restricted workload and service definitions for an operator to review. |
+| [Data migrations](projects/luxleaf-data.md) | Plan additive data changes and provide transactional migration and backup utilities. |
+| [Developer tooling](projects/luxleaf-developer-kit.md) | Determine a reproducible build order for a closed component dependency graph. |
+| [Service authorization](projects/luxleaf-service-policy.md) | Make an explicit allow-or-deny decision for a service action and tenant. |
+| [Release rollouts](projects/luxleaf-rollouts.md) | Use observation thresholds to propose holding, promoting or rolling back a candidate. |
+| [Release delivery](projects/luxleaf-delivery.md) | Build a content-hash manifest and evaluate the required release-check assertions. |
+| [Container deployment](projects/luxleaf-containers.md) | Prepare a restricted local container-service definition for a supplied image. |
+
+## Operational evidence
+
+| Public project page | What it does |
+|---|---|
+| [Event outbox](projects/luxleaf-events.md) | Retain operational events until each consumer acknowledges its own delivery. |
+| [Evidence archives](projects/luxleaf-archives.md) | Keep a local chain of event records whose contents can be checked against a retained digest. |
+| [Security posture](projects/luxleaf-security.md) | Identify missing deployment controls and show a concrete remediation for each. |
+| [Telemetry privacy](projects/luxleaf-telemetry.md) | Prepare bounded operational metadata while dropping unapproved content fields. |
+| [Service objectives](projects/luxleaf-observability.md) | Calculate request-window availability, latency percentiles and budget consumption. |
+| [Incident response](projects/luxleaf-incidents.md) | Record an owner’s progress through a defined incident-response lifecycle. |
+
+## What is public and what is private
+
+This public repository contains the project pages, synthetic demonstrations, architecture and validation summaries. The 31 implementation repositories remain private. Public navigation deliberately stays within the public showcase.
+
+The components are working local development releases. Several infrastructure projects generate plans or manifests; they do not create cloud infrastructure. All 31 private GitHub test workflows passed, alongside 129 local component tests and 6 portfolio integration tests. [Validation details](VALIDATION.md).
+
+The earlier v0.3 integrated application is a separate demonstration; its screenshots and provider adapters must not be attributed to every new component. [Platform overview](PRODUCT.md).

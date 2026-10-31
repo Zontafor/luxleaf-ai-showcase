@@ -12,11 +12,22 @@ LuxLeaf is being developed by Michelle L. Wu. This repository is its public prod
 
 [Integration roadmap](docs/INTEGRATIONS.md) · [Product & technical brief](docs/TECHNICAL_BRIEF.md) · [Product overview](docs/PRODUCT.md) · [Architecture](docs/ARCHITECTURE.md) · [Roadmap](docs/ROADMAP.md) · [Validation](docs/VALIDATION.md) · [Security](SECURITY.md)
 
-## Independent LuxLeaf projects
+## Explore the public projects
 
-LuxLeaf now has **31 separate original private GitHub repositories**, each with its own implementation, tests, example and documentation. The [component portfolio](docs/INTEGRATIONS.md) describes their responsibilities and remaining work. The initial suite passed 129 component tests and 6 integration tests; all 31 command-line examples ran successfully. Each project is hosted privately in the Zontafor account; source access requires authorization.
+**[Browse all 31 public project pages →](docs/INTEGRATIONS.md)**
 
-The earlier v0.3 integrated platform remains a separate development demonstration. Its capabilities and screenshots below do not imply that every new component implements the whole platform.
+Each page shows a concrete use case, current behavior, an actual synthetic request/result, integration relationships and validation. These pages are accessible without signing in to a private source repository.
+
+| Start here | What you can inspect |
+|---|---|
+| [Knowledge retrieval](docs/projects/luxleaf-knowledge.md) | A synthetic policy question and the actual retrieved passage |
+| [Usage metering](docs/projects/luxleaf-metering.md) | A bounded reservation and its recorded result |
+| [Workflow queue](docs/projects/luxleaf-workflows.md) | A durable submission and its initial state |
+| [Agent planning](docs/projects/luxleaf-agent-plans.md) | A tool plan, dependency order and approval requirements |
+| [Evidence archives](docs/projects/luxleaf-archives.md) | Verification of a synthetic event archive |
+| [Service objectives](docs/projects/luxleaf-observability.md) | Availability and latency calculated from a sample window |
+
+The implementation repositories remain private. The public pages are recorded demonstrations and documentation; there is no hosted interactive application. The separate v0.3 platform demonstration appears below.
 
 ## Start with the detailed brief
 
