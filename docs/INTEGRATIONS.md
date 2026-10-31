@@ -1,6 +1,6 @@
 # LuxLeaf component portfolio
 
-Michelle L. Wu’s original LuxLeaf projects are being developed as separate private repositories. Each has a defined responsibility and an explicit integration boundary. The existing v0.3 application remains a separate development demonstration.
+Michelle L. Wu’s original LuxLeaf projects have been implemented as 31 separate local Git repositories for private development. Each has a defined responsibility and an explicit integration boundary. The existing v0.3 application remains a separate development demonstration.
 
 | Project | Responsibility | Further development |
 |---|---|---|
@@ -36,4 +36,10 @@ Michelle L. Wu’s original LuxLeaf projects are being developed as separate pri
 | luxleaf-containers | Generate restricted Compose service definitions from digest-pinned images | Image building/scanning and target-host acceptance |
 | luxleaf-model-lifecycle | Durable candidate registration and evidence-gated model promotion | External model artifact storage, drift monitoring and rollback automation |
 
-Implementation and validation status will be recorded after the independent component suite is verified. No production deployment or live cloud acceptance is claimed.
+## Validation and delivery
+
+The initial component suite passed **129 component tests, 6 cross-component integration tests and all 31 command-line examples** on Python 3.14.3. Input rejection, tenant boundaries, concurrent metering, transaction rollback and archive replay were exercised. Each repository has its own package, README, design/contract documentation, license, example, tests and CI definition.
+
+The repositories are committed locally. Private GitHub source upload is pending destination confirmation; this showcase does not distribute their source. These are bounded working components, not 31 deployed commercial applications. Several infrastructure projects generate plans or manifests only. No production deployment, live provider/storage call or business-scale performance is claimed.
+
+The separate v0.3 integrated demonstration retains its own validation record. Its features and test results must not be assumed to exist in every new component. See [validation](VALIDATION.md).

@@ -1,5 +1,11 @@
 # Changelog
 
+## Independent component foundation — 2026-10-30
+
+- Reorganized the portfolio around 31 original LuxLeaf projects and their individual responsibilities.
+- Recorded local implementation, example and integration validation separately from the earlier combined platform.
+- Documented current delivery status without publishing private source.
+
 ## Showcase 0.3.0 — 2026-10-30
 
 - Documented private platform v0.3 protocol discovery, JSON workflows, client, MCP opt-in tools and S3 archive adapter.

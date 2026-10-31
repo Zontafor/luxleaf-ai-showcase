@@ -1,5 +1,9 @@
 # Development validation
 
+## Independent components 0.1.0
+
+Recorded October 30, 2026 on macOS arm64 / Python 3.14.3: 129 component tests across 31 separate repositories, 6 portfolio integration tests, and 31 CLI examples passed. Each CLI also rejected invalid envelopes and excessive JSON nesting. Python lint/format checks, local documentation links and source artifact boundaries were checked. Integration tests cover authenticated retrieval through local inference, workflow completion, budget settlement, archive acknowledgement, model governance, local tools, concurrent reservations and rollback. These are local results; component GitHub CI has not yet run. No cloud or production deployment was performed.
+
 ## v0.3 integration increment
 
 For the relationship between observed results, remaining uncertainty, and proposed release gates, read the [Product & Technical Brief](TECHNICAL_BRIEF.md).

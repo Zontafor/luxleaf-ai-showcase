@@ -12,9 +12,11 @@ LuxLeaf is being developed by Michelle L. Wu. This repository is its public prod
 
 [Integration roadmap](docs/INTEGRATIONS.md) · [Product & technical brief](docs/TECHNICAL_BRIEF.md) · [Product overview](docs/PRODUCT.md) · [Architecture](docs/ARCHITECTURE.md) · [Roadmap](docs/ROADMAP.md) · [Validation](docs/VALIDATION.md) · [Security](SECURITY.md)
 
-## Latest integration increment
+## Independent LuxLeaf projects
 
-The private v0.3 foundation adds tenant capability/model discovery, a native JSON workflow interface, an async Python client, opt-in MCP workflow tools, and a contract-tested S3 metadata archive adapter. The [integration roadmap](docs/INTEGRATIONS.md) describes the LuxLeaf components and their development boundaries; the [workflow example](examples/workflow-protocol.md) illustrates the contract.
+LuxLeaf now has **31 separate original local component repositories**, each with its own implementation, tests, example and documentation. The [component portfolio](docs/INTEGRATIONS.md) describes their responsibilities and remaining work. The initial suite passed 129 component tests and 6 integration tests; all 31 command-line examples ran successfully. Private source upload is pending destination confirmation.
+
+The earlier v0.3 integrated platform remains a separate development demonstration. Its capabilities and screenshots below do not imply that every new component implements the whole platform.
 
 ## Start with the detailed brief
 
