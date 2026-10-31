@@ -14,7 +14,7 @@ LuxLeaf is being developed by Michelle L. Wu. This repository is its public prod
 
 ## Independent LuxLeaf projects
 
-LuxLeaf now has **31 separate original local component repositories**, each with its own implementation, tests, example and documentation. The [component portfolio](docs/INTEGRATIONS.md) describes their responsibilities and remaining work. The initial suite passed 129 component tests and 6 integration tests; all 31 command-line examples ran successfully. Private source upload is pending destination confirmation.
+LuxLeaf now has **31 separate original private GitHub repositories**, each with its own implementation, tests, example and documentation. The [component portfolio](docs/INTEGRATIONS.md) describes their responsibilities and remaining work. The initial suite passed 129 component tests and 6 integration tests; all 31 command-line examples ran successfully. Each project is hosted privately in the Zontafor account; source access requires authorization.
 
 The earlier v0.3 integrated platform remains a separate development demonstration. Its capabilities and screenshots below do not imply that every new component implements the whole platform.
 
