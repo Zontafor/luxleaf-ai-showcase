@@ -1,79 +1,78 @@
-# LuxLeaf visual products
+# LuxLeaf visual products — expanded release
 
-Four private v0.1.0 packages add a presentation layer to LuxLeaf's existing 31 backend and system components. Each has original product code, typed APIs, a working local workbench, architecture documentation, dependency notices, tests and a private release workflow. Original LuxLeaf work is proprietary to Michelle L. Wu; licensed foundations keep their own rights.
+All four source repositories are public on Zontafor. Scene Kit, Gradient Studio and Metal Mark are version **0.2.0**; Glass UI is **0.2.1**. Original LuxLeaf additions are proprietary to **Michelle L. Wu**. Preserved foundations retain their own licenses and authorship. Public visibility is not an open-source license for the proprietary additions.
 
-This page shows actual local workbench screenshots and the supported scope. It is a public demonstration record, not a hosted interactive application or source download. No customer media was used: the logo is an original generated leaf and the other scenes are synthetic.
+The earlier v0.1 workbenches were limited initial products. This release restores substantially more source and runtime functionality, adds original workflows, and publishes source-inclusive package archives. It does **not** establish exact upstream parity or production certification.
 
-| Product | Working v0.1 scope | Current boundary |
-|---|---|---|
-| **Scene Kit** | React scene composition, lit primitives, material controls, orbit interaction, strict presets | Uses React Three Fiber and Three.js as licensed foundations; does not replace their renderer ecosystem |
-| **Glass UI** | Native buttons and panels, tint, blur, shape controls, optional local SVG refraction, React and imperative APIs | Browser-dependent refraction; no captured-page WebGL renderer |
-| **Gradient Studio** | Original WebGL2 color fields, plane/orb/ribbon modes, motion controls, presets and PNG export | Procedural shader modes; no Figma/Framer/Vue integrations or mesh-based gradient system |
-| **Metal Mark** | Original reflection shader, local PNG/WebP alpha masks, live controls and transparent PNG export | No SVG ingestion, video export or remote processing |
+## Repositories and distributions
+
+| Product | Public source | Public release archive | GitHub Packages name |
+|---|---|---|---|
+| Scene Kit | [Repository](https://github.com/Zontafor/luxleaf-scene-kit) | [v0.2.0](https://github.com/Zontafor/luxleaf-scene-kit/releases/tag/v0.2.0) | `@zontafor/luxleaf-scene-kit` |
+| Glass UI | [Repository](https://github.com/Zontafor/luxleaf-glass-ui) | [v0.2.1](https://github.com/Zontafor/luxleaf-glass-ui/releases/tag/v0.2.1) | `@zontafor/luxleaf-glass-ui` |
+| Gradient Studio | [Repository](https://github.com/Zontafor/luxleaf-gradient-studio) | [v0.2.0](https://github.com/Zontafor/luxleaf-gradient-studio/releases/tag/v0.2.0) | `@zontafor/luxleaf-gradient-studio` |
+| Metal Mark | [Repository](https://github.com/Zontafor/luxleaf-metal-mark) | [v0.2.0](https://github.com/Zontafor/luxleaf-metal-mark/releases/tag/v0.2.0) | `@zontafor/luxleaf-metal-mark` |
+
+The registry workflows publish actual npm packages to GitHub Packages and install them into fresh consumer directories. Registry authentication is required. Package visibility is configured separately from repository visibility; public release archives provide a separate download route. See each repository's publication workflow for the exact status and commit.
 
 ## Scene Kit
 
-![Scene Kit workbench with a rendered torus and material controls](../assets/visual-products/scene-kit.jpg)
+![Scene document workbench with two rendered objects](../assets/visual-products/scene-kit.jpg)
 
-The local workbench changes geometry, color, roughness, metalness and movement. Demand rendering is used when motion is paused. The package exposes the licensed foundation APIs for advanced scene composition. Its basic static GLTF helper is implemented, but compressed assets, animated skinned models and remote asset workflows are outside the validated release scope.
+The complete Fiber API, native entry point, test renderer and lint integration sit alongside LuxLeaf scene documents, model cloning, asset leases, animation playback, adaptive quality and PNG export. The local model importer accepts embedded GLB resources and disposes owned resources when replaced. The **228-file pinned foundation tree** preserves the implementation, tests, examples and documentation with hash verification.
 
 ## Glass UI
 
-![Glass UI workbench with native controls and translucent panels](../assets/visual-products/glass-ui.jpg)
+![Optical glass workbench sampling its chosen backdrop](../assets/visual-products/glass-ui.jpg)
 
-The library retains real native controls and does not capture the page. Local SVG filters enhance supported browser compositors; other browsers keep tint and blur where available. Host applications still own focus presentation, readable contrast and complete accessibility testing.
+A real captured-backdrop shader feeds nested optical buttons. Validated controls, keyboard and disabled behavior, React integration, capture-root coordinates and resource cleanup complement the CSS components. The **13-file MIT reference** is preserved. Version 0.2.1 corrects capture alignment and zero-blur rendering; its stronger browser test checks backdrop colors as well as output pixels.
 
 ## Gradient Studio
 
-![Gradient Studio workbench showing an original green and gold color field](../assets/visual-products/gradient-studio.jpg)
+![Mesh gradient studio with live geometry and palette controls](../assets/visual-products/gradient-studio.jpg)
 
-Three-color presets are validated before becoming shader uniforms. The local renderer offers static PNG export and pauses automatic frames for reduced-motion preference, hidden documents and offscreen canvases. The shader is original LuxLeaf code; this is not a pixel-compatible recreation of another gradient product.
+React runs from the pinned 2.4.24 source; Vue uses the full 0.1.0 package. All twelve geometry/shader-family combinations are exercised on a real GPU. The studio adds strict presets, undo/redo, interpolation, URL sharing and PNG export. Separate Framer and Figma adapters are present, with actual editor-host verification still outstanding. The **606-file reference tree** preserves the broader packages, apps, integration sources, shaders and tests.
 
 ## Metal Mark
 
-![Metal Mark workbench displaying an original reflective leaf logo](../assets/visual-products/metal-mark.jpg)
+![Original logo studio with distance-field metal reflections](../assets/visual-products/metal-mark.jpg)
 
-Logo files remain in the browser. The alpha channel supplies the mask; the renderer fits it to the canvas and generates moving reflections. Input is limited to PNG/WebP up to 8 MiB and decoded dimensions up to 4096 pixels. Presets contain settings, not image data. The implementation and leaf artwork are original; restricted third-party shader code and assets are not included.
+Original LuxLeaf code processes local SVG, PNG and WebP into distance-field bevels and normals. The studio supports directional reflections, PNG/WebM export, embedded-logo projects, undo/redo and bounded share links. An authenticated SQLite adapter supports project storage, expiry and deletion. No Paper Design implementation, shader or asset was copied; exact compatibility with that restricted product is not claimed.
 
-## Architecture and system boundary
+## Architecture
 
 ```mermaid
-flowchart TB
-    Person[User in authorized application] --> Host[LuxLeaf application shell]
-    Host --> Scene[Scene Kit]
-    Host --> Glass[Glass UI]
-    Host --> Gradient[Gradient Studio]
-    Host --> Metal[Metal Mark]
-    Scene --> Browser[Local browser rendering]
-    Glass --> Browser
-    Gradient --> Browser
-    Metal --> Browser
-    Host -. future authorized preset persistence .-> API[Tenant-scoped application API]
-    API --> System[Existing knowledge, governance and workflow services]
+flowchart LR
+  Host[Host application] --> Scene[Scene Kit]
+  Host --> Glass[Glass UI]
+  Host --> Gradient[Gradient Studio]
+  Host --> Metal[Metal Mark]
+  Scene --> Models[Validated scene documents / embedded GLB]
+  Glass --> Capture[Permitted backdrop capture]
+  Gradient --> Engines[React / Vue engines]
+  Metal --> Mask[Local SVG and raster processing]
+  Models --> GPU[Browser rendering]
+  Capture --> GPU
+  Engines --> GPU
+  Mask --> GPU
+  GPU --> Export[PNG / project data / supported video]
+  Metal --> Store[Optional authenticated project store]
 ```
 
-These libraries are presentation packages. They do not authorize users, call model providers, issue credentials or meter usage. A host application can persist validated presets through its tenant-scoped API; that connection is an integration contract, not a completed backend integration in these four packages. Provider credentials and permission checks belong on the server.
+Each repository includes architecture, capability, validation and provenance documentation. Preserved reference files are separate from LuxLeaf extensions. The optional project store is a single-process adapter; host tenancy, rate limits, distributed storage, HTTPS and operating budgets remain application responsibilities.
 
-The renderers accept bounded settings, render locally and release their resources when disposed. Gradient Studio and Metal Mark cap device pixel ratio at two and drawing-buffer dimensions at 4096. Those bounds limit allocations; they are not evidence of measured enterprise throughput or mobile performance.
+## Recorded verification — November 1, 2026
 
-## Recorded verification
-
-Observed locally on 2026-11-01:
-
-| Product | Unit tests | Actual browser assertions |
+| Package | Unit/integration tests | Expanded browser assertions |
 |---|---:|---:|
-| Scene Kit | 6 | 6 |
-| Glass UI | 8 | 6 |
-| Gradient Studio | 6 | 7 |
-| Metal Mark | 7 | 8 |
-| **Total** | **27** | **27** |
+| Scene Kit | 18 | 6 |
+| Glass UI | 13 | 11 |
+| Gradient Studio | 12 | 28 |
+| Metal Mark | 16 | 10 |
+| **Total** | **59** | **55** |
 
-All four passed strict TypeScript checks, production builds, package-content review, and import/preset checks after installation into a fresh consumer. The browser assertions exercised real rendering or DOM behavior, live updates and cleanup; the gradient and logo checks also inspected output and PNG export. The four packages resolve to one compatible React installation in that consumer.
+The browser assertions were run against production previews in the Codex in-app Chromium surface. They include actual model loading, GPU output, DOM capture, SVG rejection, PNG export, WebM recording and cleanup. They are separate from automated GitHub CI. Package verification checks exported files and imports extracted archives; publishing additionally tests a fresh registry installation.
 
-Private CI repeats type checks, unit tests, builds and package inspection. Browser checks are manually run through committed verification pages; they are not automated CI coverage. Cross-browser/device validation, adversarial media testing, measured resource budgets and independent accessibility/security review remain ahead. No full upstream feature parity or production certification is claimed.
+Remaining validation includes native devices, Figma/Framer editor hosts, a broad browser/GPU/codec matrix, accessibility review, performance budgets and independent security review. Preserving reference source does not prove every upstream test or application has been recreated.
 
-## Relationship to the wider platform
-
-The existing [system architecture](SYSTEM_ARCHITECTURE.md) and [pipeline families](SYSTEM_PIPELINES.md) describe the backend and operational portfolio. These four packages complement that work as a separate visual layer. The original 31-component catalog remains a backend/system catalog; adding four visual products does not rewrite its verification counts.
-
-[Return to LuxLeaf](../README.md)
+These products complement the existing [system architecture](SYSTEM_ARCHITECTURE.md) and [pipeline families](SYSTEM_PIPELINES.md). The 31-component backend/system catalog and its recorded counts remain separate.

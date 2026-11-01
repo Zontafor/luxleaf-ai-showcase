@@ -6,7 +6,7 @@
 
 **A business AI platform bringing private knowledge, governed model access, and repeatable workflows into one workspace.**
 
-LuxLeaf is being developed by Michelle L. Wu. This repository is its public product showcase: capabilities, architecture, synthetic demonstrations, and development direction. The application source is maintained privately.
+LuxLeaf is being developed by Michelle L. Wu. This repository is its public product showcase: capabilities, architecture, synthetic demonstrations, and development direction. The backend application source is maintained privately; the four visual product repositories are public under their stated licenses.
 
 **Status:** v0.3 development preview. There is no public hosted service or downloadable application in this repository.
 
@@ -14,7 +14,7 @@ LuxLeaf is being developed by Michelle L. Wu. This repository is its public prod
 
 ## Four new visual products
 
-[Explore Scene Kit, Glass UI, Gradient Studio and Metal Mark](docs/VISUAL_PRODUCTS.md): working local visual workbenches with original product code, typed APIs, architecture documentation and private package releases. The public overview includes actual screenshots and records 27 unit tests plus 27 browser assertions. These visual packages complement the existing 31 backend/system components.
+[Explore Scene Kit, Glass UI, Gradient Studio and Metal Mark](docs/VISUAL_PRODUCTS.md): expanded public source repositories with licensed foundations, original LuxLeaf extensions, source-inclusive releases and GitHub Packages publication. The overview includes current screenshots and records 59 unit/integration tests plus 55 expanded browser assertions. These visual packages complement the existing 31 backend/system components.
 
 ## Whole-system pipelines and architecture
 
@@ -51,7 +51,7 @@ Each page shows a concrete use case, current behavior, an actual synthetic reque
 | [Evidence archives](docs/projects/luxleaf-archives.md) | Verification of a synthetic event archive |
 | [Service objectives](docs/projects/luxleaf-observability.md) | Availability and latency calculated from a sample window |
 
-The implementation repositories remain private. The public pages are recorded demonstrations and documentation; there is no hosted interactive application. The separate v0.3 platform demonstration appears below.
+The backend implementation repositories remain private. The public pages are recorded demonstrations and documentation; there is no hosted interactive application. The separate v0.3 platform demonstration appears below.
 
 ## Start with the detailed brief
 

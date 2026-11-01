@@ -8,6 +8,11 @@ from urllib.parse import unquote, urlsplit
 import xml.etree.ElementTree as ET
 
 ROOT = Path(__file__).resolve().parents[1]
+# Explicitly reviewed public repositories; backend source remains outside this navigation boundary.
+PUBLIC_REPOSITORIES = {
+    "luxleaf-ai-showcase", "luxleaf-scene-kit", "luxleaf-glass-ui",
+    "luxleaf-gradient-studio", "luxleaf-metal-mark",
+}
 
 
 def verify(root=ROOT):
@@ -84,9 +89,9 @@ def verify(root=ROOT):
                     parsed.hostname == "github.com"
                     and len(github_path) >= 2
                     and github_path[0].lower() == "zontafor"
-                    and github_path[1].lower() != "luxleaf-ai-showcase"
+                    and github_path[1].lower() not in PUBLIC_REPOSITORIES
                 ):
-                    errors.append(f"Public navigation points outside the public showcase in {name}")
+                    errors.append(f"Public navigation points outside the reviewed public repositories in {name}")
                 if parsed.scheme or parsed.netloc or not parsed.path:
                     continue
                 resolved = (path.parent / unquote(parsed.path)).resolve()
