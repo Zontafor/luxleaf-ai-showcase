@@ -2,13 +2,13 @@
 
 # Event outbox
 
-**luxleaf-events · Operational evidence · Component 0.1.0**
+**luxleaf-events · Operational evidence · Component 0.2.0**
 
 Retain operational events until each consumer acknowledges its own delivery.
 
 ## What works today
 
-Durable deduplicated tenant events with consumer-specific acknowledgements.
+Durable deduplicated tenant events with consumer-specific acknowledgements, exclusive delivery claims, bounded retries and explicit recovery.
 
 This page is publicly readable without source-repository access. It contains a recorded local demonstration and product documentation. The implementation is private; no hosted application endpoint is advertised here.
 
@@ -52,7 +52,7 @@ A synthetic workflow-completion event was appended before this consumer requeste
 
 Append assigns stable content hashes to tenant-scoped event identifiers. Reusing an identifier with different content fails. Each consumer has independent acknowledgements, bound to the event hash; delivery success must precede acknowledgement.
 
-Pending reads do not lease events, so concurrent consumers may receive duplicates. Consumers must handle them idempotently. This is a local durable outbox with explicit acknowledgements, not an exactly-once delivery service. Producers are responsible for excluding sensitive content from payloads.
+Version 0.2 adds managed claims with active credentials and fences. Expired leases become uncertain and require operator reconciliation. Known retryable failures use bounded delays and an attempt budget. Pending reads remain a legacy inspection view; managed workers use claim. Once claimed, legacy acknowledgements cannot bypass lease checks. The [recovery architecture and exercise](../demonstrations/event-delivery-recovery.md) explains the protocol and upgrade boundaries.
 
 ## Connected demonstration
 
@@ -68,9 +68,9 @@ These links open other public project pages. The portfolio integration tests dem
 
 ## Validation and next work
 
-- 4 component tests passed locally. This component’s private GitHub test workflow also passed on its uploaded commit.
-- The full portfolio recorded 129 component tests, 6 integration tests and 31 command-line examples. This page’s synthetic example was executed separately when preparing the public documentation.
-- Further development: Leases, remote delivery and backpressure metrics.
+- 18 component tests passed locally for version 0.2.0.
+- The expanded portfolio passed 143 component tests, 12 integration tests and 31 command-line examples. This page’s synthetic example was executed separately when preparing the public documentation.
+- Further development: Remote delivery, lease renewal, retention and measured capacity.
 
 No live cloud acceptance, production capacity, independent security assurance or compliance certification is claimed. See the [validation record](../VALIDATION.md) for the evidence boundary.
 

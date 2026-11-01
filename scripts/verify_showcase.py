@@ -144,6 +144,32 @@ def verify(root=ROOT):
             errors.append("Invalid connected demonstration record")
     else:
         errors.append("Connected demonstration record is missing")
+    recovery_path = root / "docs/demonstrations/event-recovery-record.json"
+    try:
+        recovery_text = recovery_path.read_text()
+        recovery = json.loads(recovery_text)
+        if (
+            recovery["scenario"] != "event-delivery-recovery"
+            or recovery["synthetic"] is not True
+            or recovery["live_cloud_calls"] is not False
+            or recovery["production_measurements"] is not False
+            or len(recovery["checks"]) != 10
+            or recovery["checks_passed"] != 10
+            or not all(check["passed"] is True for check in recovery["checks"])
+            or set(recovery["component_worktrees_dirty"]) != {"luxleaf-events", "luxleaf-archives"}
+            or any(value is not False for value in recovery["component_worktrees_dirty"].values())
+            or recovery["archive"]["entries"] != 1
+            or recovery["archive"]["valid"] is not True
+            or recovery["recovery"]["archive_replayed"] is not True
+            or recovery["final"]["counts"]["completed"] != 1
+        ):
+            errors.append("Recovery record has inconsistent outcomes or evidence boundaries")
+        if any(value in recovery_text for value in (
+            "lease_token", "token_hash", "Bearer ", *private_paths
+        )):
+            errors.append("Private execution detail found in recovery evidence")
+    except (OSError, ValueError, KeyError, TypeError):
+        errors.append("Missing or invalid recovery demonstration record")
     return errors, len(actual)
 
 

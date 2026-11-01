@@ -42,3 +42,7 @@ Live Azure/Bedrock/Vertex integration, Linux container runtime, deployed Kuberne
 ## What public CI checks
 
 The showcase workflow validates an explicit file allowlist, checks for prohibited paths and recognizable credential patterns, verifies local documentation links and image references, and checks SVG syntax. It cannot inspect the private application. A passing showcase check is not a security certification or proof that every possible sensitive value has been detected.
+
+## October 31: managed event delivery
+
+The expanded independent portfolio passed 143 component tests, 12 integration tests and 31 CLI examples locally. The event package has 18 tests; the new event/archive recovery runner passes ten assertions, with separate negative tests that falsify replay and bypass stale-worker rejection. [Recovery evidence and architecture](demonstrations/event-delivery-recovery.md) describe the injected fault and local-only limits. Earlier records below or above remain historical snapshots.

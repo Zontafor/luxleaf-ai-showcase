@@ -1,0 +1,92 @@
+{
+  "schema_version": 1,
+  "scenario": "event-delivery-recovery",
+  "synthetic": true,
+  "live_cloud_calls": false,
+  "production_measurements": false,
+  "fault_model": "Acknowledgement omitted after archive commit; injected clock advances to expiry",
+  "component_commits": {
+    "luxleaf-events": "54f58b0596653074ac53a6aca7566db8e9776723",
+    "luxleaf-archives": "749d25667921f4336aea820b38ed3a9bdca417ac"
+  },
+  "component_worktrees_dirty": {
+    "luxleaf-events": false,
+    "luxleaf-archives": false
+  },
+  "event_component_version": "0.2.0",
+  "checks": [
+    {
+      "name": "Second worker cannot claim an active delivery",
+      "passed": true
+    },
+    {
+      "name": "First archive write is new",
+      "passed": true
+    },
+    {
+      "name": "Expired delivery is held, not automatically retried",
+      "passed": true
+    },
+    {
+      "name": "One uncertain outcome is visible",
+      "passed": true
+    },
+    {
+      "name": "Replacement attempt advances the fence",
+      "passed": true
+    },
+    {
+      "name": "Recovery reuses the existing archive entry",
+      "passed": true
+    },
+    {
+      "name": "Old worker acknowledgement is rejected",
+      "passed": true
+    },
+    {
+      "name": "One verified archive entry remains",
+      "passed": true
+    },
+    {
+      "name": "Archive consumer has one completion",
+      "passed": true
+    },
+    {
+      "name": "Another consumer still owns its independent pending delivery",
+      "passed": true
+    }
+  ],
+  "checks_passed": 10,
+  "uncertain_snapshot": {
+    "counts": {
+      "ready": 0,
+      "leased": 0,
+      "retry_wait": 0,
+      "uncertain": 1,
+      "dead": 0,
+      "completed": 0
+    },
+    "total": 1
+  },
+  "recovery": {
+    "archive_replayed": true,
+    "attempt": 2,
+    "fence": 2
+  },
+  "archive": {
+    "valid": true,
+    "entries": 1,
+    "head_sha256": "097c085b027f9b24dfc848bed252bacc4c168f8b731f267a9be38b575e0cb010"
+  },
+  "final": {
+    "counts": {
+      "ready": 0,
+      "leased": 0,
+      "retry_wait": 0,
+      "uncertain": 0,
+      "dead": 0,
+      "completed": 1
+    },
+    "total": 1
+  }
+}

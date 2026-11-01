@@ -1,6 +1,6 @@
 # Connected LuxLeaf demonstrations
 
-**Five journeys · All 31 components exercised · 35 recorded steps · 29 executable checks passed**
+**Five portfolio journeys plus one recovery exercise · All 31 components exercised · 39 executable checks passed across two records**
 
 Explore how LuxLeaf components work together using synthetic business data. Each journey shows a flow, actual recorded results, rejected actions and the boundary between executed local behavior and unexecuted proposals. These are recorded demonstrations, not a live application or production measurements.
 
@@ -11,6 +11,10 @@ Explore how LuxLeaf components work together using synthetic business data. Each
 | [Evidence before release](demonstrations/evidence-before-release.md) | Evaluate synthetic retrieval results, review an artifact, and prepare a release manifest. |
 | [Deployment planning and recovery](demonstrations/deployment-planning-and-recovery.md) | Validate an environment, calculate placement, prepare runtime definitions, and exercise a local backup. |
 | [Operational evidence and response](demonstrations/operational-evidence-and-response.md) | Archive a completion event, remove content from telemetry, calculate a service objective and record an incident exercise. |
+
+## New: interrupted delivery recovery
+
+[Follow the event/archive recovery exercise](demonstrations/event-delivery-recovery.md): a lease expires after an archive write, a reviewed replay preserves one entry, and the stale worker is rejected. The new exercise adds ten checks to the original five journeys' 29 checks.
 
 ## Start with a business question
 
@@ -62,6 +66,8 @@ Every component below appears in at least one recorded execution step. These lin
 - **Executed negative case:** an invalid or prohibited request was made and rejected; unexpected acceptance stops the runner.
 - **Synthetic assertions or samples:** the evaluator ran, but supplied reviews, controls, metrics, images or capacity are fixtures. They are not claims about a real deployment.
 
-The run contains 29 passing checks. The expanded local portfolio suite passed 9 tests, including a test that deliberately bypasses the budget rule and confirms the demonstration refuses to report success. Another test checks that recorded evidence excludes credential strings, lease tokens and private filesystem paths. These results are separate from the earlier 129 component tests. [Full validation record](VALIDATION.md).
+The run contains 29 passing checks. The original demonstration validation passed 9 portfolio tests, including a test that deliberately bypasses the budget rule and confirms the demonstration refuses to report success. Another test checks that recorded evidence excludes credential strings, lease tokens and private filesystem paths. These results are separate from the earlier 129 component tests. [Full validation record](VALIDATION.md).
 
 [Download or inspect the recorded evidence](demonstrations/record.json) · [Browse individual project examples](INTEGRATIONS.md)
+
+The October 31 expansion passed 143 component tests and 12 portfolio tests. The additional [recovery record](demonstrations/event-recovery-record.json) is separate from the preserved five-journey record.

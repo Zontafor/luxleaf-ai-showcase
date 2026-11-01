@@ -48,3 +48,9 @@ Initial public showcase for the private LuxLeaf v0.2 development foundation.
 - Automated publication-boundary and local-link checks.
 
 Showcase versions describe this documentation repository. They do not imply a publicly downloadable application release.
+
+## October 31, 2026 — managed event recovery
+
+- Publish the Events 0.2.0 recovery flow, state diagram and sanitized ten-check execution record.
+- Update event/developer-kit pages and current validation totals while preserving earlier demonstration snapshots.
+- Keep implementation source and package artifacts private.

@@ -2,7 +2,7 @@
 
 # Developer tooling
 
-**luxleaf-developer-kit · Infrastructure and delivery · Component 0.1.0**
+**luxleaf-developer-kit · Infrastructure and delivery · Component 0.1.1**
 
 Determine a reproducible build order for a closed component dependency graph.
 
@@ -81,3 +81,7 @@ These links open other public project pages. The portfolio integration tests dem
 No live cloud acceptance, production capacity, independent security assurance or compliance certification is claimed. See the [validation record](../VALIDATION.md) for the evidence boundary.
 
 Copyright © 2026 Michelle L. Wu. Public materials are governed by the [showcase license](../../LICENSE); it does not grant access to private source.
+
+## Recovery runner expansion
+
+Version 0.1.1 adds a reproducible [event/archive recovery exercise](../demonstrations/event-delivery-recovery.md) with ten assertions and sanitized output. This extends the five-journey portfolio runner. The public pages show recorded results; the runner source remains private.

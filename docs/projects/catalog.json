@@ -595,7 +595,7 @@
     "title": "Event outbox",
     "group": "Operational evidence",
     "page": "docs/projects/luxleaf-events.md",
-    "unit_tests": 4,
+    "unit_tests": 18,
     "example": {
       "request": {
         "schema_version": 1,

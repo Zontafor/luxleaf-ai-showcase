@@ -61,3 +61,5 @@ docs/demonstrations/controlled-agent-work.md
 docs/demonstrations/evidence-before-release.md
 docs/demonstrations/deployment-planning-and-recovery.md
 docs/demonstrations/operational-evidence-and-response.md
+docs/demonstrations/event-delivery-recovery.md
+docs/demonstrations/event-recovery-record.json
