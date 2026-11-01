@@ -12,6 +12,10 @@ LuxLeaf is being developed by Michelle L. Wu. This repository is its public prod
 
 [Integration roadmap](docs/INTEGRATIONS.md) · [Product & technical brief](docs/TECHNICAL_BRIEF.md) · [Product overview](docs/PRODUCT.md) · [Architecture](docs/ARCHITECTURE.md) · [Roadmap](docs/ROADMAP.md) · [Validation](docs/VALIDATION.md) · [Security](SECURITY.md)
 
+## Four new visual products
+
+[Explore Scene Kit, Glass UI, Gradient Studio and Metal Mark](docs/VISUAL_PRODUCTS.md): working local visual workbenches with original product code, typed APIs, architecture documentation and private package releases. The public overview includes actual screenshots and records 27 unit tests plus 27 browser assertions. These visual packages complement the existing 31 backend/system components.
+
 ## Whole-system pipelines and architecture
 
 [Explore the complete system architecture](docs/SYSTEM_ARCHITECTURE.md) and [five connected pipeline families](docs/SYSTEM_PIPELINES.md). The latest acceptance composition executes 37 stages across all 31 packages, with explicit handoffs, artifact binding and downstream failure gates. The full source portfolio passed 198 component tests and 28 integration tests.

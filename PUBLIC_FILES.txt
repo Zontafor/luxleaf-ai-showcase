@@ -102,3 +102,8 @@ docs/demonstrations/coordinated-knowledge-record.json
 docs/SYSTEM_ARCHITECTURE.md
 docs/SYSTEM_PIPELINES.md
 docs/demonstrations/system-pipeline-record.json
+docs/VISUAL_PRODUCTS.md
+assets/visual-products/scene-kit.jpg
+assets/visual-products/glass-ui.jpg
+assets/visual-products/gradient-studio.jpg
+assets/visual-products/metal-mark.jpg
