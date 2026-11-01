@@ -56,3 +56,7 @@ All 31 wheels were built from committed source and installed together into a fre
 ## October 31: durable coordinated knowledge
 
 The current source portfolio passed 188 component tests, 23 integration tests and 31 CLI examples. Workflow has 20 package tests; the maintained cross-package coordinator suite has nine tests. Six actual subprocess interruption cases passed 54 assertions. [Read the exact fault model and evidence](demonstrations/coordinated-knowledge-recovery.md). This adds real process loss between separate local transactions; it does not establish power-loss durability, live-cloud acceptance or production throughput.
+
+## October 31: full-system pipeline composition
+
+The current portfolio passed 198 component tests, 28 cross-component integration tests and 31 CLI examples. Developer Kit 0.4.0 adds ten engine tests and five system integration tests. The [system evidence](demonstrations/system-pipeline-record.json) records 37 completed stages, all 31 clean component commits, 16 assertions and four downstream-blocking scenarios. [Architecture and limits](SYSTEM_ARCHITECTURE.md). Earlier records remain historical snapshots.

@@ -1,0 +1,1037 @@
+{
+  "schema_version": 1,
+  "scenario": "system-pipeline-composition",
+  "synthetic": true,
+  "live_cloud_calls": false,
+  "production_measurements": false,
+  "architecture": {
+    "plan_sha256": "955464094d8125cf6365ad9adbc86ca33b8edf4d440bb18dbaa0057c08afb106",
+    "components": [
+      "luxleaf-agent-plans",
+      "luxleaf-agent-runtime",
+      "luxleaf-api",
+      "luxleaf-archives",
+      "luxleaf-batch",
+      "luxleaf-cloud-tools",
+      "luxleaf-containers",
+      "luxleaf-data",
+      "luxleaf-delivery",
+      "luxleaf-developer-kit",
+      "luxleaf-environments",
+      "luxleaf-evaluations",
+      "luxleaf-events",
+      "luxleaf-generation",
+      "luxleaf-incidents",
+      "luxleaf-inference",
+      "luxleaf-knowledge",
+      "luxleaf-metering",
+      "luxleaf-model-governance",
+      "luxleaf-model-lifecycle",
+      "luxleaf-model-router",
+      "luxleaf-observability",
+      "luxleaf-rag",
+      "luxleaf-rollouts",
+      "luxleaf-runtime",
+      "luxleaf-security",
+      "luxleaf-service-policy",
+      "luxleaf-telemetry",
+      "luxleaf-tool-protocol",
+      "luxleaf-workflows",
+      "luxleaf-workspace"
+    ],
+    "pipelines": [
+      "access-knowledge",
+      "agent-tools",
+      "deployment-recovery",
+      "governed-release",
+      "operations-response"
+    ],
+    "stages": [
+      {
+        "id": "access",
+        "pipeline": "access-knowledge",
+        "component": "luxleaf-workspace",
+        "mode": "local-operation",
+        "dependencies": [],
+        "preconditions": 0,
+        "postconditions": 1
+      },
+      {
+        "id": "entry",
+        "pipeline": "access-knowledge",
+        "component": "luxleaf-api",
+        "mode": "local-operation",
+        "dependencies": [
+          "access"
+        ],
+        "preconditions": 0,
+        "postconditions": 1
+      },
+      {
+        "id": "retrieve",
+        "pipeline": "access-knowledge",
+        "component": "luxleaf-knowledge",
+        "mode": "local-operation",
+        "dependencies": [
+          "entry"
+        ],
+        "preconditions": 0,
+        "postconditions": 1
+      },
+      {
+        "id": "route",
+        "pipeline": "access-knowledge",
+        "component": "luxleaf-model-router",
+        "mode": "proposal-only",
+        "dependencies": [
+          "retrieve"
+        ],
+        "preconditions": 0,
+        "postconditions": 1
+      },
+      {
+        "id": "reserve",
+        "pipeline": "access-knowledge",
+        "component": "luxleaf-metering",
+        "mode": "local-operation",
+        "dependencies": [
+          "route"
+        ],
+        "preconditions": 0,
+        "postconditions": 0
+      },
+      {
+        "id": "prompt",
+        "pipeline": "access-knowledge",
+        "component": "luxleaf-generation",
+        "mode": "proposal-only",
+        "dependencies": [
+          "reserve",
+          "retrieve"
+        ],
+        "preconditions": 0,
+        "postconditions": 1
+      },
+      {
+        "id": "infer",
+        "pipeline": "access-knowledge",
+        "component": "luxleaf-inference",
+        "mode": "local-operation",
+        "dependencies": [
+          "prompt",
+          "retrieve"
+        ],
+        "preconditions": 0,
+        "postconditions": 1
+      },
+      {
+        "id": "ground",
+        "pipeline": "access-knowledge",
+        "component": "luxleaf-rag",
+        "mode": "local-operation",
+        "dependencies": [
+          "infer",
+          "retrieve"
+        ],
+        "preconditions": 0,
+        "postconditions": 1
+      },
+      {
+        "id": "workflow",
+        "pipeline": "access-knowledge",
+        "component": "luxleaf-workflows",
+        "mode": "local-operation",
+        "dependencies": [
+          "ground"
+        ],
+        "preconditions": 0,
+        "postconditions": 1
+      },
+      {
+        "id": "settle",
+        "pipeline": "access-knowledge",
+        "component": "luxleaf-metering",
+        "mode": "local-operation",
+        "dependencies": [
+          "infer",
+          "workflow"
+        ],
+        "preconditions": 0,
+        "postconditions": 0
+      },
+      {
+        "id": "agent-policy",
+        "pipeline": "agent-tools",
+        "component": "luxleaf-service-policy",
+        "mode": "local-operation",
+        "dependencies": [
+          "settle"
+        ],
+        "preconditions": 0,
+        "postconditions": 1
+      },
+      {
+        "id": "agent-plan",
+        "pipeline": "agent-tools",
+        "component": "luxleaf-agent-plans",
+        "mode": "local-operation",
+        "dependencies": [
+          "agent-policy",
+          "ground"
+        ],
+        "preconditions": 0,
+        "postconditions": 0
+      },
+      {
+        "id": "tool-check",
+        "pipeline": "agent-tools",
+        "component": "luxleaf-tool-protocol",
+        "mode": "local-operation",
+        "dependencies": [
+          "agent-plan",
+          "ground"
+        ],
+        "preconditions": 0,
+        "postconditions": 0
+      },
+      {
+        "id": "agent-run",
+        "pipeline": "agent-tools",
+        "component": "luxleaf-agent-runtime",
+        "mode": "local-operation",
+        "dependencies": [
+          "agent-plan",
+          "tool-check"
+        ],
+        "preconditions": 0,
+        "postconditions": 1
+      },
+      {
+        "id": "cloud-policy",
+        "pipeline": "agent-tools",
+        "component": "luxleaf-cloud-tools",
+        "mode": "proposal-only",
+        "dependencies": [
+          "agent-run"
+        ],
+        "preconditions": 0,
+        "postconditions": 1
+      },
+      {
+        "id": "quality",
+        "pipeline": "governed-release",
+        "component": "luxleaf-evaluations",
+        "mode": "local-operation",
+        "dependencies": [
+          "cloud-policy",
+          "retrieve"
+        ],
+        "preconditions": 0,
+        "postconditions": 1
+      },
+      {
+        "id": "posture",
+        "pipeline": "governed-release",
+        "component": "luxleaf-security",
+        "mode": "proposal-only",
+        "dependencies": [
+          "quality"
+        ],
+        "preconditions": 0,
+        "postconditions": 1
+      },
+      {
+        "id": "build-order",
+        "pipeline": "governed-release",
+        "component": "luxleaf-developer-kit",
+        "mode": "proposal-only",
+        "dependencies": [
+          "posture"
+        ],
+        "preconditions": 0,
+        "postconditions": 1
+      },
+      {
+        "id": "bundle",
+        "pipeline": "governed-release",
+        "component": "luxleaf-delivery",
+        "mode": "proposal-only",
+        "dependencies": [
+          "build-order"
+        ],
+        "preconditions": 1,
+        "postconditions": 1
+      },
+      {
+        "id": "approval",
+        "pipeline": "governed-release",
+        "component": "luxleaf-model-governance",
+        "mode": "proposal-only",
+        "dependencies": [
+          "bundle",
+          "posture",
+          "quality"
+        ],
+        "preconditions": 0,
+        "postconditions": 1
+      },
+      {
+        "id": "candidate",
+        "pipeline": "governed-release",
+        "component": "luxleaf-model-lifecycle",
+        "mode": "local-operation",
+        "dependencies": [
+          "approval",
+          "bundle"
+        ],
+        "preconditions": 0,
+        "postconditions": 0
+      },
+      {
+        "id": "promote",
+        "pipeline": "governed-release",
+        "component": "luxleaf-model-lifecycle",
+        "mode": "local-operation",
+        "dependencies": [
+          "approval",
+          "candidate"
+        ],
+        "preconditions": 0,
+        "postconditions": 0
+      },
+      {
+        "id": "release",
+        "pipeline": "governed-release",
+        "component": "luxleaf-delivery",
+        "mode": "proposal-only",
+        "dependencies": [
+          "approval",
+          "promote"
+        ],
+        "preconditions": 0,
+        "postconditions": 2
+      },
+      {
+        "id": "environment",
+        "pipeline": "deployment-recovery",
+        "component": "luxleaf-environments",
+        "mode": "proposal-only",
+        "dependencies": [
+          "release"
+        ],
+        "preconditions": 0,
+        "postconditions": 1
+      },
+      {
+        "id": "placement",
+        "pipeline": "deployment-recovery",
+        "component": "luxleaf-batch",
+        "mode": "proposal-only",
+        "dependencies": [
+          "environment"
+        ],
+        "preconditions": 0,
+        "postconditions": 1
+      },
+      {
+        "id": "runtime",
+        "pipeline": "deployment-recovery",
+        "component": "luxleaf-runtime",
+        "mode": "proposal-only",
+        "dependencies": [
+          "placement"
+        ],
+        "preconditions": 0,
+        "postconditions": 1
+      },
+      {
+        "id": "container",
+        "pipeline": "deployment-recovery",
+        "component": "luxleaf-containers",
+        "mode": "proposal-only",
+        "dependencies": [
+          "runtime"
+        ],
+        "preconditions": 0,
+        "postconditions": 1
+      },
+      {
+        "id": "restore",
+        "pipeline": "deployment-recovery",
+        "component": "luxleaf-data",
+        "mode": "local-operation",
+        "dependencies": [
+          "container"
+        ],
+        "preconditions": 0,
+        "postconditions": 2
+      },
+      {
+        "id": "rollout",
+        "pipeline": "deployment-recovery",
+        "component": "luxleaf-rollouts",
+        "mode": "proposal-only",
+        "dependencies": [
+          "restore"
+        ],
+        "preconditions": 0,
+        "postconditions": 0
+      },
+      {
+        "id": "span",
+        "pipeline": "operations-response",
+        "component": "luxleaf-telemetry",
+        "mode": "local-operation",
+        "dependencies": [
+          "infer",
+          "rollout"
+        ],
+        "preconditions": 0,
+        "postconditions": 2
+      },
+      {
+        "id": "objective",
+        "pipeline": "operations-response",
+        "component": "luxleaf-observability",
+        "mode": "local-operation",
+        "dependencies": [
+          "span"
+        ],
+        "preconditions": 0,
+        "postconditions": 1
+      },
+      {
+        "id": "rollback",
+        "pipeline": "operations-response",
+        "component": "luxleaf-rollouts",
+        "mode": "proposal-only",
+        "dependencies": [
+          "objective"
+        ],
+        "preconditions": 0,
+        "postconditions": 1
+      },
+      {
+        "id": "event",
+        "pipeline": "operations-response",
+        "component": "luxleaf-events",
+        "mode": "local-operation",
+        "dependencies": [
+          "release",
+          "rollback"
+        ],
+        "preconditions": 0,
+        "postconditions": 0
+      },
+      {
+        "id": "pending",
+        "pipeline": "operations-response",
+        "component": "luxleaf-events",
+        "mode": "local-operation",
+        "dependencies": [
+          "event"
+        ],
+        "preconditions": 0,
+        "postconditions": 0
+      },
+      {
+        "id": "archive",
+        "pipeline": "operations-response",
+        "component": "luxleaf-archives",
+        "mode": "local-operation",
+        "dependencies": [
+          "pending"
+        ],
+        "preconditions": 0,
+        "postconditions": 0
+      },
+      {
+        "id": "acknowledge",
+        "pipeline": "operations-response",
+        "component": "luxleaf-events",
+        "mode": "local-operation",
+        "dependencies": [
+          "archive",
+          "pending"
+        ],
+        "preconditions": 0,
+        "postconditions": 0
+      },
+      {
+        "id": "incident",
+        "pipeline": "operations-response",
+        "component": "luxleaf-incidents",
+        "mode": "local-operation",
+        "dependencies": [
+          "acknowledge",
+          "objective"
+        ],
+        "preconditions": 1,
+        "postconditions": 0
+      }
+    ]
+  },
+  "execution": {
+    "plan_sha256": "955464094d8125cf6365ad9adbc86ca33b8edf4d440bb18dbaa0057c08afb106",
+    "execution_sha256": "39837b7916642d4efbea0215d72facb4f34fe75c8e7d10f17b86dd4c3cc87b04",
+    "status": "completed",
+    "completed": 37,
+    "stages": [
+      {
+        "stage": "access",
+        "pipeline": "access-knowledge",
+        "component": "luxleaf-workspace",
+        "mode": "local-operation",
+        "status": "completed",
+        "input_sha256": "922fbfab78b938df467262ed737f88efec480c46a9ddb4645411c72ad0d2d2ac",
+        "output_sha256": "af0da34c17b64921ff8e70fffbc89b6fa7a9445ef03cf8407b99d913231acb00"
+      },
+      {
+        "stage": "entry",
+        "pipeline": "access-knowledge",
+        "component": "luxleaf-api",
+        "mode": "local-operation",
+        "status": "completed",
+        "input_sha256": "fac168d72649abd3ae8db61770dc7ef389cd75ce51e05910bc0ac7f8cb0bb3fc",
+        "output_sha256": "0b3443a9377c829f10dc4dbc281475c7bf89f141d56af637ad5c59b74d00b2ca"
+      },
+      {
+        "stage": "retrieve",
+        "pipeline": "access-knowledge",
+        "component": "luxleaf-knowledge",
+        "mode": "local-operation",
+        "status": "completed",
+        "input_sha256": "6dcd000f54c800caefebfc4434495b19811dfc5fa0dd406cffb3e55c9d404fce",
+        "output_sha256": "3490fa9a2c704705b92efa434bf21e8b226e5f910b99afcf8473c1ad08ee9995"
+      },
+      {
+        "stage": "route",
+        "pipeline": "access-knowledge",
+        "component": "luxleaf-model-router",
+        "mode": "proposal-only",
+        "status": "completed",
+        "input_sha256": "ce5b6268922fbc2f8647891eef3346a4c169a4a42e3eb821522a7679673769cf",
+        "output_sha256": "29f02e4b34b6ad50d952ff28b748040d36954d443fe7c5e115951023bd68efc9"
+      },
+      {
+        "stage": "reserve",
+        "pipeline": "access-knowledge",
+        "component": "luxleaf-metering",
+        "mode": "local-operation",
+        "status": "completed",
+        "input_sha256": "81d7ae249ee7b98c57c2c43a452b15241e79234b9777613d398d9d5126e82262",
+        "output_sha256": "687217ce74cdf2a60290ee51defbbd46ad305144d56558f59cf18d6c6703e54c"
+      },
+      {
+        "stage": "prompt",
+        "pipeline": "access-knowledge",
+        "component": "luxleaf-generation",
+        "mode": "proposal-only",
+        "status": "completed",
+        "input_sha256": "2cf12fb70c8c744426e3731b956e8dba9141bf407c1ed4eea24f27bcfc302b69",
+        "output_sha256": "fd76e7096bef2ced222891f125949aafdde7402ef216fc05e501cee11b2442ee"
+      },
+      {
+        "stage": "infer",
+        "pipeline": "access-knowledge",
+        "component": "luxleaf-inference",
+        "mode": "local-operation",
+        "status": "completed",
+        "input_sha256": "2cf12fb70c8c744426e3731b956e8dba9141bf407c1ed4eea24f27bcfc302b69",
+        "output_sha256": "ce6ae833e7dcc9a93a9a3070e8d650198b44cabd08746ca1ba048d7717b49fff"
+      },
+      {
+        "stage": "ground",
+        "pipeline": "access-knowledge",
+        "component": "luxleaf-rag",
+        "mode": "local-operation",
+        "status": "completed",
+        "input_sha256": "c2149a2a1bf0db1a071238f7eb331b5d0b3c4b0313a09dd31a86fc4f08c367f0",
+        "output_sha256": "2de9128a425988b3c0482900a40702542942bb190e7ae5910e1f0a26885ca50d"
+      },
+      {
+        "stage": "workflow",
+        "pipeline": "access-knowledge",
+        "component": "luxleaf-workflows",
+        "mode": "local-operation",
+        "status": "completed",
+        "input_sha256": "a49a417aaaa071e3ea4f3a4abdbc97c23b9d3c78e28d73da59800f98b14d915a",
+        "output_sha256": "d0765f73cd5d1df39be353d538ea7c47a017d66a8bd001dc4707240dbb71e58c"
+      },
+      {
+        "stage": "settle",
+        "pipeline": "access-knowledge",
+        "component": "luxleaf-metering",
+        "mode": "local-operation",
+        "status": "completed",
+        "input_sha256": "bb258e895107bbf24dda77524edc28ca2b9d6526350332d0814d8d63f8cb49f1",
+        "output_sha256": "47d616af9507f6f24024a260c01d193517b551a8309029d90db756b0aeee04c0"
+      },
+      {
+        "stage": "agent-policy",
+        "pipeline": "agent-tools",
+        "component": "luxleaf-service-policy",
+        "mode": "local-operation",
+        "status": "completed",
+        "input_sha256": "7c9f9a6a24a29b98d321b150e7aa4d294e23bb9ae3e603357299437c927f41c7",
+        "output_sha256": "54c62b6a83941bed695499070bb7ca43ae4696528e23a1a734e9cb2e51ee72d8"
+      },
+      {
+        "stage": "agent-plan",
+        "pipeline": "agent-tools",
+        "component": "luxleaf-agent-plans",
+        "mode": "local-operation",
+        "status": "completed",
+        "input_sha256": "525692323456900ed1427d026431fc9b107ab98e4463d2e67e208ddc9a3f0088",
+        "output_sha256": "2e2561e64bd2db6751aaabf951c72f2c28855555321358047911881d70fc8631"
+      },
+      {
+        "stage": "tool-check",
+        "pipeline": "agent-tools",
+        "component": "luxleaf-tool-protocol",
+        "mode": "local-operation",
+        "status": "completed",
+        "input_sha256": "839ac207baec85c9d6f85d44b59eade63a68ea237911b93ab5ca310dacf3c584",
+        "output_sha256": "d529fcdaa9418e79804141223a6df08d6c2e6cfb82cd0259caaf2a41c4f4961e"
+      },
+      {
+        "stage": "agent-run",
+        "pipeline": "agent-tools",
+        "component": "luxleaf-agent-runtime",
+        "mode": "local-operation",
+        "status": "completed",
+        "input_sha256": "6d527e5a476bf222ff2933d70b85e7855d6827e953adec7f72a1f1f416ce9759",
+        "output_sha256": "e317b722467bd41df5a9fb550504f1f215984c5492a6ad286f1b69a9fc5e4fd0"
+      },
+      {
+        "stage": "cloud-policy",
+        "pipeline": "agent-tools",
+        "component": "luxleaf-cloud-tools",
+        "mode": "proposal-only",
+        "status": "completed",
+        "input_sha256": "09721ae0812e74c4edfc76b389800ea7fef0323a8415679ba7c867690d2b72ef",
+        "output_sha256": "fad1ed2b3311491b5f50da405e1947b094afa1ed083fbda98793cb43c579d357"
+      },
+      {
+        "stage": "quality",
+        "pipeline": "governed-release",
+        "component": "luxleaf-evaluations",
+        "mode": "local-operation",
+        "status": "completed",
+        "input_sha256": "5b17c1499ba414c380436993aaa7270f9f0b03c602d28068c07866fd2804e669",
+        "output_sha256": "eb39f551aefc53cf8c0ccdfcea1f82e07885bf3cc56dfd74a946f3ad663df39f"
+      },
+      {
+        "stage": "posture",
+        "pipeline": "governed-release",
+        "component": "luxleaf-security",
+        "mode": "proposal-only",
+        "status": "completed",
+        "input_sha256": "f0972333f5d7e165b1006cf4fd6cf1ad93c745ddeccd381fd44d0991f6095f7b",
+        "output_sha256": "b39be85b0a8ab4ec44b14114f6dd731bf43abb766a0f6eec8d53aea4824d3baf"
+      },
+      {
+        "stage": "build-order",
+        "pipeline": "governed-release",
+        "component": "luxleaf-developer-kit",
+        "mode": "proposal-only",
+        "status": "completed",
+        "input_sha256": "16632a24e3a32d4e388da384f67663aa32b14ef7d18e2f1eed07aa464c65dbbc",
+        "output_sha256": "475f1dc45cee46e92a22022b40756863508a0abf441c393cce0b82d6e05937cd"
+      },
+      {
+        "stage": "bundle",
+        "pipeline": "governed-release",
+        "component": "luxleaf-delivery",
+        "mode": "proposal-only",
+        "status": "completed",
+        "input_sha256": "27e70b38747c61c35306cf218c2511cd8d62ac166dd20a811015d9a97c894925",
+        "output_sha256": "cfc7dc3a46ec2acc8ae4787392269fc7c24560e4ab90e4c730a2eb82d1b57cb1"
+      },
+      {
+        "stage": "approval",
+        "pipeline": "governed-release",
+        "component": "luxleaf-model-governance",
+        "mode": "proposal-only",
+        "status": "completed",
+        "input_sha256": "a6358148e99376356f70a5021c2392e5fb367d8580dfcb52efd1434a08b663db",
+        "output_sha256": "cd7d4a3d8994cd3a7488304232cb124d0ee4c84654799d0bbd3dc1f1621a0dbf"
+      },
+      {
+        "stage": "candidate",
+        "pipeline": "governed-release",
+        "component": "luxleaf-model-lifecycle",
+        "mode": "local-operation",
+        "status": "completed",
+        "input_sha256": "ba02ca326104bcfa0ac472092ac49f852cec2ea48e10ffe1cce30257c8d13837",
+        "output_sha256": "8de78f48e96d700d7dd3ab3e78998f5585b246e9a30cf3e4a57f5115d96ae37e"
+      },
+      {
+        "stage": "promote",
+        "pipeline": "governed-release",
+        "component": "luxleaf-model-lifecycle",
+        "mode": "local-operation",
+        "status": "completed",
+        "input_sha256": "78602822f5e55ca70e57afeabb9ebd201df3e15e4f05f90bcfb10f43e9471e96",
+        "output_sha256": "2d0b28e6c1977c21af22d90e85521c0d1460e395b9513e983f39b4d396f51635"
+      },
+      {
+        "stage": "release",
+        "pipeline": "governed-release",
+        "component": "luxleaf-delivery",
+        "mode": "proposal-only",
+        "status": "completed",
+        "input_sha256": "daa38c7c43a49c0c39bf1fe5119e5afe660385b4efd048de576f0b6762ca5740",
+        "output_sha256": "cfc7dc3a46ec2acc8ae4787392269fc7c24560e4ab90e4c730a2eb82d1b57cb1"
+      },
+      {
+        "stage": "environment",
+        "pipeline": "deployment-recovery",
+        "component": "luxleaf-environments",
+        "mode": "proposal-only",
+        "status": "completed",
+        "input_sha256": "28ebd8a06cceddad820fee9ca2e247da7fc730f03301a77acdb1999be1efda59",
+        "output_sha256": "19baefc963e539965a5f6ef49048a048094b01723507d78bbe31fcfbbdd8c028"
+      },
+      {
+        "stage": "placement",
+        "pipeline": "deployment-recovery",
+        "component": "luxleaf-batch",
+        "mode": "proposal-only",
+        "status": "completed",
+        "input_sha256": "3d1d84818106aefa5f9de042c6bc7fd3a70ea4274c3d13e184c143979b7e7aab",
+        "output_sha256": "01ca6460026384712806c6cfea2d50f91537c8862b193dd7dff533aa911b05e9"
+      },
+      {
+        "stage": "runtime",
+        "pipeline": "deployment-recovery",
+        "component": "luxleaf-runtime",
+        "mode": "proposal-only",
+        "status": "completed",
+        "input_sha256": "ea268113858c15bcd9edfac370228c63b6aa2ee3b8aa0b765bfb88f20ffae7fb",
+        "output_sha256": "dcb6cd593641f93548f5503c0fc1912d527712a5d3d2c73aaf0b85f5d3d2be1e"
+      },
+      {
+        "stage": "container",
+        "pipeline": "deployment-recovery",
+        "component": "luxleaf-containers",
+        "mode": "proposal-only",
+        "status": "completed",
+        "input_sha256": "d6204494883cd4acdffaaa23b8879604ce5bd9350b6a99d3f26500b87940ce76",
+        "output_sha256": "71e90422693b6399890bda01e92f339b538f1d4c50c3a60705176717fa3820db"
+      },
+      {
+        "stage": "restore",
+        "pipeline": "deployment-recovery",
+        "component": "luxleaf-data",
+        "mode": "local-operation",
+        "status": "completed",
+        "input_sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+        "output_sha256": "3af30986b8288b57b012f66a64f92bbf8bc0a8c45913921dcd4db3d5f3fd2101"
+      },
+      {
+        "stage": "rollout",
+        "pipeline": "deployment-recovery",
+        "component": "luxleaf-rollouts",
+        "mode": "proposal-only",
+        "status": "completed",
+        "input_sha256": "b743ddc960430949b8bb19e3cb861359320170507f113f471bd422764fbcd480",
+        "output_sha256": "9de1fa5892de4f1839d35aeb28693bcfacca424a1b93a6a5169c451151ef05ab"
+      },
+      {
+        "stage": "span",
+        "pipeline": "operations-response",
+        "component": "luxleaf-telemetry",
+        "mode": "local-operation",
+        "status": "completed",
+        "input_sha256": "436a106d8ecae4db5ebb949b6955367db002e2602be187f5392047723904c0c0",
+        "output_sha256": "2f836e5abe3830ff2794a821c0ee6c7723d8e57ec30eac47e9dbb4f2d43e35ac"
+      },
+      {
+        "stage": "objective",
+        "pipeline": "operations-response",
+        "component": "luxleaf-observability",
+        "mode": "local-operation",
+        "status": "completed",
+        "input_sha256": "37a8aee6dc73873d3541df4753c32563ce26336b567515b083a60fc552012ff5",
+        "output_sha256": "0da488eb35a97aa2de360574829925a6629e45a3a4ee6c5eb6c78cf3aceea3dd"
+      },
+      {
+        "stage": "rollback",
+        "pipeline": "operations-response",
+        "component": "luxleaf-rollouts",
+        "mode": "proposal-only",
+        "status": "completed",
+        "input_sha256": "f2b67989a39897f28f2e5dc5b8d0f6281d61a73a7f7a57c0c7328e6e53ddc9b0",
+        "output_sha256": "bf3566cac93bfdeb713d3a529b7db576e0c51c85e7097f12da1707ae75c9a2de"
+      },
+      {
+        "stage": "event",
+        "pipeline": "operations-response",
+        "component": "luxleaf-events",
+        "mode": "local-operation",
+        "status": "completed",
+        "input_sha256": "76f1d1a510fea4355e76cc359788bb9f6e5d756c3a7ff7a1c17df7e30545d139",
+        "output_sha256": "6ed9b22d873978258eff9d5144887f4a1f9e0480f34e8cfd9245db964c60f009"
+      },
+      {
+        "stage": "pending",
+        "pipeline": "operations-response",
+        "component": "luxleaf-events",
+        "mode": "local-operation",
+        "status": "completed",
+        "input_sha256": "90491ab04cb070380cd86f9d68c559a4ff60e4b6804e54895b33f016f124e900",
+        "output_sha256": "682b6fa5962c9b9362326472c1ae926a53d63b37e0f0c76c87399c65b0d61e81"
+      },
+      {
+        "stage": "archive",
+        "pipeline": "operations-response",
+        "component": "luxleaf-archives",
+        "mode": "local-operation",
+        "status": "completed",
+        "input_sha256": "6929d28374bdfdc458346dc1a487ab451013e35430dc5123ad264603c72f5f3b",
+        "output_sha256": "4b441a658a85493f38f5a4683fb1ab8a18fb0cf09afba938c9d1df3f538f46c5"
+      },
+      {
+        "stage": "acknowledge",
+        "pipeline": "operations-response",
+        "component": "luxleaf-events",
+        "mode": "local-operation",
+        "status": "completed",
+        "input_sha256": "008114e19b7f32b575b6dfed173d9a1c98a850336c2a905e39a4fc63a2ae210d",
+        "output_sha256": "f45bc6c74e711ca0b826247be7dc91042f9a616c0afb9b287dd5431aff311a6f"
+      },
+      {
+        "stage": "incident",
+        "pipeline": "operations-response",
+        "component": "luxleaf-incidents",
+        "mode": "local-operation",
+        "status": "completed",
+        "input_sha256": "5fd571219f9d931995ea61ad42513eeba4077be4e0b60f28fda4eab7bed269ae",
+        "output_sha256": "24552bea7a76e221a3929e740708a67826679c9a95cd778d0dc766a5bfa7bb09"
+      }
+    ],
+    "unstarted": [],
+    "automatic_retry": false,
+    "durable_resume": false
+  },
+  "negative_cases": [
+    {
+      "fault": "service-denial",
+      "stopped_at": "agent-policy",
+      "status": "uncertain",
+      "deployment_unstarted": true
+    },
+    {
+      "fault": "posture-failure",
+      "stopped_at": "posture",
+      "status": "uncertain",
+      "deployment_unstarted": true
+    },
+    {
+      "fault": "release-gate-failure",
+      "stopped_at": "bundle",
+      "status": "uncertain",
+      "deployment_unstarted": true
+    },
+    {
+      "fault": "image-binding-failure",
+      "stopped_at": "bundle",
+      "status": "blocked",
+      "deployment_unstarted": true
+    }
+  ],
+  "components": {
+    "luxleaf-workspace": {
+      "commit": "046d2fb8ba0415700e94bc82b439cd25335359ad",
+      "worktree_dirty": false
+    },
+    "luxleaf-knowledge": {
+      "commit": "28794613e122646a51256465db5daea3e305c9f0",
+      "worktree_dirty": false
+    },
+    "luxleaf-inference": {
+      "commit": "abfd194210a58299aeaec5f1a3dcd47c32c80bf4",
+      "worktree_dirty": false
+    },
+    "luxleaf-metering": {
+      "commit": "b945ce8ea0ee796332699bfa985e64ee1f193c3e",
+      "worktree_dirty": false
+    },
+    "luxleaf-workflows": {
+      "commit": "1f669c6cb60df02f49ddd1bee047f4eef00ea3db",
+      "worktree_dirty": false
+    },
+    "luxleaf-environments": {
+      "commit": "541fdd9f504582c60b7bd0d422f9083431506ff8",
+      "worktree_dirty": false
+    },
+    "luxleaf-evaluations": {
+      "commit": "7726addb3b7e9c18a5b5aac806da871366259646",
+      "worktree_dirty": false
+    },
+    "luxleaf-model-router": {
+      "commit": "2d79abec0f1d4d3989c8f94b3ec360e1ea038bf0",
+      "worktree_dirty": false
+    },
+    "luxleaf-generation": {
+      "commit": "1552c0c39b20c739c2c26d95d1aa0fcdd040630f",
+      "worktree_dirty": false
+    },
+    "luxleaf-agent-plans": {
+      "commit": "b83f9ad8875b4c5cb93d55cb5b41e816be1e2368",
+      "worktree_dirty": false
+    },
+    "luxleaf-tool-protocol": {
+      "commit": "791a16d70047046a31b5c8bbcd5e88a4b5339ef0",
+      "worktree_dirty": false
+    },
+    "luxleaf-cloud-tools": {
+      "commit": "0215912105eea43ff7effd857ff7a43e22caba1e",
+      "worktree_dirty": false
+    },
+    "luxleaf-agent-runtime": {
+      "commit": "5fb383556e793c0afe0cefe32b136589e2610583",
+      "worktree_dirty": false
+    },
+    "luxleaf-rag": {
+      "commit": "2c6e6b25d5104d40c0df2df0e02324ddee45474d",
+      "worktree_dirty": false
+    },
+    "luxleaf-model-governance": {
+      "commit": "1a80645be90f27cd43af3cbcf8fbf2b3a6b32500",
+      "worktree_dirty": false
+    },
+    "luxleaf-batch": {
+      "commit": "a8011c9625bdd1b2fb143f1b839dd84bc09b7992",
+      "worktree_dirty": false
+    },
+    "luxleaf-events": {
+      "commit": "cc77bb668023eef79c1d641550e4e6d113f481e2",
+      "worktree_dirty": false
+    },
+    "luxleaf-rollouts": {
+      "commit": "1c3293ba2c030bf7a3c17141a285b956e721daaa",
+      "worktree_dirty": false
+    },
+    "luxleaf-runtime": {
+      "commit": "224496cadd289675a3a177d1f0f3e573ff12b63c",
+      "worktree_dirty": false
+    },
+    "luxleaf-archives": {
+      "commit": "228dadd312781cca521d5114f91e5aceb9cce3d4",
+      "worktree_dirty": false
+    },
+    "luxleaf-data": {
+      "commit": "e4b906ff88e37328010549d0dea1e8ea050540a6",
+      "worktree_dirty": false
+    },
+    "luxleaf-developer-kit": {
+      "commit": "f544fe2ad774aac513509d22a674d7975f5e24d0",
+      "worktree_dirty": false
+    },
+    "luxleaf-api": {
+      "commit": "138e9c4f3c9c0448827176f427ae4c16d42c641f",
+      "worktree_dirty": false
+    },
+    "luxleaf-service-policy": {
+      "commit": "e1478afed8886d6d75385a913eab50c421758d3b",
+      "worktree_dirty": false
+    },
+    "luxleaf-security": {
+      "commit": "f192120296f070855f86baefcd9ec6f7f8236f39",
+      "worktree_dirty": false
+    },
+    "luxleaf-telemetry": {
+      "commit": "17ef1092339aea4199e8ebbb9265647063fbf5dd",
+      "worktree_dirty": false
+    },
+    "luxleaf-observability": {
+      "commit": "f38d50debc024db96302f0ba23e4c90fa333be57",
+      "worktree_dirty": false
+    },
+    "luxleaf-incidents": {
+      "commit": "3817e85fe7afa96d1cb4fce3711a04cca77d450b",
+      "worktree_dirty": false
+    },
+    "luxleaf-delivery": {
+      "commit": "7018fe15dc0e21ee0f210f48b9169916636f1bb9",
+      "worktree_dirty": false
+    },
+    "luxleaf-containers": {
+      "commit": "a350e45e6d8a0579601c91f40aa3e1064be48041",
+      "worktree_dirty": false
+    },
+    "luxleaf-model-lifecycle": {
+      "commit": "8be3fd1056959976cf5f3b862b570c60345ee2e2",
+      "worktree_dirty": false
+    }
+  },
+  "checks": [
+    {
+      "name": "All 31 components executed",
+      "passed": true
+    },
+    {
+      "name": "All five pipelines completed",
+      "passed": true
+    },
+    {
+      "name": "Authorized retrieval supplies inference",
+      "passed": true
+    },
+    {
+      "name": "Agent consumed the grounded answer",
+      "passed": true
+    },
+    {
+      "name": "Actual retrieval result supplied evaluation",
+      "passed": true
+    },
+    {
+      "name": "Reviewed artifact reaches final release",
+      "passed": true
+    },
+    {
+      "name": "Local recovery verified before rollout",
+      "passed": true
+    },
+    {
+      "name": "Objective output drives rollback proposal",
+      "passed": true
+    },
+    {
+      "name": "Archive matches event exactly",
+      "passed": true
+    },
+    {
+      "name": "Acknowledgement followed archive",
+      "passed": true
+    },
+    {
+      "name": "Local inference released credit",
+      "passed": true
+    },
+    {
+      "name": "Public receipt excludes answer text",
+      "passed": true
+    },
+    {
+      "name": "service-denial stops downstream execution",
+      "passed": true
+    },
+    {
+      "name": "posture-failure stops downstream execution",
+      "passed": true
+    },
+    {
+      "name": "release-gate-failure stops downstream execution",
+      "passed": true
+    },
+    {
+      "name": "image-binding-failure stops downstream execution",
+      "passed": true
+    }
+  ],
+  "checks_passed": 16
+}

@@ -66,3 +66,9 @@ Showcase versions describe this documentation repository. They do not imply a pu
 - Publish the persistent coordinator architecture and six-stage knowledge composition.
 - Record six real process-exit/restart cases and 54 passing recovery assertions.
 - Document current-access revalidation, replay limits, uncertainty and operator responsibilities.
+
+## October 31, 2026 — whole-system pipelines
+
+- Add system-wide architecture, trust boundaries, state ownership, delivery path and scaling acceptance criteria.
+- Connect 31 components through 37 recorded stages in five pipeline families.
+- Link every component architecture to its implemented pipeline role and distinguish current local execution from proposed production deployment.

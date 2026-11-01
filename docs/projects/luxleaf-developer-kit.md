@@ -2,7 +2,7 @@
 
 # Developer tooling
 
-**luxleaf-developer-kit · Infrastructure and delivery · Component 0.3.0**
+**luxleaf-developer-kit · Infrastructure and delivery · Component 0.4.0**
 
 Determine a reproducible build order for a closed component dependency graph.
 
@@ -95,3 +95,7 @@ Version 0.1.1 adds a reproducible [event/archive recovery exercise](../demonstra
 ## Version 0.3.0: durable integration
 
 The [coordinated knowledge recovery demonstration](../demonstrations/coordinated-knowledge-recovery.md) exercises a persistent six-stage workflow using real worker-process exits. The workflow package provides the coordinator and knowledge composition; developer kit provides the reproducible fault runner and cross-package suite. Earlier expansion examples remain historical snapshots.
+
+## Version 0.4.0: system pipeline composition
+
+The shared compiler now validates a dependency graph, resolves output bindings, enforces preconditions and postconditions, and returns metadata receipts. [The five system pipelines](../SYSTEM_PIPELINES.md) exercise all 31 packages through 37 stages. Fifteen Developer Kit package tests pass; the maintained system suite adds five cross-repository tests. Full-system durable resumption remains separate work.

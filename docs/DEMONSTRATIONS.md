@@ -1,5 +1,7 @@
 # Connected LuxLeaf demonstrations
 
+**System-wide view: [architecture and deployment boundaries](SYSTEM_ARCHITECTURE.md) · [five pipeline contracts](SYSTEM_PIPELINES.md).**
+
 **New implemented integration: [durable knowledge recovery across six process-exit boundaries](demonstrations/coordinated-knowledge-recovery.md).**
 
 **Latest: [All 31 expansion scenarios and 122 checked assertions](demonstrations/all-component-expansion.md)** · [Complete component architecture index](PORTFOLIO_ARCHITECTURE.md)

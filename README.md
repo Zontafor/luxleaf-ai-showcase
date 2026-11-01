@@ -12,6 +12,10 @@ LuxLeaf is being developed by Michelle L. Wu. This repository is its public prod
 
 [Integration roadmap](docs/INTEGRATIONS.md) · [Product & technical brief](docs/TECHNICAL_BRIEF.md) · [Product overview](docs/PRODUCT.md) · [Architecture](docs/ARCHITECTURE.md) · [Roadmap](docs/ROADMAP.md) · [Validation](docs/VALIDATION.md) · [Security](SECURITY.md)
 
+## Whole-system pipelines and architecture
+
+[Explore the complete system architecture](docs/SYSTEM_ARCHITECTURE.md) and [five connected pipeline families](docs/SYSTEM_PIPELINES.md). The latest acceptance composition executes 37 stages across all 31 packages, with explicit handoffs, artifact binding and downstream failure gates. The full source portfolio passed 198 component tests and 28 integration tests.
+
 ## Durable recovery across components
 
 [See the knowledge flow survive six real worker interruptions](docs/demonstrations/coordinated-knowledge-recovery.md). The persistent coordinator resumes interrupted work from fenced checkpoints, reviewed replay rules and current-access checks for stored answers. All six interruption cases passed 54 assertions without duplicate accounting or archive entries.

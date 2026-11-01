@@ -52,3 +52,7 @@ Original implementation remains proprietary to Michelle L. Wu in private reposit
 ## Subsequent integration release
 
 Version 0.3.0 adds [persistent coordination and real process-interruption evidence](../demonstrations/coordinated-knowledge-recovery.md). This page preserves the earlier 0.2.0 expansion record; the new page describes the implemented cross-package flow and its current limits.
+
+## Role in the full system
+
+This component participates in **access-knowledge** through the recorded stages `workflow`. These stages were executed in the 37-stage local acceptance composition. [Inspect the system pipeline handoffs and failure gates](../SYSTEM_PIPELINES.md), [deployment and state ownership](../SYSTEM_ARCHITECTURE.md), and [exact component commits and stage receipts](../demonstrations/system-pipeline-record.json). The linked record distinguishes local operations from unexecuted deployment proposals.

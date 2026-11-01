@@ -1,5 +1,7 @@
 # Independent component portfolio architecture
 
+**System-wide view: [architecture and deployment boundaries](SYSTEM_ARCHITECTURE.md) · [five pipeline contracts](SYSTEM_PIPELINES.md).**
+
 **New implemented integration: [durable knowledge recovery across six process-exit boundaries](demonstrations/coordinated-knowledge-recovery.md).**
 
 [All projects](INTEGRATIONS.md) · [Expansion demonstrations](demonstrations/all-component-expansion.md) · [Earlier integrated platform](ARCHITECTURE.md)

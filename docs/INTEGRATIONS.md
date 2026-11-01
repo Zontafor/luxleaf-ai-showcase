@@ -1,5 +1,7 @@
 # Explore LuxLeaf projects
 
+**System-wide view: [architecture and deployment boundaries](SYSTEM_ARCHITECTURE.md) · [five pipeline contracts](SYSTEM_PIPELINES.md).**
+
 **31 public project pages · Original LuxLeaf components by Michelle L. Wu**
 
 Every project below opens a public page with its purpose, current behavior, an actual synthetic request/result, integration relationships, validation and next work. You do not need access to the private implementation repositories to read these pages.

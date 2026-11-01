@@ -245,6 +245,61 @@ def verify(root=ROOT):
             errors.append("Private execution details in coordinated recovery evidence")
     except (OSError, ValueError, KeyError, TypeError, AttributeError):
         errors.append("Missing or invalid coordinated recovery evidence")
+    try:
+        system_text = (root / "docs/demonstrations/system-pipeline-record.json").read_text()
+        system = json.loads(system_text)
+        architecture = system["architecture"]
+        execution = system["execution"]
+        expected = {row["name"] for row in json.loads(catalog_path.read_text())}
+        if (
+            system["schema_version"] != 1 or system["scenario"] != "system-pipeline-composition"
+            or system["synthetic"] is not True or system["live_cloud_calls"] is not False
+            or system["production_measurements"] is not False
+            or set(system["components"]) != expected or set(architecture["components"]) != expected
+            or len(architecture["pipelines"]) != 5 or len(architecture["stages"]) != 37
+            or execution["status"] != "completed" or execution["completed"] != 37
+            or execution["unstarted"] != [] or execution["automatic_retry"] is not False
+            or execution["durable_resume"] is not False
+            or execution["plan_sha256"] != architecture["plan_sha256"]
+            or re.fullmatch(r"[0-9a-f]{64}", execution["plan_sha256"]) is None
+            or re.fullmatch(r"[0-9a-f]{64}", execution["execution_sha256"]) is None
+            or system["checks_passed"] != 16 or len(system["checks"]) != 16
+            or not all(row["passed"] is True for row in system["checks"])
+        ):
+            errors.append("System pipeline evidence coverage or boundary is invalid")
+        for source in system["components"].values():
+            if source["worktree_dirty"] is not False or re.fullmatch(r"[0-9a-f]{40}", source["commit"]) is None:
+                errors.append("System pipeline evidence lacks clean source commits")
+        graph = architecture["stages"]
+        receipts = execution["stages"]
+        if len(receipts) != 37 or len({row["id"] for row in graph}) != 37:
+            errors.append("System pipeline stage count is invalid")
+        seen = set()
+        for stage, receipt in zip(graph, receipts):
+            if (
+                set(receipt) != {"stage", "pipeline", "component", "mode", "status", "input_sha256", "output_sha256"}
+                or receipt["stage"] != stage["id"] or receipt["status"] != "completed"
+                or receipt["component"] != stage["component"] or stage["component"] not in expected
+                or receipt["pipeline"] != stage["pipeline"] or stage["pipeline"] not in architecture["pipelines"]
+                or receipt["mode"] != stage["mode"] or stage["mode"] not in {"local-operation", "proposal-only"}
+                or not set(stage["dependencies"]) <= seen
+                or any(re.fullmatch(r"[0-9a-f]{64}", receipt[key]) is None for key in ("input_sha256", "output_sha256"))
+            ):
+                errors.append("System pipeline receipt or dependency ordering is invalid")
+            seen.add(stage["id"])
+        if {stage["component"] for stage in graph} != expected:
+            errors.append("System pipeline graph omits a component")
+        negative = system["negative_cases"]
+        expected_faults = {"service-denial": "agent-policy", "posture-failure": "posture", "release-gate-failure": "bundle", "image-binding-failure": "bundle"}
+        if len(negative) != 4 or {row["fault"] for row in negative} != set(expected_faults):
+            errors.append("System pipeline failure cases are incomplete")
+        for row in negative:
+            if row["stopped_at"] != expected_faults.get(row["fault"]) or row["deployment_unstarted"] is not True or row["status"] not in {"blocked", "uncertain"}:
+                errors.append("System pipeline failure case does not stop downstream work")
+        if any(value in system_text for value in ("lease_token", "token_hash", "pseudonym_key", "Bearer ", *private_paths)):
+            errors.append("Private execution detail in system pipeline evidence")
+    except (OSError, ValueError, KeyError, TypeError, AttributeError):
+        errors.append("Missing or invalid system pipeline evidence")
     return errors, len(actual)
 
 

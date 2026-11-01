@@ -813,7 +813,7 @@
     "title": "Developer tooling",
     "group": "Infrastructure and delivery",
     "page": "docs/projects/luxleaf-developer-kit.md",
-    "unit_tests": 5,
+    "unit_tests": 15,
     "example": {
       "request": {
         "schema_version": 1,
