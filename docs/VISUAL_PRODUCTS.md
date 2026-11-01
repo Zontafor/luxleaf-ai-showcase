@@ -1,6 +1,17 @@
 # LuxLeaf visual products — development status
 
-All four implementation repositories are currently **private** while re-engineering continues. This public showcase presents approved recordings and documentation. No new package is published by this update. Original LuxLeaf additions remain proprietary to Michelle L. Wu; licensed foundations retain their authorship and license notices.
+All four implementation repositories are **public again**, with their latest development source and demonstrations. This public showcase presents approved recordings and documentation. No new package is published by this update. Original LuxLeaf additions remain proprietary to Michelle L. Wu; licensed foundations retain their authorship and license notices.
+
+## Public repositories
+
+| Product | Current source and demonstrations |
+|---|---|
+| Scene Kit | [Zontafor/luxleaf-scene-kit](https://github.com/Zontafor/luxleaf-scene-kit) |
+| Glass UI | [Zontafor/luxleaf-glass-ui](https://github.com/Zontafor/luxleaf-glass-ui) |
+| Gradient Studio | [Zontafor/luxleaf-gradient-studio](https://github.com/Zontafor/luxleaf-gradient-studio) — recorded gradient films |
+| Metal Mark | [Zontafor/luxleaf-metal-mark](https://github.com/Zontafor/luxleaf-metal-mark) — SentiLeaf editor and film |
+
+Public visibility does not change the stated license terms or publish a new registry version. The backend/system implementation repositories remain private.
 
 ## Current SentiLeaf demonstration
 
@@ -10,7 +21,7 @@ All four implementation repositories are currently **private** while re-engineer
 
 ## Earlier released workbenches
 
-The following screenshots and test counts describe the earlier v0.2 workbenches. They are retained as historical demonstrations, not current distribution or public-access claims. Current private work includes the restored licensed source trees and further independent metal-renderer development. Earlier repository/release links require authorized access after privatization.
+The following screenshots and test counts describe the earlier v0.2 workbenches. They are retained as historical demonstrations, not current distribution or public-access claims. Current development includes the restored licensed source trees and further independent metal-renderer development. Repository links below provide current source. Historical releases remain separate from the current development implementation.
 
 ## Scene Kit
 

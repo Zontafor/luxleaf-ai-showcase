@@ -14,6 +14,6 @@ Video frames now include the same gradient or solid background selected in the e
 
 The demonstration was captured from the working browser renderer, not generated video. Its [capture record](../../assets/visual-products/sentileaf-record.json) reports the media hashes and a frame-change check. The local implementation passed 30 automated tests and 25 browser checks, including this logo and the exported background colors.
 
-This is a development demonstration of metallic reflection with procedural surface motion. It is not a fluid simulation or a claim of production certification. The renderer and all four visual-product repositories remain private while development continues. The public showcase contains the approved recorded media, not implementation source or a live hosted editor. No new package release accompanies this demo.
+This is a development demonstration of metallic reflection with procedural surface motion. It is not a fluid simulation or a claim of production certification. The renderer and all four visual-product repositories are public again under their stated licenses while development continues. The public showcase contains the approved recorded media, with implementation source linked from the visual-product overview; it does not host a live editor. No new package release accompanies this demo.
 
 SentiLeaf artwork was supplied by the owner for this demonstration. No separate trademark rights are granted. [Visual product overview](../VISUAL_PRODUCTS.md).

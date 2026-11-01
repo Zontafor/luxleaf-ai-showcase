@@ -6,7 +6,7 @@
 
 **A business AI platform bringing private knowledge, governed model access, and repeatable workflows into one workspace.**
 
-LuxLeaf is being developed by Michelle L. Wu. This repository is its public product showcase: capabilities, architecture, synthetic demonstrations, and development direction. The backend application source is maintained privately; the four visual product repositories are private during continued development. Public demonstrations are available here.
+LuxLeaf is being developed by Michelle L. Wu. This repository is its public product showcase: capabilities, architecture, synthetic demonstrations, and development direction. The backend application source is maintained privately; the four visual product repositories are public again under their stated licenses. Public demonstrations are available here.
 
 **Status:** v0.3 development preview. There is no public hosted service or downloadable application in this repository.
 
@@ -16,7 +16,7 @@ LuxLeaf is being developed by Michelle L. Wu. This repository is its public prod
 
 [![SentiLeaf liquid metal demonstration](assets/visual-products/sentileaf-preview.gif)](assets/visual-products/sentileaf-liquid-metal.mp4)
 
-**[Watch the SentiLeaf demo and read what changed](docs/demonstrations/sentileaf-liquid-metal.md)** — actual browser-rendered motion with corrected logo/background separation and matching video export. [Visual product status](docs/VISUAL_PRODUCTS.md). The source repositories remain private; this demonstration does not publish a package.
+**[Watch the SentiLeaf demo and read what changed](docs/demonstrations/sentileaf-liquid-metal.md)** — actual browser-rendered motion with corrected logo/background separation and matching video export. [Visual product status](docs/VISUAL_PRODUCTS.md). The four visual source repositories are public again; this demonstration does not publish a package.
 
 ## Whole-system pipelines and architecture
 
