@@ -107,3 +107,9 @@ assets/visual-products/scene-kit.jpg
 assets/visual-products/glass-ui.jpg
 assets/visual-products/gradient-studio.jpg
 assets/visual-products/metal-mark.jpg
+
+assets/visual-products/sentileaf-liquid-metal.mp4
+assets/visual-products/sentileaf-preview.gif
+assets/visual-products/sentileaf-poster.jpg
+assets/visual-products/sentileaf-record.json
+docs/demonstrations/sentileaf-liquid-metal.md

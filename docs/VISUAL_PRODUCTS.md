@@ -1,19 +1,16 @@
-# LuxLeaf visual products — expanded release
+# LuxLeaf visual products — development status
 
-All four source repositories are public on Zontafor. Scene Kit, Gradient Studio and Metal Mark are version **0.2.0**; Glass UI is **0.2.1**. Original LuxLeaf additions are proprietary to **Michelle L. Wu**. Preserved foundations retain their own licenses and authorship. Public visibility is not an open-source license for the proprietary additions.
+All four implementation repositories are currently **private** while re-engineering continues. This public showcase presents approved recordings and documentation. No new package is published by this update. Original LuxLeaf additions remain proprietary to Michelle L. Wu; licensed foundations retain their authorship and license notices.
 
-The earlier v0.1 workbenches were limited initial products. This release restores substantially more source and runtime functionality, adds original workflows, and publishes source-inclusive package archives. It does **not** establish exact upstream parity or production certification.
+## Current SentiLeaf demonstration
 
-## Repositories and distributions
+[![SentiLeaf liquid metal motion](../assets/visual-products/sentileaf-preview.gif)](../assets/visual-products/sentileaf-liquid-metal.mp4)
 
-| Product | Public source | Public release archive | GitHub Packages name |
-|---|---|---|---|
-| Scene Kit | [Repository](https://github.com/Zontafor/luxleaf-scene-kit) | [v0.2.0](https://github.com/Zontafor/luxleaf-scene-kit/releases/tag/v0.2.0) | `@zontafor/luxleaf-scene-kit` |
-| Glass UI | [Repository](https://github.com/Zontafor/luxleaf-glass-ui) | [v0.2.1](https://github.com/Zontafor/luxleaf-glass-ui/releases/tag/v0.2.1) | `@zontafor/luxleaf-glass-ui` |
-| Gradient Studio | [Repository](https://github.com/Zontafor/luxleaf-gradient-studio) | [v0.2.0](https://github.com/Zontafor/luxleaf-gradient-studio/releases/tag/v0.2.0) | `@zontafor/luxleaf-gradient-studio` |
-| Metal Mark | [Repository](https://github.com/Zontafor/luxleaf-metal-mark) | [v0.2.0](https://github.com/Zontafor/luxleaf-metal-mark/releases/tag/v0.2.0) | `@zontafor/luxleaf-metal-mark` |
+[Watch the full film and inspect the fix](demonstrations/sentileaf-liquid-metal.md). The default metal editor now uses the supplied SentiLeaf logo, removes its flat backdrop, fits the artwork and records the selected preview background. Local validation: 30 automated tests and 25 browser checks. The current development API is not in the earlier 0.2.0 registry package.
 
-The registry workflows publish actual npm packages to GitHub Packages and install them into fresh consumer directories. Registry authentication is required. Package visibility is configured separately from repository visibility; public release archives provide a separate download route. See each repository's publication workflow for the exact status and commit.
+## Earlier released workbenches
+
+The following screenshots and test counts describe the earlier v0.2 workbenches. They are retained as historical demonstrations, not current distribution or public-access claims. Current private work includes the restored licensed source trees and further independent metal-renderer development. Earlier repository/release links require authorized access after privatization.
 
 ## Scene Kit
 

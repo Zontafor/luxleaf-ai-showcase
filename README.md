@@ -6,15 +6,17 @@
 
 **A business AI platform bringing private knowledge, governed model access, and repeatable workflows into one workspace.**
 
-LuxLeaf is being developed by Michelle L. Wu. This repository is its public product showcase: capabilities, architecture, synthetic demonstrations, and development direction. The backend application source is maintained privately; the four visual product repositories are public under their stated licenses.
+LuxLeaf is being developed by Michelle L. Wu. This repository is its public product showcase: capabilities, architecture, synthetic demonstrations, and development direction. The backend application source is maintained privately; the four visual product repositories are private during continued development. Public demonstrations are available here.
 
 **Status:** v0.3 development preview. There is no public hosted service or downloadable application in this repository.
 
 [Integration roadmap](docs/INTEGRATIONS.md) · [Product & technical brief](docs/TECHNICAL_BRIEF.md) · [Product overview](docs/PRODUCT.md) · [Architecture](docs/ARCHITECTURE.md) · [Roadmap](docs/ROADMAP.md) · [Validation](docs/VALIDATION.md) · [Security](SECURITY.md)
 
-## Four new visual products
+## SentiLeaf in motion
 
-[Explore Scene Kit, Glass UI, Gradient Studio and Metal Mark](docs/VISUAL_PRODUCTS.md): expanded public source repositories with licensed foundations, original LuxLeaf extensions, source-inclusive releases and GitHub Packages publication. The overview includes current screenshots and records 59 unit/integration tests plus 55 expanded browser assertions. These visual packages complement the existing 31 backend/system components.
+[![SentiLeaf liquid metal demonstration](assets/visual-products/sentileaf-preview.gif)](assets/visual-products/sentileaf-liquid-metal.mp4)
+
+**[Watch the SentiLeaf demo and read what changed](docs/demonstrations/sentileaf-liquid-metal.md)** — actual browser-rendered motion with corrected logo/background separation and matching video export. [Visual product status](docs/VISUAL_PRODUCTS.md). The source repositories remain private; this demonstration does not publish a package.
 
 ## Whole-system pipelines and architecture
 
