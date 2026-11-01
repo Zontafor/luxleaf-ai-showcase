@@ -72,12 +72,12 @@ def verify(root=ROOT):
                     errors.append(f"PNG metadata requires removal/review: {name}")
                 offset += size + 12
             continue
-        if name == "assets/visual-products/sentileaf-liquid-metal.mp4":
+        if name in {"assets/visual-products/sentileaf-liquid-metal.mp4", "assets/visual-products/scene-kit-motion.mp4", "assets/visual-products/glass-ui-motion.mp4"}:
             content = path.read_bytes()
             if len(content) < 32 or content[4:8] != b"ftyp":
                 errors.append(f"Invalid reviewed MP4 asset: {name}")
             continue
-        if name == "assets/visual-products/sentileaf-preview.gif":
+        if name in {"assets/visual-products/sentileaf-preview.gif", "assets/visual-products/scene-kit-motion.gif", "assets/visual-products/glass-ui-motion.gif"}:
             if path.read_bytes()[:6] not in {b"GIF87a", b"GIF89a"}:
                 errors.append(f"Invalid reviewed GIF asset: {name}")
             continue

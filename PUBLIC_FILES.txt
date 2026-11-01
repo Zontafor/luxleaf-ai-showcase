@@ -113,3 +113,13 @@ assets/visual-products/sentileaf-preview.gif
 assets/visual-products/sentileaf-poster.jpg
 assets/visual-products/sentileaf-record.json
 docs/demonstrations/sentileaf-liquid-metal.md
+
+assets/visual-products/scene-kit-motion.mp4
+assets/visual-products/scene-kit-motion.gif
+assets/visual-products/scene-kit-motion.jpg
+assets/visual-products/scene-kit-motion.json
+assets/visual-products/glass-ui-motion.mp4
+assets/visual-products/glass-ui-motion.gif
+assets/visual-products/glass-ui-motion.jpg
+assets/visual-products/glass-ui-motion.json
+docs/VISUAL_DEMOS.md

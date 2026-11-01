@@ -12,6 +12,10 @@ LuxLeaf is being developed by Michelle L. Wu. This repository is its public prod
 
 [Integration roadmap](docs/INTEGRATIONS.md) · [Product & technical brief](docs/TECHNICAL_BRIEF.md) · [Product overview](docs/PRODUCT.md) · [Architecture](docs/ARCHITECTURE.md) · [Roadmap](docs/ROADMAP.md) · [Validation](docs/VALIDATION.md) · [Security](SECURITY.md)
 
+## Videos for all four visual products
+
+**[Watch the complete visual demo gallery](docs/VISUAL_DEMOS.md)** — Scene Kit geometry and lighting, Glass UI refraction, three Gradient Studio films, and Metal Mark’s AULIN and SentiLeaf demonstrations. Every product has a recorded video and reproduction instructions.
+
 ## SentiLeaf in motion
 
 [![SentiLeaf liquid metal demonstration](assets/visual-products/sentileaf-preview.gif)](assets/visual-products/sentileaf-liquid-metal.mp4)

@@ -13,6 +13,10 @@ All four implementation repositories are **public again**, with their latest dev
 
 Public visibility does not change the stated license terms or publish a new registry version. The backend/system implementation repositories remain private.
 
+## Complete video coverage
+
+[Watch dedicated videos for all four products](VISUAL_DEMOS.md), including the new Scene Kit and Glass UI recordings and AULIN full-surface chrome.
+
 ## Current SentiLeaf demonstration
 
 [![SentiLeaf liquid metal motion](../assets/visual-products/sentileaf-preview.gif)](../assets/visual-products/sentileaf-liquid-metal.mp4)
