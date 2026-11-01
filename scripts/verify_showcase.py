@@ -203,6 +203,48 @@ def verify(root=ROOT):
             errors.append("Private execution details in expansion evidence")
     except (OSError, ValueError, KeyError, TypeError):
         errors.append("Missing or invalid all-component expansion evidence")
+    try:
+        coordination_text = (root / "docs/demonstrations/coordinated-knowledge-record.json").read_text()
+        coordination = json.loads(coordination_text)
+        stages = ["reserve", "answer", "settle", "event", "archive", "acknowledge"]
+        expected_repos = {f"luxleaf-{name}" for name in (
+            "workflows", "workspace", "knowledge", "inference", "metering",
+            "events", "archives", "developer-kit"
+        )}
+        cases = coordination["cases"]
+        if (
+            coordination["schema_version"] != 1
+            or coordination["scenario"] != "coordinated-knowledge-process-recovery"
+            or coordination["synthetic"] is not True
+            or coordination["live_cloud_calls"] is not False
+            or coordination["production_measurements"] is not False
+            or coordination["real_process_termination"] is not True
+            or coordination["checks_passed"] != 54
+            or len(cases) != 6
+            or {case["crash_after"] for case in cases} != set(stages)
+            or set(coordination["components"]) != expected_repos
+        ):
+            errors.append("Coordinated recovery coverage or evidence boundary is invalid")
+        for component in coordination["components"].values():
+            if component["worktree_dirty"] is not False or re.fullmatch(r"[0-9a-f]{40}", component["commit"]) is None:
+                errors.append("Coordinated recovery lacks clean source evidence")
+        for case in cases:
+            expected_attempts = {stage: 2 if stage == case["crash_after"] else 1 for stage in stages}
+            if (
+                case["exit_code"] != 73 or case["recovery_exit_code"] != 0
+                or case["completed_steps"] != stages or case["attempts"] != expected_attempts
+                or len(case["checks"]) != 9
+                or not all(check["passed"] is True for check in case["checks"])
+                or case["available_micros"] != 100 or case["archive_entries"] != 1
+                or case["ledger_entries"] != 1 or case["citation_count"] != 2
+            ):
+                errors.append("Coordinated recovery case has inconsistent outcomes")
+        if any(value in coordination_text for value in (
+            "lease_token", "token_hash", "pseudonym_key", "Bearer ", *private_paths
+        )):
+            errors.append("Private execution details in coordinated recovery evidence")
+    except (OSError, ValueError, KeyError, TypeError, AttributeError):
+        errors.append("Missing or invalid coordinated recovery evidence")
     return errors, len(actual)
 
 

@@ -60,3 +60,9 @@ Showcase versions describe this documentation repository. They do not imply a pu
 - Expand all 31 packages with distinct implemented capabilities and synthetic checks.
 - Publish 31 individual architecture pages, a portfolio composition map and 122-assertion evidence record.
 - Keep original source, wheels and source distributions in private repositories.
+
+## October 31, 2026 — durable coordinated knowledge
+
+- Publish the persistent coordinator architecture and six-stage knowledge composition.
+- Record six real process-exit/restart cases and 54 passing recovery assertions.
+- Document current-access revalidation, replay limits, uncertainty and operator responsibilities.

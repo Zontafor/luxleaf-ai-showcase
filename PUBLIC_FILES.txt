@@ -97,3 +97,5 @@ docs/architectures/luxleaf-model-lifecycle.md
 docs/demonstrations/expansion-record.json
 docs/demonstrations/all-component-expansion.md
 docs/PORTFOLIO_ARCHITECTURE.md
+docs/demonstrations/coordinated-knowledge-recovery.md
+docs/demonstrations/coordinated-knowledge-record.json

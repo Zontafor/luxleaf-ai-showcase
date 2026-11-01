@@ -1,0 +1,424 @@
+{
+  "schema_version": 1,
+  "scenario": "coordinated-knowledge-process-recovery",
+  "synthetic": true,
+  "live_cloud_calls": false,
+  "production_measurements": false,
+  "real_process_termination": true,
+  "clock": "injected seconds; recovery begins after lease expiry",
+  "components": {
+    "luxleaf-workflows": {
+      "commit": "1f669c6cb60df02f49ddd1bee047f4eef00ea3db",
+      "worktree_dirty": false
+    },
+    "luxleaf-workspace": {
+      "commit": "046d2fb8ba0415700e94bc82b439cd25335359ad",
+      "worktree_dirty": false
+    },
+    "luxleaf-knowledge": {
+      "commit": "28794613e122646a51256465db5daea3e305c9f0",
+      "worktree_dirty": false
+    },
+    "luxleaf-inference": {
+      "commit": "abfd194210a58299aeaec5f1a3dcd47c32c80bf4",
+      "worktree_dirty": false
+    },
+    "luxleaf-metering": {
+      "commit": "b945ce8ea0ee796332699bfa985e64ee1f193c3e",
+      "worktree_dirty": false
+    },
+    "luxleaf-events": {
+      "commit": "cc77bb668023eef79c1d641550e4e6d113f481e2",
+      "worktree_dirty": false
+    },
+    "luxleaf-archives": {
+      "commit": "228dadd312781cca521d5114f91e5aceb9cce3d4",
+      "worktree_dirty": false
+    },
+    "luxleaf-developer-kit": {
+      "commit": "506e36c06919f66ee4384d6ed1527e119ff35ba3",
+      "worktree_dirty": false
+    }
+  },
+  "cases": [
+    {
+      "crash_after": "reserve",
+      "exit_code": 73,
+      "recovery_exit_code": 0,
+      "checks": [
+        {
+          "name": "Restart completed all six checkpoints",
+          "passed": true
+        },
+        {
+          "name": "Only interrupted stage was repeated",
+          "passed": true
+        },
+        {
+          "name": "Authorized answer retains two source citations",
+          "passed": true
+        },
+        {
+          "name": "Zero-cost settlement restores the full credit balance",
+          "passed": true
+        },
+        {
+          "name": "Repeated reservation did not create another ledger entry",
+          "passed": true
+        },
+        {
+          "name": "Repeated archive write leaves one valid entry",
+          "passed": true
+        },
+        {
+          "name": "Acknowledgement follows durable archive completion",
+          "passed": true
+        },
+        {
+          "name": "Exactly one event remains available to another consumer",
+          "passed": true
+        },
+        {
+          "name": "Completed run is stable on another restart",
+          "passed": true
+        }
+      ],
+      "completed_steps": [
+        "reserve",
+        "answer",
+        "settle",
+        "event",
+        "archive",
+        "acknowledge"
+      ],
+      "attempts": {
+        "acknowledge": 1,
+        "answer": 1,
+        "archive": 1,
+        "event": 1,
+        "reserve": 2,
+        "settle": 1
+      },
+      "available_micros": 100,
+      "archive_entries": 1,
+      "ledger_entries": 1,
+      "citation_count": 2
+    },
+    {
+      "crash_after": "answer",
+      "exit_code": 73,
+      "recovery_exit_code": 0,
+      "checks": [
+        {
+          "name": "Restart completed all six checkpoints",
+          "passed": true
+        },
+        {
+          "name": "Only interrupted stage was repeated",
+          "passed": true
+        },
+        {
+          "name": "Authorized answer retains two source citations",
+          "passed": true
+        },
+        {
+          "name": "Zero-cost settlement restores the full credit balance",
+          "passed": true
+        },
+        {
+          "name": "Repeated reservation did not create another ledger entry",
+          "passed": true
+        },
+        {
+          "name": "Repeated archive write leaves one valid entry",
+          "passed": true
+        },
+        {
+          "name": "Acknowledgement follows durable archive completion",
+          "passed": true
+        },
+        {
+          "name": "Exactly one event remains available to another consumer",
+          "passed": true
+        },
+        {
+          "name": "Completed run is stable on another restart",
+          "passed": true
+        }
+      ],
+      "completed_steps": [
+        "reserve",
+        "answer",
+        "settle",
+        "event",
+        "archive",
+        "acknowledge"
+      ],
+      "attempts": {
+        "acknowledge": 1,
+        "answer": 2,
+        "archive": 1,
+        "event": 1,
+        "reserve": 1,
+        "settle": 1
+      },
+      "available_micros": 100,
+      "archive_entries": 1,
+      "ledger_entries": 1,
+      "citation_count": 2
+    },
+    {
+      "crash_after": "settle",
+      "exit_code": 73,
+      "recovery_exit_code": 0,
+      "checks": [
+        {
+          "name": "Restart completed all six checkpoints",
+          "passed": true
+        },
+        {
+          "name": "Only interrupted stage was repeated",
+          "passed": true
+        },
+        {
+          "name": "Authorized answer retains two source citations",
+          "passed": true
+        },
+        {
+          "name": "Zero-cost settlement restores the full credit balance",
+          "passed": true
+        },
+        {
+          "name": "Repeated reservation did not create another ledger entry",
+          "passed": true
+        },
+        {
+          "name": "Repeated archive write leaves one valid entry",
+          "passed": true
+        },
+        {
+          "name": "Acknowledgement follows durable archive completion",
+          "passed": true
+        },
+        {
+          "name": "Exactly one event remains available to another consumer",
+          "passed": true
+        },
+        {
+          "name": "Completed run is stable on another restart",
+          "passed": true
+        }
+      ],
+      "completed_steps": [
+        "reserve",
+        "answer",
+        "settle",
+        "event",
+        "archive",
+        "acknowledge"
+      ],
+      "attempts": {
+        "acknowledge": 1,
+        "answer": 1,
+        "archive": 1,
+        "event": 1,
+        "reserve": 1,
+        "settle": 2
+      },
+      "available_micros": 100,
+      "archive_entries": 1,
+      "ledger_entries": 1,
+      "citation_count": 2
+    },
+    {
+      "crash_after": "event",
+      "exit_code": 73,
+      "recovery_exit_code": 0,
+      "checks": [
+        {
+          "name": "Restart completed all six checkpoints",
+          "passed": true
+        },
+        {
+          "name": "Only interrupted stage was repeated",
+          "passed": true
+        },
+        {
+          "name": "Authorized answer retains two source citations",
+          "passed": true
+        },
+        {
+          "name": "Zero-cost settlement restores the full credit balance",
+          "passed": true
+        },
+        {
+          "name": "Repeated reservation did not create another ledger entry",
+          "passed": true
+        },
+        {
+          "name": "Repeated archive write leaves one valid entry",
+          "passed": true
+        },
+        {
+          "name": "Acknowledgement follows durable archive completion",
+          "passed": true
+        },
+        {
+          "name": "Exactly one event remains available to another consumer",
+          "passed": true
+        },
+        {
+          "name": "Completed run is stable on another restart",
+          "passed": true
+        }
+      ],
+      "completed_steps": [
+        "reserve",
+        "answer",
+        "settle",
+        "event",
+        "archive",
+        "acknowledge"
+      ],
+      "attempts": {
+        "acknowledge": 1,
+        "answer": 1,
+        "archive": 1,
+        "event": 2,
+        "reserve": 1,
+        "settle": 1
+      },
+      "available_micros": 100,
+      "archive_entries": 1,
+      "ledger_entries": 1,
+      "citation_count": 2
+    },
+    {
+      "crash_after": "archive",
+      "exit_code": 73,
+      "recovery_exit_code": 0,
+      "checks": [
+        {
+          "name": "Restart completed all six checkpoints",
+          "passed": true
+        },
+        {
+          "name": "Only interrupted stage was repeated",
+          "passed": true
+        },
+        {
+          "name": "Authorized answer retains two source citations",
+          "passed": true
+        },
+        {
+          "name": "Zero-cost settlement restores the full credit balance",
+          "passed": true
+        },
+        {
+          "name": "Repeated reservation did not create another ledger entry",
+          "passed": true
+        },
+        {
+          "name": "Repeated archive write leaves one valid entry",
+          "passed": true
+        },
+        {
+          "name": "Acknowledgement follows durable archive completion",
+          "passed": true
+        },
+        {
+          "name": "Exactly one event remains available to another consumer",
+          "passed": true
+        },
+        {
+          "name": "Completed run is stable on another restart",
+          "passed": true
+        }
+      ],
+      "completed_steps": [
+        "reserve",
+        "answer",
+        "settle",
+        "event",
+        "archive",
+        "acknowledge"
+      ],
+      "attempts": {
+        "acknowledge": 1,
+        "answer": 1,
+        "archive": 2,
+        "event": 1,
+        "reserve": 1,
+        "settle": 1
+      },
+      "available_micros": 100,
+      "archive_entries": 1,
+      "ledger_entries": 1,
+      "citation_count": 2
+    },
+    {
+      "crash_after": "acknowledge",
+      "exit_code": 73,
+      "recovery_exit_code": 0,
+      "checks": [
+        {
+          "name": "Restart completed all six checkpoints",
+          "passed": true
+        },
+        {
+          "name": "Only interrupted stage was repeated",
+          "passed": true
+        },
+        {
+          "name": "Authorized answer retains two source citations",
+          "passed": true
+        },
+        {
+          "name": "Zero-cost settlement restores the full credit balance",
+          "passed": true
+        },
+        {
+          "name": "Repeated reservation did not create another ledger entry",
+          "passed": true
+        },
+        {
+          "name": "Repeated archive write leaves one valid entry",
+          "passed": true
+        },
+        {
+          "name": "Acknowledgement follows durable archive completion",
+          "passed": true
+        },
+        {
+          "name": "Exactly one event remains available to another consumer",
+          "passed": true
+        },
+        {
+          "name": "Completed run is stable on another restart",
+          "passed": true
+        }
+      ],
+      "completed_steps": [
+        "reserve",
+        "answer",
+        "settle",
+        "event",
+        "archive",
+        "acknowledge"
+      ],
+      "attempts": {
+        "acknowledge": 2,
+        "answer": 1,
+        "archive": 1,
+        "event": 1,
+        "reserve": 1,
+        "settle": 1
+      },
+      "available_micros": 100,
+      "archive_entries": 1,
+      "ledger_entries": 1,
+      "citation_count": 2
+    }
+  ],
+  "checks_passed": 54
+}

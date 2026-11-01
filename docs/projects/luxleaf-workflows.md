@@ -2,7 +2,7 @@
 
 # Workflow queue
 
-**luxleaf-workflows · Governance and workflow · Component 0.2.0**
+**luxleaf-workflows · Governance and workflow · Component 0.3.0**
 
 Keep approved work durable while distinguishing queued, running and uncertain execution.
 
@@ -81,3 +81,7 @@ Copyright © 2026 Michelle L. Wu. Public materials are governed by the [showcase
 **Active workflow lease renewal** — Renew requires job id, matching lease_token and fence, and optional lease_seconds from 1 to 3600. It extends expiry to the greater of existing expiry or current host time plus duration. The fence and worker claim remain unchanged. Expired, uncertain or completed work cannot renew.
 
 [Inspect this component’s architecture, actual observations and rejection checks](../architectures/luxleaf-workflows.md). Version 0.2.0 passed 6 component tests locally. Earlier examples and validation notes on this page remain historical snapshots; the linked architecture page describes the current expansion.
+
+## Version 0.3.0: durable integration
+
+The [coordinated knowledge recovery demonstration](../demonstrations/coordinated-knowledge-recovery.md) exercises a persistent six-stage workflow using real worker-process exits. The workflow package provides the coordinator and knowledge composition; developer kit provides the reproducible fault runner and cross-package suite. Earlier expansion examples remain historical snapshots.

@@ -1,5 +1,7 @@
 # Independent component portfolio architecture
 
+**New implemented integration: [durable knowledge recovery across six process-exit boundaries](demonstrations/coordinated-knowledge-recovery.md).**
+
 [All projects](INTEGRATIONS.md) · [Expansion demonstrations](demonstrations/all-component-expansion.md) · [Earlier integrated platform](ARCHITECTURE.md)
 
 **31 component architectures · Original proprietary packages · October 31, 2026**

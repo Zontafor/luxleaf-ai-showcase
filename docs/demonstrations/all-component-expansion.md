@@ -1,5 +1,7 @@
 # All-component expansion demonstrations
 
+Next integration: [durable knowledge recovery across six real process interruptions](coordinated-knowledge-recovery.md).
+
 [Architecture index](../PORTFOLIO_ARCHITECTURE.md) · [Earlier connected demonstrations](../DEMONSTRATIONS.md)
 
 **31 of 31 components expanded · 122 executable assertions passed · October 31, 2026**

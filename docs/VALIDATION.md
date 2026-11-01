@@ -52,3 +52,7 @@ The expanded independent portfolio passed 143 component tests, 12 integration te
 All 31 packages now have checked expansion scenarios. The current source portfolio passed 174 component tests, 14 integration tests and 31 CLI examples. Expansion scenarios passed 122 assertions. [Current evidence and exact commits](demonstrations/all-component-expansion.md) supersede earlier counts for the updated code; older records remain historical.
 
 All 31 wheels were built from committed source and installed together into a fresh environment without network dependency resolution. Their 174 component tests passed against the installed packages. All 31 source archives include licenses, tests, examples and expansion architecture documents. Generated Compose health-check configuration passed local Docker Compose configuration validation; no container or cluster was started.
+
+## October 31: durable coordinated knowledge
+
+The current source portfolio passed 188 component tests, 23 integration tests and 31 CLI examples. Workflow has 20 package tests; the maintained cross-package coordinator suite has nine tests. Six actual subprocess interruption cases passed 54 assertions. [Read the exact fault model and evidence](demonstrations/coordinated-knowledge-recovery.md). This adds real process loss between separate local transactions; it does not establish power-loss durability, live-cloud acceptance or production throughput.

@@ -2,7 +2,7 @@
 
 # Developer tooling
 
-**luxleaf-developer-kit · Infrastructure and delivery · Component 0.2.0**
+**luxleaf-developer-kit · Infrastructure and delivery · Component 0.3.0**
 
 Determine a reproducible build order for a closed component dependency graph.
 
@@ -91,3 +91,7 @@ Version 0.1.1 adds a reproducible [event/archive recovery exercise](../demonstra
 **Transitive rebuild planning** — The existing dependency graph accepts changed component names and returns rebuild_order containing those components and their transitive dependents in valid build order. Unknown changes fail; unrelated components are excluded.
 
 [Inspect this component’s architecture, actual observations and rejection checks](../architectures/luxleaf-developer-kit.md). Version 0.2.0 passed 5 component tests locally. Earlier examples and validation notes on this page remain historical snapshots; the linked architecture page describes the current expansion.
+
+## Version 0.3.0: durable integration
+
+The [coordinated knowledge recovery demonstration](../demonstrations/coordinated-knowledge-recovery.md) exercises a persistent six-stage workflow using real worker-process exits. The workflow package provides the coordinator and knowledge composition; developer kit provides the reproducible fault runner and cross-package suite. Earlier expansion examples remain historical snapshots.
