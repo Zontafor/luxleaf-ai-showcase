@@ -2,7 +2,7 @@
 
 # Service runtime
 
-**luxleaf-runtime · Infrastructure and delivery · Component 0.1.0**
+**luxleaf-runtime · Infrastructure and delivery · Component 0.2.0**
 
 Prepare restricted workload and service definitions for an operator to review.
 
@@ -152,3 +152,9 @@ These links open other public project pages. The portfolio integration tests dem
 No live cloud acceptance, production capacity, independent security assurance or compliance certification is claimed. See the [validation record](../VALIDATION.md) for the evidence boundary.
 
 Copyright © 2026 Michelle L. Wu. Public materials are governed by the [showcase license](../../LICENSE); it does not grant access to private source.
+
+## Current package expansion
+
+**HTTP readiness and liveness probes** — Optional health_path creates bounded HTTP readiness and liveness probes on the container port. health_period_seconds ranges from 1 to 300. Invalid absolute URLs, network-path references and traversal segments are rejected. Existing restricted container settings remain intact.
+
+[Inspect this component’s architecture, actual observations and rejection checks](../architectures/luxleaf-runtime.md). Version 0.2.0 passed 5 component tests locally. Earlier examples and validation notes on this page remain historical snapshots; the linked architecture page describes the current expansion.

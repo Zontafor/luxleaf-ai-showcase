@@ -2,7 +2,7 @@
 
 # Data migrations
 
-**luxleaf-data · Infrastructure and delivery · Component 0.1.0**
+**luxleaf-data · Infrastructure and delivery · Component 0.2.0**
 
 Plan additive data changes and provide transactional migration and backup utilities.
 
@@ -77,3 +77,9 @@ These links open other public project pages. The portfolio integration tests dem
 No live cloud acceptance, production capacity, independent security assurance or compliance certification is claimed. See the [validation record](../VALIDATION.md) for the evidence boundary.
 
 Copyright © 2026 Michelle L. Wu. Public materials are governed by the [showcase license](../../LICENSE); it does not grant access to private source.
+
+## Current package expansion
+
+**Read-only database inspection** — The Python helper luxleaf_data.core.inspect(database) opens an operator-selected SQLite file in read-only mode, checks integrity, and returns user_version and sorted application table names. It never creates a missing source and closes its connection after inspection.
+
+[Inspect this component’s architecture, actual observations and rejection checks](../architectures/luxleaf-data.md). Version 0.2.0 passed 7 component tests locally. Earlier examples and validation notes on this page remain historical snapshots; the linked architecture page describes the current expansion.

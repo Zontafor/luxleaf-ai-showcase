@@ -2,7 +2,7 @@
 
 # Model release governance
 
-**luxleaf-model-governance · Governance and workflow · Component 0.1.0**
+**luxleaf-model-governance · Governance and workflow · Component 0.2.0**
 
 Decide whether a particular model artifact has the required independent approvals.
 
@@ -86,3 +86,9 @@ These links open other public project pages. The portfolio integration tests dem
 No live cloud acceptance, production capacity, independent security assurance or compliance certification is claimed. See the [validation record](../VALIDATION.md) for the evidence boundary.
 
 Copyright © 2026 Michelle L. Wu. Public materials are governed by the [showcase license](../../LICENSE); it does not grant access to private source.
+
+## Current package expansion
+
+**Approval freshness and revocation** — Optional revoked_people invalidates listed reviewers. Configuring maximum_approval_age_seconds requires evaluated_at and approved_at on nonrevoked approval rows. Future-dated or over-age reviews cannot satisfy their role. Separation of author, reviewer people and roles remains enforced.
+
+[Inspect this component’s architecture, actual observations and rejection checks](../architectures/luxleaf-model-governance.md). Version 0.2.0 passed 5 component tests locally. Earlier examples and validation notes on this page remain historical snapshots; the linked architecture page describes the current expansion.

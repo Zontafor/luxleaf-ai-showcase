@@ -2,7 +2,7 @@
 
 # Incident response
 
-**luxleaf-incidents · Operational evidence · Component 0.1.0**
+**luxleaf-incidents · Operational evidence · Component 0.2.0**
 
 Record an owner’s progress through a defined incident-response lifecycle.
 
@@ -79,3 +79,9 @@ These links open other public project pages. The portfolio integration tests dem
 No live cloud acceptance, production capacity, independent security assurance or compliance certification is claimed. See the [validation record](../VALIDATION.md) for the evidence boundary.
 
 Copyright © 2026 Michelle L. Wu. Public materials are governed by the [showcase license](../../LICENSE); it does not grant access to private source.
+
+## Current package expansion
+
+**Evidence-backed incident ownership handoff** — Assign requires the current owner as actor, a new owner and evidence. It records previous/new owners in history without changing lifecycle state. The new owner alone can perform subsequent owner-gated transitions. Closed incidents cannot be reassigned.
+
+[Inspect this component’s architecture, actual observations and rejection checks](../architectures/luxleaf-incidents.md). Version 0.2.0 passed 5 component tests locally. Earlier examples and validation notes on this page remain historical snapshots; the linked architecture page describes the current expansion.

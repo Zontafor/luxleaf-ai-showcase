@@ -1,0 +1,1013 @@
+{
+  "schema_version": 1,
+  "scenario": "all-component-expansion",
+  "synthetic": true,
+  "live_cloud_calls": false,
+  "production_measurements": false,
+  "components": [
+    {
+      "name": "luxleaf-workspace",
+      "version": "0.2.0",
+      "source_commit": "046d2fb8ba0415700e94bc82b439cd25335359ad",
+      "worktree_dirty": false,
+      "checks": [
+        {
+          "name": "Invalid or unauthorized expansion request rejected",
+          "passed": true
+        },
+        {
+          "name": "Invalid or unauthorized expansion request rejected",
+          "passed": true
+        },
+        {
+          "name": "Stale update did not create a member or advance revision",
+          "passed": true
+        },
+        {
+          "name": "Audit identifies who changed membership",
+          "passed": true
+        }
+      ],
+      "observed": {
+        "revision": 1,
+        "audited_changes": 1
+      },
+      "synthetic": true,
+      "live_cloud_calls": false
+    },
+    {
+      "name": "luxleaf-knowledge",
+      "version": "0.2.0",
+      "source_commit": "28794613e122646a51256465db5daea3e305c9f0",
+      "worktree_dirty": false,
+      "checks": [
+        {
+          "name": "Reader policy filters passages for alice",
+          "passed": true
+        },
+        {
+          "name": "Reader policy filters passages for bob",
+          "passed": true
+        },
+        {
+          "name": "Restricted title is absent from unauthenticated library context",
+          "passed": true
+        },
+        {
+          "name": "Other tenant cannot retrieve these documents",
+          "passed": true
+        },
+        {
+          "name": "Invalid or unauthorized expansion request rejected",
+          "passed": true
+        }
+      ],
+      "observed": {
+        "alice_documents": 2,
+        "bob_documents": 1,
+        "other_tenant_documents": 0
+      },
+      "synthetic": true,
+      "live_cloud_calls": false
+    },
+    {
+      "name": "luxleaf-inference",
+      "version": "0.2.0",
+      "source_commit": "abfd194210a58299aeaec5f1a3dcd47c32c80bf4",
+      "worktree_dirty": false,
+      "checks": [
+        {
+          "name": "Total answer includes separator within five-character limit",
+          "passed": true
+        },
+        {
+          "name": "Repeated identical passage is omitted",
+          "passed": true
+        },
+        {
+          "name": "Invalid or unauthorized expansion request rejected",
+          "passed": true
+        }
+      ],
+      "observed": {
+        "answer_characters": 5,
+        "omitted_passages": 1
+      },
+      "synthetic": true,
+      "live_cloud_calls": false
+    },
+    {
+      "name": "luxleaf-metering",
+      "version": "0.2.0",
+      "source_commit": "b945ce8ea0ee796332699bfa985e64ee1f193c3e",
+      "worktree_dirty": false,
+      "checks": [
+        {
+          "name": "Invalid or unauthorized expansion request rejected",
+          "passed": true
+        },
+        {
+          "name": "Invalid or unauthorized expansion request rejected",
+          "passed": true
+        },
+        {
+          "name": "Invalid review preserves held credit",
+          "passed": true
+        },
+        {
+          "name": "Reviewed unknown outcome settles exact usage",
+          "passed": true
+        },
+        {
+          "name": "Unused hold is released",
+          "passed": true
+        }
+      ],
+      "observed": {
+        "actual_micros": 20,
+        "available_micros": 80,
+        "reviewed": true
+      },
+      "synthetic": true,
+      "live_cloud_calls": false
+    },
+    {
+      "name": "luxleaf-workflows",
+      "version": "0.2.0",
+      "source_commit": "98114a4263cd0e9c82173156d2359b432c886d8b",
+      "worktree_dirty": false,
+      "checks": [
+        {
+          "name": "Invalid or unauthorized expansion request rejected",
+          "passed": true
+        },
+        {
+          "name": "Renewal extends only the current lease",
+          "passed": true
+        },
+        {
+          "name": "Invalid or unauthorized expansion request rejected",
+          "passed": true
+        },
+        {
+          "name": "Expired work is not silently reclaimed",
+          "passed": true
+        }
+      ],
+      "observed": {
+        "renewed_expiry": 1035,
+        "expired_renewal_rejected": true
+      },
+      "synthetic": true,
+      "live_cloud_calls": false
+    },
+    {
+      "name": "luxleaf-environments",
+      "version": "0.2.0",
+      "source_commit": "541fdd9f504582c60b7bd0d422f9083431506ff8",
+      "worktree_dirty": false,
+      "checks": [
+        {
+          "name": "Disjoint contained subnets are preserved",
+          "passed": true
+        },
+        {
+          "name": "Invalid or unauthorized expansion request rejected",
+          "passed": true
+        },
+        {
+          "name": "Invalid or unauthorized expansion request rejected",
+          "passed": true
+        },
+        {
+          "name": "Planning does not provision networks",
+          "passed": true
+        }
+      ],
+      "observed": {
+        "subnets": [
+          "10.0.1.0/24",
+          "10.0.2.0/24"
+        ],
+        "provisioned": false
+      },
+      "synthetic": true,
+      "live_cloud_calls": false
+    },
+    {
+      "name": "luxleaf-evaluations",
+      "version": "0.2.0",
+      "source_commit": "7726addb3b7e9c18a5b5aac806da871366259646",
+      "worktree_dirty": false,
+      "checks": [
+        {
+          "name": "Weak rank fails MRR without failing complete recall",
+          "passed": true
+        },
+        {
+          "name": "Measured quality rejects release gate",
+          "passed": true
+        },
+        {
+          "name": "Invalid or unauthorized expansion request rejected",
+          "passed": true
+        },
+        {
+          "name": "No positive labels cannot establish recall",
+          "passed": true
+        }
+      ],
+      "observed": {
+        "mrr": 0.5,
+        "failed_gates": [
+          "minimum_mrr_basis_points"
+        ]
+      },
+      "synthetic": true,
+      "live_cloud_calls": false
+    },
+    {
+      "name": "luxleaf-model-router",
+      "version": "0.2.0",
+      "source_commit": "2d79abec0f1d4d3989c8f94b3ec360e1ea038bf0",
+      "worktree_dirty": false,
+      "checks": [
+        {
+          "name": "Default preference keeps cost ordering",
+          "passed": true
+        },
+        {
+          "name": "Latency strategy changes selection",
+          "passed": true
+        },
+        {
+          "name": "Latency limit excludes a cheaper slow model",
+          "passed": true
+        },
+        {
+          "name": "Invalid or unauthorized expansion request rejected",
+          "passed": true
+        }
+      ],
+      "observed": {
+        "selected": "fast",
+        "rejected": [
+          {
+            "id": "cheap",
+            "reason": "latency_limit"
+          }
+        ]
+      },
+      "synthetic": true,
+      "live_cloud_calls": false
+    },
+    {
+      "name": "luxleaf-generation",
+      "version": "0.2.0",
+      "source_commit": "1552c0c39b20c739c2c26d95d1aa0fcdd040630f",
+      "worktree_dirty": false,
+      "checks": [
+        {
+          "name": "Empty evidence array fits a two-character context budget",
+          "passed": true
+        },
+        {
+          "name": "Whole evidence is omitted instead of being cut mid-record",
+          "passed": true
+        },
+        {
+          "name": "No document is falsely reported as included",
+          "passed": true
+        },
+        {
+          "name": "Invalid or unauthorized expansion request rejected",
+          "passed": true
+        },
+        {
+          "name": "Prompt preparation makes no provider call",
+          "passed": true
+        }
+      ],
+      "observed": {
+        "omitted_evidence": 1,
+        "context_characters": 2,
+        "provider_called": false
+      },
+      "synthetic": true,
+      "live_cloud_calls": false
+    },
+    {
+      "name": "luxleaf-agent-plans",
+      "version": "0.2.0",
+      "source_commit": "b83f9ad8875b4c5cb93d55cb5b41e816be1e2368",
+      "worktree_dirty": false,
+      "checks": [
+        {
+          "name": "Independent roots form one execution wave",
+          "passed": true
+        },
+        {
+          "name": "Input order does not change approved plan identity",
+          "passed": true
+        },
+        {
+          "name": "Invalid or unauthorized expansion request rejected",
+          "passed": true
+        }
+      ],
+      "observed": {
+        "waves": [
+          [
+            "a",
+            "b"
+          ],
+          [
+            "c"
+          ]
+        ],
+        "plan_sha256": "1e07a69dcb06401628d6e93c9817f85da819dbfa34da81bc1e7d262ea9f98e29"
+      },
+      "synthetic": true,
+      "live_cloud_calls": false
+    },
+    {
+      "name": "luxleaf-tool-protocol",
+      "version": "0.2.0",
+      "source_commit": "791a16d70047046a31b5c8bbcd5e88a4b5339ef0",
+      "worktree_dirty": false,
+      "checks": [
+        {
+          "name": "Batch preserves call order and results",
+          "passed": true
+        },
+        {
+          "name": "Invalid or unauthorized expansion request rejected",
+          "passed": true
+        },
+        {
+          "name": "Invalid or unauthorized expansion request rejected",
+          "passed": true
+        }
+      ],
+      "observed": {
+        "results": [
+          {
+            "name": "text.count",
+            "result": {
+              "words": 2
+            },
+            "effect": "read"
+          },
+          {
+            "name": "text.excerpt",
+            "result": {
+              "text": "abc"
+            },
+            "effect": "read"
+          }
+        ],
+        "protocol": "luxleaf-tools/1"
+      },
+      "synthetic": true,
+      "live_cloud_calls": false
+    },
+    {
+      "name": "luxleaf-cloud-tools",
+      "version": "0.2.0",
+      "source_commit": "0215912105eea43ff7effd857ff7a43e22caba1e",
+      "worktree_dirty": false,
+      "checks": [
+        {
+          "name": "Region-scoped plan is accepted without execution",
+          "passed": true
+        },
+        {
+          "name": "Invalid or unauthorized expansion request rejected",
+          "passed": true
+        },
+        {
+          "name": "Invalid or unauthorized expansion request rejected",
+          "passed": true
+        },
+        {
+          "name": "Invalid or unauthorized expansion request rejected",
+          "passed": true
+        },
+        {
+          "name": "Invalid or unauthorized expansion request rejected",
+          "passed": true
+        }
+      ],
+      "observed": {
+        "region": "local",
+        "executed": false,
+        "ambiguous_paths_rejected": 3
+      },
+      "synthetic": true,
+      "live_cloud_calls": false
+    },
+    {
+      "name": "luxleaf-agent-runtime",
+      "version": "0.2.0",
+      "source_commit": "5fb383556e793c0afe0cefe32b136589e2610583",
+      "worktree_dirty": false,
+      "checks": [
+        {
+          "name": "Invalid or unauthorized expansion request rejected",
+          "passed": true
+        },
+        {
+          "name": "Valid ordered dependencies execute both steps",
+          "passed": true
+        },
+        {
+          "name": "Rejected ordering did not poison the request identity",
+          "passed": true
+        }
+      ],
+      "observed": {
+        "status": "completed",
+        "executed_steps": 2
+      },
+      "synthetic": true,
+      "live_cloud_calls": false
+    },
+    {
+      "name": "luxleaf-rag",
+      "version": "0.2.0",
+      "source_commit": "2c6e6b25d5104d40c0df2df0e02324ddee45474d",
+      "worktree_dirty": false,
+      "checks": [
+        {
+          "name": "Repeated passage cannot satisfy independent-source quorum",
+          "passed": true
+        },
+        {
+          "name": "Inference is skipped below quorum",
+          "passed": true
+        },
+        {
+          "name": "Two distinct sources allow local evidence answer",
+          "passed": true
+        },
+        {
+          "name": "Invalid or unauthorized expansion request rejected",
+          "passed": true
+        }
+      ],
+      "observed": {
+        "distinct_sources_required": 2,
+        "inference_skipped_below_quorum": true
+      },
+      "synthetic": true,
+      "live_cloud_calls": false
+    },
+    {
+      "name": "luxleaf-model-governance",
+      "version": "0.2.0",
+      "source_commit": "1a80645be90f27cd43af3cbcf8fbf2b3a6b32500",
+      "worktree_dirty": false,
+      "checks": [
+        {
+          "name": "Expired security approval blocks release",
+          "passed": true
+        },
+        {
+          "name": "Stale approval does not satisfy required role",
+          "passed": true
+        },
+        {
+          "name": "Revoked reviewer cannot approve release",
+          "passed": true
+        },
+        {
+          "name": "Invalid or unauthorized expansion request rejected",
+          "passed": true
+        }
+      ],
+      "observed": {
+        "stale_role": "security",
+        "revoked_role": "release",
+        "approved": false
+      },
+      "synthetic": true,
+      "live_cloud_calls": false
+    },
+    {
+      "name": "luxleaf-batch",
+      "version": "0.2.0",
+      "source_commit": "a8011c9625bdd1b2fb143f1b839dd84bc09b7992",
+      "worktree_dirty": false,
+      "checks": [
+        {
+          "name": "Exact placement selector chooses matching node",
+          "passed": true
+        },
+        {
+          "name": "Unmatched selector defers rather than ignoring restriction",
+          "passed": true
+        },
+        {
+          "name": "Invalid or unauthorized expansion request rejected",
+          "passed": true
+        }
+      ],
+      "observed": {
+        "matched_node": "west",
+        "unmatched_deferred": [
+          "job"
+        ],
+        "executed": false
+      },
+      "synthetic": true,
+      "live_cloud_calls": false
+    },
+    {
+      "name": "luxleaf-events",
+      "version": "0.3.0",
+      "source_commit": "cc77bb668023eef79c1d641550e4e6d113f481e2",
+      "worktree_dirty": false,
+      "checks": [
+        {
+          "name": "Invalid or unauthorized expansion request rejected",
+          "passed": true
+        },
+        {
+          "name": "Renewal preserves fence",
+          "passed": true
+        },
+        {
+          "name": "Renewal extends the active claim",
+          "passed": true
+        },
+        {
+          "name": "Renewal does not release the event",
+          "passed": true
+        },
+        {
+          "name": "Invalid or unauthorized expansion request rejected",
+          "passed": true
+        }
+      ],
+      "observed": {
+        "renewed": true,
+        "fence": 1,
+        "completed": true
+      },
+      "synthetic": true,
+      "live_cloud_calls": false
+    },
+    {
+      "name": "luxleaf-rollouts",
+      "version": "0.2.0",
+      "source_commit": "1c3293ba2c030bf7a3c17141a285b956e721daaa",
+      "worktree_dirty": false,
+      "checks": [
+        {
+          "name": "First observation advances canary",
+          "passed": true
+        },
+        {
+          "name": "Exact observation replay cannot advance twice",
+          "passed": true
+        },
+        {
+          "name": "Invalid or unauthorized expansion request rejected",
+          "passed": true
+        },
+        {
+          "name": "Conflict leaves traffic proposal unchanged",
+          "passed": true
+        }
+      ],
+      "observed": {
+        "traffic_percent": 35,
+        "duplicate_observation_advanced": false
+      },
+      "synthetic": true,
+      "live_cloud_calls": false
+    },
+    {
+      "name": "luxleaf-runtime",
+      "version": "0.2.0",
+      "source_commit": "224496cadd289675a3a177d1f0f3e573ff12b63c",
+      "worktree_dirty": false,
+      "checks": [
+        {
+          "name": "Readiness uses bounded HTTP probe",
+          "passed": true
+        },
+        {
+          "name": "Health definitions preserve restricted runtime",
+          "passed": true
+        },
+        {
+          "name": "Invalid or unauthorized expansion request rejected",
+          "passed": true
+        },
+        {
+          "name": "Invalid or unauthorized expansion request rejected",
+          "passed": true
+        },
+        {
+          "name": "Invalid or unauthorized expansion request rejected",
+          "passed": true
+        }
+      ],
+      "observed": {
+        "readiness_path": "/ready",
+        "probe_period_seconds": 15,
+        "applied": false
+      },
+      "synthetic": true,
+      "live_cloud_calls": false
+    },
+    {
+      "name": "luxleaf-archives",
+      "version": "0.2.0",
+      "source_commit": "228dadd312781cca521d5114f91e5aceb9cce3d4",
+      "worktree_dirty": false,
+      "checks": [
+        {
+          "name": "First page is bounded and advertises remaining data",
+          "passed": true
+        },
+        {
+          "name": "Cursor resumes without duplicate entries",
+          "passed": true
+        },
+        {
+          "name": "Other tenant receives no entries",
+          "passed": true
+        },
+        {
+          "name": "Invalid or unauthorized expansion request rejected",
+          "passed": true
+        }
+      ],
+      "observed": {
+        "page_sequences": [
+          [
+            1,
+            2
+          ],
+          [
+            3
+          ]
+        ],
+        "archive_verified": true
+      },
+      "synthetic": true,
+      "live_cloud_calls": false
+    },
+    {
+      "name": "luxleaf-data",
+      "version": "0.2.0",
+      "source_commit": "e4b906ff88e37328010549d0dea1e8ea050540a6",
+      "worktree_dirty": false,
+      "checks": [
+        {
+          "name": "Read-only inspection reports version and table",
+          "passed": true
+        },
+        {
+          "name": "Inspection leaves database bytes unchanged",
+          "passed": true
+        },
+        {
+          "name": "Missing database is rejected without creation",
+          "passed": true
+        }
+      ],
+      "observed": {
+        "valid": true,
+        "schema_version": 1,
+        "tables": [
+          "items"
+        ]
+      },
+      "synthetic": true,
+      "live_cloud_calls": false
+    },
+    {
+      "name": "luxleaf-developer-kit",
+      "version": "0.2.0",
+      "source_commit": "764aa8bfc207cba4a45187e9147444e7357169ef",
+      "worktree_dirty": false,
+      "checks": [
+        {
+          "name": "Upstream change rebuilds only transitive dependents",
+          "passed": true
+        },
+        {
+          "name": "Leaf change avoids unrelated rebuilds",
+          "passed": true
+        },
+        {
+          "name": "Invalid or unauthorized expansion request rejected",
+          "passed": true
+        }
+      ],
+      "observed": {
+        "rebuild_order": [
+          "base",
+          "api",
+          "ui"
+        ]
+      },
+      "synthetic": true,
+      "live_cloud_calls": false
+    },
+    {
+      "name": "luxleaf-api",
+      "version": "0.2.0",
+      "source_commit": "138e9c4f3c9c0448827176f427ae4c16d42c641f",
+      "worktree_dirty": false,
+      "checks": [
+        {
+          "name": "Scoped valid credential can use permitted route",
+          "passed": true
+        },
+        {
+          "name": "Route scope narrows otherwise permitted role",
+          "passed": true
+        },
+        {
+          "name": "Credential expires exactly at boundary",
+          "passed": true
+        },
+        {
+          "name": "Denied and expired requests do not invoke handler",
+          "passed": true
+        }
+      ],
+      "observed": {
+        "permitted_status": 200,
+        "scope_denied_status": 403,
+        "expired_status": 401
+      },
+      "synthetic": true,
+      "live_cloud_calls": false
+    },
+    {
+      "name": "luxleaf-service-policy",
+      "version": "0.2.0",
+      "source_commit": "e1478afed8886d6d75385a913eab50c421758d3b",
+      "worktree_dirty": false,
+      "checks": [
+        {
+          "name": "Exact allowed resource succeeds",
+          "passed": true
+        },
+        {
+          "name": "Neighboring resource is denied",
+          "passed": true
+        },
+        {
+          "name": "Omitting a resource cannot bypass a scoped rule",
+          "passed": true
+        },
+        {
+          "name": "Explicit scoped deny overrides allow",
+          "passed": true
+        }
+      ],
+      "observed": {
+        "allowed_resource": "document-a",
+        "other_resource_allowed": false
+      },
+      "synthetic": true,
+      "live_cloud_calls": false
+    },
+    {
+      "name": "luxleaf-security",
+      "version": "0.2.0",
+      "source_commit": "f192120296f070855f86baefcd9ec6f7f8236f39",
+      "worktree_dirty": false,
+      "checks": [
+        {
+          "name": "Posture comparison identifies new and resolved findings",
+          "passed": true
+        },
+        {
+          "name": "A resolved issue does not cancel a new failure",
+          "passed": true
+        },
+        {
+          "name": "Invalid or unauthorized expansion request rejected",
+          "passed": true
+        }
+      ],
+      "observed": {
+        "comparison": {
+          "introduced": [
+            "tls"
+          ],
+          "resolved": [
+            "backups"
+          ],
+          "unchanged": []
+        },
+        "certified": false
+      },
+      "synthetic": true,
+      "live_cloud_calls": false
+    },
+    {
+      "name": "luxleaf-telemetry",
+      "version": "0.2.0",
+      "source_commit": "17ef1092339aea4199e8ebbb9265647063fbf5dd",
+      "worktree_dirty": false,
+      "checks": [
+        {
+          "name": "Pseudonym is stable before rotation",
+          "passed": true
+        },
+        {
+          "name": "Rotation changes correlation identifier",
+          "passed": true
+        },
+        {
+          "name": "New generation is visible without key disclosure",
+          "passed": true
+        },
+        {
+          "name": "Content remains excluded after rotation",
+          "passed": true
+        }
+      ],
+      "observed": {
+        "generation": 2,
+        "pseudonym_changed": true,
+        "dropped_attributes": 1
+      },
+      "synthetic": true,
+      "live_cloud_calls": false
+    },
+    {
+      "name": "luxleaf-observability",
+      "version": "0.2.0",
+      "source_commit": "f38d50debc024db96302f0ba23e4c90fa333be57",
+      "worktree_dirty": false,
+      "checks": [
+        {
+          "name": "Overlapping error and latency failures count once",
+          "passed": true
+        },
+        {
+          "name": "Goodput counts only fast successful requests",
+          "passed": true
+        },
+        {
+          "name": "Combined objective catches slow success",
+          "passed": true
+        },
+        {
+          "name": "Invalid or unauthorized expansion request rejected",
+          "passed": true
+        }
+      ],
+      "observed": {
+        "bad_requests": 2,
+        "goodput": 0.3333333333333333,
+        "combined_status": "breached"
+      },
+      "synthetic": true,
+      "live_cloud_calls": false
+    },
+    {
+      "name": "luxleaf-incidents",
+      "version": "0.2.0",
+      "source_commit": "3817e85fe7afa96d1cb4fce3711a04cca77d450b",
+      "worktree_dirty": false,
+      "checks": [
+        {
+          "name": "Invalid or unauthorized expansion request rejected",
+          "passed": true
+        },
+        {
+          "name": "New owner replaces old owner with history",
+          "passed": true
+        },
+        {
+          "name": "Invalid or unauthorized expansion request rejected",
+          "passed": true
+        },
+        {
+          "name": "New owner can continue response",
+          "passed": true
+        }
+      ],
+      "observed": {
+        "owner": "bob",
+        "status": "acknowledged",
+        "handoff_recorded": true
+      },
+      "synthetic": true,
+      "live_cloud_calls": false
+    },
+    {
+      "name": "luxleaf-delivery",
+      "version": "0.2.0",
+      "source_commit": "7018fe15dc0e21ee0f210f48b9169916636f1bb9",
+      "worktree_dirty": false,
+      "checks": [
+        {
+          "name": "Matching reviewed digest permits a release proposal",
+          "passed": true
+        },
+        {
+          "name": "Changed content invalidates prior release approval",
+          "passed": true
+        },
+        {
+          "name": "Mismatched artifact is never publishable",
+          "passed": true
+        },
+        {
+          "name": "Invalid or unauthorized expansion request rejected",
+          "passed": true
+        }
+      ],
+      "observed": {
+        "changed_content_allowed": false,
+        "failed_gates": [
+          "artifact_identity"
+        ],
+        "published": false
+      },
+      "synthetic": true,
+      "live_cloud_calls": false
+    },
+    {
+      "name": "luxleaf-containers",
+      "version": "0.2.0",
+      "source_commit": "a350e45e6d8a0579601c91f40aa3e1064be48041",
+      "worktree_dirty": false,
+      "checks": [
+        {
+          "name": "Health command uses explicit argv rather than implicit shell",
+          "passed": true
+        },
+        {
+          "name": "Health checks preserve read-only runtime",
+          "passed": true
+        },
+        {
+          "name": "Invalid or unauthorized expansion request rejected",
+          "passed": true
+        },
+        {
+          "name": "Invalid or unauthorized expansion request rejected",
+          "passed": true
+        }
+      ],
+      "observed": {
+        "healthcheck": {
+          "test": [
+            "CMD",
+            "python",
+            "-V"
+          ],
+          "interval": "30s",
+          "timeout": "5s",
+          "retries": 3
+        },
+        "started": false
+      },
+      "synthetic": true,
+      "live_cloud_calls": false
+    },
+    {
+      "name": "luxleaf-model-lifecycle",
+      "version": "0.2.0",
+      "source_commit": "8be3fd1056959976cf5f3b862b570c60345ee2e2",
+      "worktree_dirty": false,
+      "checks": [
+        {
+          "name": "Invalid or unauthorized expansion request rejected",
+          "passed": true
+        },
+        {
+          "name": "Invalid or unauthorized expansion request rejected",
+          "passed": true
+        },
+        {
+          "name": "Reviewed rollback restores a previously active candidate",
+          "passed": true
+        },
+        {
+          "name": "Rollback leaves evidence in registry history",
+          "passed": true
+        }
+      ],
+      "observed": {
+        "active": "one",
+        "rolled_back": true
+      },
+      "synthetic": true,
+      "live_cloud_calls": false
+    }
+  ],
+  "checks_passed": 122
+}

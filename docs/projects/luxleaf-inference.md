@@ -2,7 +2,7 @@
 
 # Inference engine
 
-**luxleaf-inference · Business knowledge · Component 0.1.0**
+**luxleaf-inference · Business knowledge · Component 0.2.0**
 
 Return inspectable source excerpts when a local answer is sufficient.
 
@@ -80,3 +80,9 @@ These links open other public project pages. The portfolio integration tests dem
 No live cloud acceptance, production capacity, independent security assurance or compliance certification is claimed. See the [validation record](../VALIDATION.md) for the evidence boundary.
 
 Copyright © 2026 Michelle L. Wu. Public materials are governed by the [showcase license](../../LICENSE); it does not grant access to private source.
+
+## Current package expansion
+
+**Exact output budgets and passage deduplication** — The maximum character budget now includes separators between passages. Identical document/text pairs are emitted once, and omitted_passages counts duplicate or fully excluded passages. Every supplied citation is still checked for tenant identity, even after the budget is exhausted.
+
+[Inspect this component’s architecture, actual observations and rejection checks](../architectures/luxleaf-inference.md). Version 0.2.0 passed 5 component tests locally. Earlier examples and validation notes on this page remain historical snapshots; the linked architecture page describes the current expansion.

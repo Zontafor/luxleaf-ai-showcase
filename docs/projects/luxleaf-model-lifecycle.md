@@ -2,7 +2,7 @@
 
 # Model registry
 
-**luxleaf-model-lifecycle · Governance and workflow · Component 0.1.0**
+**luxleaf-model-lifecycle · Governance and workflow · Component 0.2.0**
 
 Maintain a candidate registry and promote an approved artifact that meets a quality gate.
 
@@ -72,3 +72,9 @@ These links open other public project pages. The portfolio integration tests dem
 No live cloud acceptance, production capacity, independent security assurance or compliance certification is claimed. See the [validation record](../VALIDATION.md) for the evidence boundary.
 
 Copyright © 2026 Michelle L. Wu. Public materials are governed by the [showcase license](../../LICENSE); it does not grant access to private source.
+
+## Current package expansion
+
+**Reviewed rollback to known active candidates** — Rollback requires a previously promoted target, matching current expected_active, artifact-matching approval, quality threshold, actor and evidence_ref. It switches the local active pointer and records rollback history. A registered but never-active candidate cannot be a rollback target.
+
+[Inspect this component’s architecture, actual observations and rejection checks](../architectures/luxleaf-model-lifecycle.md). Version 0.2.0 passed 5 component tests locally. Earlier examples and validation notes on this page remain historical snapshots; the linked architecture page describes the current expansion.

@@ -2,7 +2,7 @@
 
 # Usage metering
 
-**luxleaf-metering · Governance and workflow · Component 0.1.0**
+**luxleaf-metering · Governance and workflow · Component 0.2.0**
 
 Reserve estimated usage before a request and keep uncertain spending visible.
 
@@ -74,3 +74,9 @@ These links open other public project pages. The portfolio integration tests dem
 No live cloud acceptance, production capacity, independent security assurance or compliance certification is claimed. See the [validation record](../VALIDATION.md) for the evidence boundary.
 
 Copyright © 2026 Michelle L. Wu. Public materials are governed by the [showcase license](../../LICENSE); it does not grant access to private source.
+
+## Current package expansion
+
+**Reviewed unknown-usage reconciliation** — Reconcile accepts key, actual_micros, actor and evidence_ref only when the reservation is unknown. It records the review and settles exact usage, releasing unused held credit. Invalid reviews roll back without changing the hold.
+
+[Inspect this component’s architecture, actual observations and rejection checks](../architectures/luxleaf-metering.md). Version 0.2.0 passed 5 component tests locally. Earlier examples and validation notes on this page remain historical snapshots; the linked architecture page describes the current expansion.

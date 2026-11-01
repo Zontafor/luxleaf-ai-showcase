@@ -2,7 +2,7 @@
 
 # Release rollouts
 
-**luxleaf-rollouts · Infrastructure and delivery · Component 0.1.0**
+**luxleaf-rollouts · Infrastructure and delivery · Component 0.2.0**
 
 Use observation thresholds to propose holding, promoting or rolling back a candidate.
 
@@ -68,3 +68,9 @@ These links open other public project pages. The portfolio integration tests dem
 No live cloud acceptance, production capacity, independent security assurance or compliance certification is claimed. See the [validation record](../VALIDATION.md) for the evidence boundary.
 
 Copyright © 2026 Michelle L. Wu. Public materials are governed by the [showcase license](../../LICENSE); it does not grant access to private source.
+
+## Current package expansion
+
+**Idempotent rollout observations** — Optional observation_id binds all observation input fields to its recorded decision within the active rollout. Exact replay returns the earlier decision without advancing traffic again. Reusing the identifier with changed metrics or policy fails. Starting a new rollout clears its observation history.
+
+[Inspect this component’s architecture, actual observations and rejection checks](../architectures/luxleaf-rollouts.md). Version 0.2.0 passed 5 component tests locally. Earlier examples and validation notes on this page remain historical snapshots; the linked architecture page describes the current expansion.

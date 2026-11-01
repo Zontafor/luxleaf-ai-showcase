@@ -2,7 +2,7 @@
 
 # Evidence archives
 
-**luxleaf-archives · Operational evidence · Component 0.1.0**
+**luxleaf-archives · Operational evidence · Component 0.2.0**
 
 Keep a local chain of event records whose contents can be checked against a retained digest.
 
@@ -66,3 +66,9 @@ These links open other public project pages. The portfolio integration tests dem
 No live cloud acceptance, production capacity, independent security assurance or compliance certification is claimed. See the [validation record](../VALIDATION.md) for the evidence boundary.
 
 Copyright © 2026 Michelle L. Wu. Public materials are governed by the [showcase license](../../LICENSE); it does not grant access to private source.
+
+## Current package expansion
+
+**Verified archive pagination** — Read accepts after_sequence from 0 to 1000 and limit from 1 to 1000. It verifies the full chain, returns the selected page, next_sequence, has_more and the current head hash. Defaults preserve full reads within the existing archive capacity.
+
+[Inspect this component’s architecture, actual observations and rejection checks](../architectures/luxleaf-archives.md). Version 0.2.0 passed 5 component tests locally. Earlier examples and validation notes on this page remain historical snapshots; the linked architecture page describes the current expansion.

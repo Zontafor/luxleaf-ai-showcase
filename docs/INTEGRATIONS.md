@@ -71,3 +71,7 @@ This public repository contains the project pages, synthetic demonstrations, arc
 The components are working local development releases. Several infrastructure projects generate plans or manifests; they do not create cloud infrastructure. All 31 private GitHub test workflows passed, alongside 129 local component tests and 6 portfolio integration tests. [Validation details](VALIDATION.md).
 
 The earlier v0.3 integrated application is a separate demonstration; its screenshots and provider adapters must not be attributed to every new component. [Platform overview](PRODUCT.md).
+
+## All-component expansion
+
+Every listed package now has a [dedicated architecture and contract expansion](PORTFOLIO_ARCHITECTURE.md), with [122 actual checked assertions across 31 scenarios](demonstrations/all-component-expansion.md). Source and package distribution remain private.

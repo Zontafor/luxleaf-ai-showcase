@@ -2,7 +2,7 @@
 
 # Event outbox
 
-**luxleaf-events · Operational evidence · Component 0.2.0**
+**luxleaf-events · Operational evidence · Component 0.3.0**
 
 Retain operational events until each consumer acknowledges its own delivery.
 
@@ -75,3 +75,9 @@ These links open other public project pages. The portfolio integration tests dem
 No live cloud acceptance, production capacity, independent security assurance or compliance certification is claimed. See the [validation record](../VALIDATION.md) for the evidence boundary.
 
 Copyright © 2026 Michelle L. Wu. Public materials are governed by the [showcase license](../../LICENSE); it does not grant access to private source.
+
+## Current package expansion
+
+**Managed event lease renewal** — Renew requires the same consumer, event hash, worker, fence and active credential as completion. A bounded lease_seconds extends expiry without advancing attempts or changing the fence. Renewal preserves the active token hash; uncertain, expired and terminal deliveries cannot renew.
+
+[Inspect this component’s architecture, actual observations and rejection checks](../architectures/luxleaf-events.md). Version 0.3.0 passed 19 component tests locally. Earlier examples and validation notes on this page remain historical snapshots; the linked architecture page describes the current expansion.

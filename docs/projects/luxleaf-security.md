@@ -2,7 +2,7 @@
 
 # Security posture
 
-**luxleaf-security · Operational evidence · Component 0.1.0**
+**luxleaf-security · Operational evidence · Component 0.2.0**
 
 Identify missing deployment controls and show a concrete remediation for each.
 
@@ -75,3 +75,9 @@ These links open other public project pages. The portfolio integration tests dem
 No live cloud acceptance, production capacity, independent security assurance or compliance certification is claimed. See the [validation record](../VALIDATION.md) for the evidence boundary.
 
 Copyright © 2026 Michelle L. Wu. Public materials are governed by the [showcase license](../../LICENSE); it does not grant access to private source.
+
+## Current package expansion
+
+**Posture regression comparison** — Optional baseline_configuration is evaluated using the same controls as the current configuration. Comparison reports introduced, resolved and unchanged finding identifiers. A resolved finding never cancels an unrelated new failure.
+
+[Inspect this component’s architecture, actual observations and rejection checks](../architectures/luxleaf-security.md). Version 0.2.0 passed 5 component tests locally. Earlier examples and validation notes on this page remain historical snapshots; the linked architecture page describes the current expansion.

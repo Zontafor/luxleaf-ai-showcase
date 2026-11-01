@@ -2,7 +2,7 @@
 
 # Model routing
 
-**luxleaf-model-router · Governance and workflow · Component 0.1.0**
+**luxleaf-model-router · Governance and workflow · Component 0.2.0**
 
 Choose an eligible model proposal within a tenant’s region and budget policy.
 
@@ -82,3 +82,9 @@ These links open other public project pages. The portfolio integration tests dem
 No live cloud acceptance, production capacity, independent security assurance or compliance certification is claimed. See the [validation record](../VALIDATION.md) for the evidence boundary.
 
 Copyright © 2026 Michelle L. Wu. Public materials are governed by the [showcase license](../../LICENSE); it does not grant access to private source.
+
+## Current package expansion
+
+**Latency-aware routing and fallback order** — Strategy accepts cost or latency, with cost remaining the default. Optional max_latency_ms excludes candidates beyond the supplied threshold. Eligible candidates are returned in stable preference order after permissions, region, remote policy, capacity and budget checks.
+
+[Inspect this component’s architecture, actual observations and rejection checks](../architectures/luxleaf-model-router.md). Version 0.2.0 passed 5 component tests locally. Earlier examples and validation notes on this page remain historical snapshots; the linked architecture page describes the current expansion.

@@ -4,7 +4,7 @@
     "title": "Workspace membership",
     "group": "Business knowledge",
     "page": "docs/projects/luxleaf-workspace.md",
-    "unit_tests": 4,
+    "unit_tests": 5,
     "example": {
       "request": {
         "schema_version": 1,
@@ -26,7 +26,7 @@
     "title": "Knowledge retrieval",
     "group": "Business knowledge",
     "page": "docs/projects/luxleaf-knowledge.md",
-    "unit_tests": 4,
+    "unit_tests": 5,
     "example": {
       "request": {
         "schema_version": 1,
@@ -58,7 +58,7 @@
     "title": "Inference engine",
     "group": "Business knowledge",
     "page": "docs/projects/luxleaf-inference.md",
-    "unit_tests": 4,
+    "unit_tests": 5,
     "example": {
       "request": {
         "schema_version": 1,
@@ -94,7 +94,7 @@
     "title": "Usage metering",
     "group": "Governance and workflow",
     "page": "docs/projects/luxleaf-metering.md",
-    "unit_tests": 4,
+    "unit_tests": 5,
     "example": {
       "request": {
         "schema_version": 1,
@@ -124,7 +124,7 @@
     "title": "Workflow queue",
     "group": "Governance and workflow",
     "page": "docs/projects/luxleaf-workflows.md",
-    "unit_tests": 5,
+    "unit_tests": 6,
     "example": {
       "request": {
         "schema_version": 1,
@@ -155,7 +155,7 @@
     "title": "Environment policy",
     "group": "Infrastructure and delivery",
     "page": "docs/projects/luxleaf-environments.md",
-    "unit_tests": 5,
+    "unit_tests": 6,
     "example": {
       "request": {
         "schema_version": 1,
@@ -190,7 +190,7 @@
     "title": "Retrieval evaluation",
     "group": "Governance and workflow",
     "page": "docs/projects/luxleaf-evaluations.md",
-    "unit_tests": 4,
+    "unit_tests": 5,
     "example": {
       "request": {
         "schema_version": 1,
@@ -233,7 +233,7 @@
     "title": "Model routing",
     "group": "Governance and workflow",
     "page": "docs/projects/luxleaf-model-router.md",
-    "unit_tests": 4,
+    "unit_tests": 5,
     "example": {
       "request": {
         "schema_version": 1,
@@ -271,7 +271,7 @@
     "title": "Prompt construction",
     "group": "Business knowledge",
     "page": "docs/projects/luxleaf-generation.md",
-    "unit_tests": 4,
+    "unit_tests": 5,
     "example": {
       "request": {
         "schema_version": 1,
@@ -304,7 +304,7 @@
     "title": "Agent planning",
     "group": "Agents and tools",
     "page": "docs/projects/luxleaf-agent-plans.md",
-    "unit_tests": 4,
+    "unit_tests": 5,
     "example": {
       "request": {
         "schema_version": 1,
@@ -347,7 +347,7 @@
     "title": "Tool protocol",
     "group": "Agents and tools",
     "page": "docs/projects/luxleaf-tool-protocol.md",
-    "unit_tests": 4,
+    "unit_tests": 5,
     "example": {
       "request": {
         "schema_version": 1,
@@ -390,7 +390,7 @@
     "title": "Cloud action policy",
     "group": "Agents and tools",
     "page": "docs/projects/luxleaf-cloud-tools.md",
-    "unit_tests": 4,
+    "unit_tests": 5,
     "example": {
       "request": {
         "schema_version": 1,
@@ -431,7 +431,7 @@
     "title": "Agent execution",
     "group": "Agents and tools",
     "page": "docs/projects/luxleaf-agent-runtime.md",
-    "unit_tests": 4,
+    "unit_tests": 5,
     "example": {
       "request": {
         "schema_version": 1,
@@ -470,7 +470,7 @@
     "title": "Knowledge orchestration",
     "group": "Business knowledge",
     "page": "docs/projects/luxleaf-rag.md",
-    "unit_tests": 4,
+    "unit_tests": 5,
     "example": {
       "request": {
         "schema_version": 1,
@@ -505,7 +505,7 @@
     "title": "Model release governance",
     "group": "Governance and workflow",
     "page": "docs/projects/luxleaf-model-governance.md",
-    "unit_tests": 4,
+    "unit_tests": 5,
     "example": {
       "request": {
         "schema_version": 1,
@@ -547,7 +547,7 @@
     "title": "Batch scheduling",
     "group": "Infrastructure and delivery",
     "page": "docs/projects/luxleaf-batch.md",
-    "unit_tests": 4,
+    "unit_tests": 5,
     "example": {
       "request": {
         "schema_version": 1,
@@ -595,7 +595,7 @@
     "title": "Event outbox",
     "group": "Operational evidence",
     "page": "docs/projects/luxleaf-events.md",
-    "unit_tests": 18,
+    "unit_tests": 19,
     "example": {
       "request": {
         "schema_version": 1,
@@ -626,7 +626,7 @@
     "title": "Release rollouts",
     "group": "Infrastructure and delivery",
     "page": "docs/projects/luxleaf-rollouts.md",
-    "unit_tests": 4,
+    "unit_tests": 5,
     "example": {
       "request": {
         "schema_version": 1,
@@ -650,7 +650,7 @@
     "title": "Service runtime",
     "group": "Infrastructure and delivery",
     "page": "docs/projects/luxleaf-runtime.md",
-    "unit_tests": 4,
+    "unit_tests": 5,
     "example": {
       "request": {
         "schema_version": 1,
@@ -758,7 +758,7 @@
     "title": "Evidence archives",
     "group": "Operational evidence",
     "page": "docs/projects/luxleaf-archives.md",
-    "unit_tests": 4,
+    "unit_tests": 5,
     "example": {
       "request": {
         "schema_version": 1,
@@ -780,7 +780,7 @@
     "title": "Data migrations",
     "group": "Infrastructure and delivery",
     "page": "docs/projects/luxleaf-data.md",
-    "unit_tests": 6,
+    "unit_tests": 7,
     "example": {
       "request": {
         "schema_version": 1,
@@ -813,7 +813,7 @@
     "title": "Developer tooling",
     "group": "Infrastructure and delivery",
     "page": "docs/projects/luxleaf-developer-kit.md",
-    "unit_tests": 4,
+    "unit_tests": 5,
     "example": {
       "request": {
         "schema_version": 1,
@@ -850,7 +850,7 @@
     "title": "API boundary",
     "group": "Business knowledge",
     "page": "docs/projects/luxleaf-api.md",
-    "unit_tests": 5,
+    "unit_tests": 6,
     "example": {
       "request": {
         "schema_version": 1,
@@ -877,7 +877,7 @@
     "title": "Service authorization",
     "group": "Infrastructure and delivery",
     "page": "docs/projects/luxleaf-service-policy.md",
-    "unit_tests": 4,
+    "unit_tests": 5,
     "example": {
       "request": {
         "schema_version": 1,
@@ -913,7 +913,7 @@
     "title": "Security posture",
     "group": "Operational evidence",
     "page": "docs/projects/luxleaf-security.md",
-    "unit_tests": 4,
+    "unit_tests": 5,
     "example": {
       "request": {
         "schema_version": 1,
@@ -944,7 +944,7 @@
     "title": "Telemetry privacy",
     "group": "Operational evidence",
     "page": "docs/projects/luxleaf-telemetry.md",
-    "unit_tests": 4,
+    "unit_tests": 5,
     "example": {
       "request": {
         "schema_version": 1,
@@ -980,7 +980,7 @@
     "title": "Service objectives",
     "group": "Operational evidence",
     "page": "docs/projects/luxleaf-observability.md",
-    "unit_tests": 4,
+    "unit_tests": 5,
     "example": {
       "request": {
         "schema_version": 1,
@@ -1016,7 +1016,7 @@
     "title": "Incident response",
     "group": "Operational evidence",
     "page": "docs/projects/luxleaf-incidents.md",
-    "unit_tests": 4,
+    "unit_tests": 5,
     "example": {
       "request": {
         "schema_version": 1,
@@ -1051,7 +1051,7 @@
     "title": "Release delivery",
     "group": "Infrastructure and delivery",
     "page": "docs/projects/luxleaf-delivery.md",
-    "unit_tests": 4,
+    "unit_tests": 5,
     "example": {
       "request": {
         "schema_version": 1,
@@ -1087,7 +1087,7 @@
     "title": "Container deployment",
     "group": "Infrastructure and delivery",
     "page": "docs/projects/luxleaf-containers.md",
-    "unit_tests": 4,
+    "unit_tests": 5,
     "example": {
       "request": {
         "schema_version": 1,
@@ -1136,7 +1136,7 @@
     "title": "Model registry",
     "group": "Governance and workflow",
     "page": "docs/projects/luxleaf-model-lifecycle.md",
-    "unit_tests": 4,
+    "unit_tests": 5,
     "example": {
       "request": {
         "schema_version": 1,

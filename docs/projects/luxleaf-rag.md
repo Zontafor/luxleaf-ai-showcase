@@ -2,7 +2,7 @@
 
 # Knowledge orchestration
 
-**luxleaf-rag · Business knowledge · Component 0.1.0**
+**luxleaf-rag · Business knowledge · Component 0.2.0**
 
 Connect retrieval and inference while checking tenant identity and evidence excerpts.
 
@@ -79,3 +79,9 @@ These links open other public project pages. The portfolio integration tests dem
 No live cloud acceptance, production capacity, independent security assurance or compliance certification is claimed. See the [validation record](../VALIDATION.md) for the evidence boundary.
 
 Copyright © 2026 Michelle L. Wu. Public materials are governed by the [showcase license](../../LICENSE); it does not grant access to private source.
+
+## Current package expansion
+
+**Distinct-source quorum before inference** — The pipeline accepts minimum_sources from 1 to 20, and the envelope exposes the same optional field. It counts distinct document identifiers after tenant validation. Below quorum it abstains with insufficient_distinct_sources and never invokes the inference callback.
+
+[Inspect this component’s architecture, actual observations and rejection checks](../architectures/luxleaf-rag.md). Version 0.2.0 passed 5 component tests locally. Earlier examples and validation notes on this page remain historical snapshots; the linked architecture page describes the current expansion.

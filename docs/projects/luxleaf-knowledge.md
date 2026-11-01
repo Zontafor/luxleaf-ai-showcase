@@ -2,7 +2,7 @@
 
 # Knowledge retrieval
 
-**luxleaf-knowledge · Business knowledge · Component 0.1.0**
+**luxleaf-knowledge · Business knowledge · Component 0.2.0**
 
 Find an authorized policy passage that answers a team member’s question.
 
@@ -76,3 +76,9 @@ These links open other public project pages. The portfolio integration tests dem
 No live cloud acceptance, production capacity, independent security assurance or compliance certification is claimed. See the [validation record](../VALIDATION.md) for the evidence boundary.
 
 Copyright © 2026 Michelle L. Wu. Public materials are governed by the [showcase license](../../LICENSE); it does not grant access to private source.
+
+## Current package expansion
+
+**Document reader restrictions** — Put accepts readers as a bounded list of actor identifiers. Omission on a new document means tenant-wide visibility; omission on update preserves its current readers. An empty list denies all query/list readers. Query and list filter restricted records using the host-derived actor before returning passages or titles.
+
+[Inspect this component’s architecture, actual observations and rejection checks](../architectures/luxleaf-knowledge.md). Version 0.2.0 passed 5 component tests locally. Earlier examples and validation notes on this page remain historical snapshots; the linked architecture page describes the current expansion.

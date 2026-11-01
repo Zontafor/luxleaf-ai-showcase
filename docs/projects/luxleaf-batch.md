@@ -2,7 +2,7 @@
 
 # Batch scheduling
 
-**luxleaf-batch · Infrastructure and delivery · Component 0.1.0**
+**luxleaf-batch · Infrastructure and delivery · Component 0.2.0**
 
 Fit proposed jobs into a supplied CPU and memory capacity snapshot.
 
@@ -92,3 +92,9 @@ These links open other public project pages. The portfolio integration tests dem
 No live cloud acceptance, production capacity, independent security assurance or compliance certification is claimed. See the [validation record](../VALIDATION.md) for the evidence boundary.
 
 Copyright © 2026 Michelle L. Wu. Public materials are governed by the [showcase license](../../LICENSE); it does not grant access to private source.
+
+## Current package expansion
+
+**Exact placement selectors** — Nodes accept labels and jobs accept selector maps of bounded identifiers. A job fits only when all selector entries match the node in addition to CPU and memory requirements. Unmatched jobs remain deferred rather than silently losing their constraints.
+
+[Inspect this component’s architecture, actual observations and rejection checks](../architectures/luxleaf-batch.md). Version 0.2.0 passed 5 component tests locally. Earlier examples and validation notes on this page remain historical snapshots; the linked architecture page describes the current expansion.

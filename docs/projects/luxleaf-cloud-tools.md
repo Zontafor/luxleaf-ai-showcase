@@ -2,7 +2,7 @@
 
 # Cloud action policy
 
-**luxleaf-cloud-tools · Agents and tools · Component 0.1.0**
+**luxleaf-cloud-tools · Agents and tools · Component 0.2.0**
 
 Decide whether an inventory action fits an account and resource policy.
 
@@ -85,3 +85,9 @@ These links open other public project pages. The portfolio integration tests dem
 No live cloud acceptance, production capacity, independent security assurance or compliance certification is claimed. See the [validation record](../VALIDATION.md) for the evidence boundary.
 
 Copyright © 2026 Michelle L. Wu. Public materials are governed by the [showcase license](../../LICENSE); it does not grant access to private source.
+
+## Current package expansion
+
+**Region constraints and unambiguous resource paths** — A policy containing regions requires a matching request region. Resource paths and policy prefixes reject dot segments, backslashes and percent encoding; wildcard restrictions remain. This prevents obvious alternative path representations from bypassing prefix intent.
+
+[Inspect this component’s architecture, actual observations and rejection checks](../architectures/luxleaf-cloud-tools.md). Version 0.2.0 passed 5 component tests locally. Earlier examples and validation notes on this page remain historical snapshots; the linked architecture page describes the current expansion.

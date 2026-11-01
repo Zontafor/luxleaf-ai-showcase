@@ -2,7 +2,7 @@
 
 # API boundary
 
-**luxleaf-api · Business knowledge · Component 0.1.0**
+**luxleaf-api · Business knowledge · Component 0.2.0**
 
 Derive tenant context from authenticated host credentials before calling a permitted operation.
 
@@ -71,3 +71,9 @@ These links open other public project pages. The portfolio integration tests dem
 No live cloud acceptance, production capacity, independent security assurance or compliance certification is claimed. See the [validation record](../VALIDATION.md) for the evidence boundary.
 
 Copyright © 2026 Michelle L. Wu. Public materials are governed by the [showcase license](../../LICENSE); it does not grant access to private source.
+
+## Current package expansion
+
+**Credential expiry and route scopes** — Boundary accepts a host clock. Credential context may include integer expires_at and allowed_routes containing method/path pairs. Expired credentials return 401; requests outside the credential route scope return 403 before handler execution, even if the role otherwise permits access.
+
+[Inspect this component’s architecture, actual observations and rejection checks](../architectures/luxleaf-api.md). Version 0.2.0 passed 6 component tests locally. Earlier examples and validation notes on this page remain historical snapshots; the linked architecture page describes the current expansion.

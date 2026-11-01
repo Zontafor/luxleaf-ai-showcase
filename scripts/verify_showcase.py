@@ -170,6 +170,39 @@ def verify(root=ROOT):
             errors.append("Private execution detail found in recovery evidence")
     except (OSError, ValueError, KeyError, TypeError):
         errors.append("Missing or invalid recovery demonstration record")
+    try:
+        expansion_text = (root / "docs/demonstrations/expansion-record.json").read_text()
+        expansion = json.loads(expansion_text)
+        records = expansion["components"]
+        expected = {row["name"] for row in json.loads(catalog_path.read_text())}
+        names = {row["name"] for row in records}
+        checks = [check for row in records for check in row["checks"]]
+        if (
+            len(records) != 31 or names != expected
+            or expansion["scenario"] != "all-component-expansion"
+            or expansion["synthetic"] is not True
+            or expansion["live_cloud_calls"] is not False
+            or expansion["production_measurements"] is not False
+            or expansion["checks_passed"] != len(checks)
+            or not all(check["passed"] is True for check in checks)
+        ):
+            errors.append("Expansion evidence has invalid coverage or outcomes")
+        for row in records:
+            page = f"docs/architectures/{row['name']}.md"
+            if (
+                page not in allowed or not (root / page).is_file()
+                or row["worktree_dirty"] is not False or not row["checks"]
+                or row["synthetic"] is not True or row["live_cloud_calls"] is not False
+                or re.fullmatch(r"[0-9a-f]{40}", row["source_commit"]) is None
+                or re.fullmatch(r"\d+\.\d+\.\d+", row["version"]) is None
+            ):
+                errors.append("Expansion component lacks reviewed architecture or clean source evidence")
+        if any(value in expansion_text for value in (
+            "lease_token", "token_hash", "pseudonym_key", "synthetic-token", "Bearer ", *private_paths
+        )):
+            errors.append("Private execution details in expansion evidence")
+    except (OSError, ValueError, KeyError, TypeError):
+        errors.append("Missing or invalid all-component expansion evidence")
     return errors, len(actual)
 
 

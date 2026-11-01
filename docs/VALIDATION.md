@@ -46,3 +46,9 @@ The showcase workflow validates an explicit file allowlist, checks for prohibite
 ## October 31: managed event delivery
 
 The expanded independent portfolio passed 143 component tests, 12 integration tests and 31 CLI examples locally. The event package has 18 tests; the new event/archive recovery runner passes ten assertions, with separate negative tests that falsify replay and bypass stale-worker rejection. [Recovery evidence and architecture](demonstrations/event-delivery-recovery.md) describe the injected fault and local-only limits. Earlier records below or above remain historical snapshots.
+
+## October 31: all-component expansion
+
+All 31 packages now have checked expansion scenarios. The current source portfolio passed 174 component tests, 14 integration tests and 31 CLI examples. Expansion scenarios passed 122 assertions. [Current evidence and exact commits](demonstrations/all-component-expansion.md) supersede earlier counts for the updated code; older records remain historical.
+
+All 31 wheels were built from committed source and installed together into a fresh environment without network dependency resolution. Their 174 component tests passed against the installed packages. All 31 source archives include licenses, tests, examples and expansion architecture documents. Generated Compose health-check configuration passed local Docker Compose configuration validation; no container or cluster was started.

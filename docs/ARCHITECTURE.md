@@ -1,6 +1,6 @@
 # Integrated platform architecture overview
 
-This page describes the earlier integrated platform. For the independent component portfolio's new event/consumer architecture, see [delivery recovery](demonstrations/event-delivery-recovery.md#architecture-and-trust-boundary). This targeted diagram does not represent a complete architecture set for all 31 packages.
+This page describes the earlier integrated platform. For the independent component portfolio's new event/consumer architecture, see [delivery recovery](demonstrations/event-delivery-recovery.md#architecture-and-trust-boundary). The [independent portfolio architecture and 31 component diagrams](PORTFOLIO_ARCHITECTURE.md) now provide the complete component documentation set.
 
 For request flow, accounting, trust boundaries, and failure behavior, read the [Product & Technical Brief](TECHNICAL_BRIEF.md).
 

@@ -2,7 +2,7 @@
 
 # Agent planning
 
-**luxleaf-agent-plans · Agents and tools · Component 0.1.0**
+**luxleaf-agent-plans · Agents and tools · Component 0.2.0**
 
 Review tool steps and dependencies before an execution runtime receives them.
 
@@ -87,3 +87,9 @@ These links open other public project pages. The portfolio integration tests dem
 No live cloud acceptance, production capacity, independent security assurance or compliance certification is claimed. See the [validation record](../VALIDATION.md) for the evidence boundary.
 
 Copyright © 2026 Michelle L. Wu. Public materials are governed by the [showcase license](../../LICENSE); it does not grant access to private source.
+
+## Current package expansion
+
+**Dependency waves and plan identity** — Validated plans now include waves of steps whose dependencies are already satisfied, plus a SHA-256 digest of the normalized ordered plan. Independent roots share a wave. The digest covers tool, arguments, dependencies and declared effect.
+
+[Inspect this component’s architecture, actual observations and rejection checks](../architectures/luxleaf-agent-plans.md). Version 0.2.0 passed 5 component tests locally. Earlier examples and validation notes on this page remain historical snapshots; the linked architecture page describes the current expansion.

@@ -2,7 +2,7 @@
 
 # Tool protocol
 
-**luxleaf-tool-protocol · Agents and tools · Component 0.1.0**
+**luxleaf-tool-protocol · Agents and tools · Component 0.2.0**
 
 Expose a small, explicit local tool catalog with checked arguments.
 
@@ -87,3 +87,9 @@ These links open other public project pages. The portfolio integration tests dem
 No live cloud acceptance, production capacity, independent security assurance or compliance certification is claimed. See the [validation record](../VALIDATION.md) for the evidence boundary.
 
 Copyright © 2026 Michelle L. Wu. Public materials are governed by the [showcase license](../../LICENSE); it does not grant access to private source.
+
+## Current package expansion
+
+**Bounded local tool batches** — Method=batch accepts one to ten calls, each containing exactly name and arguments. Every call uses the same permitted-tools policy and the existing argument validation. Results preserve call order. Any invalid call rejects the overall request.
+
+[Inspect this component’s architecture, actual observations and rejection checks](../architectures/luxleaf-tool-protocol.md). Version 0.2.0 passed 5 component tests locally. Earlier examples and validation notes on this page remain historical snapshots; the linked architecture page describes the current expansion.

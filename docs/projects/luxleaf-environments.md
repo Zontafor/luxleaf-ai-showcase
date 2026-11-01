@@ -2,7 +2,7 @@
 
 # Environment policy
 
-**luxleaf-environments · Infrastructure and delivery · Component 0.1.0**
+**luxleaf-environments · Infrastructure and delivery · Component 0.2.0**
 
 Review deployment requirements before an operator creates infrastructure.
 
@@ -79,3 +79,9 @@ These links open other public project pages. The portfolio integration tests dem
 No live cloud acceptance, production capacity, independent security assurance or compliance certification is claimed. See the [validation record](../VALIDATION.md) for the evidence boundary.
 
 Copyright © 2026 Michelle L. Wu. Public materials are governed by the [showcase license](../../LICENSE); it does not grant access to private source.
+
+## Current package expansion
+
+**Contained nonoverlapping subnet plans** — An optional subnets list accepts at most 32 canonical private IPv4 networks. Every subnet must be contained in the environment network and no two may overlap. Accepted subnets are included in the validated proposal.
+
+[Inspect this component’s architecture, actual observations and rejection checks](../architectures/luxleaf-environments.md). Version 0.2.0 passed 6 component tests locally. Earlier examples and validation notes on this page remain historical snapshots; the linked architecture page describes the current expansion.

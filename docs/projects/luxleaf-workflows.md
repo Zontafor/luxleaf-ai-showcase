@@ -2,7 +2,7 @@
 
 # Workflow queue
 
-**luxleaf-workflows · Governance and workflow · Component 0.1.0**
+**luxleaf-workflows · Governance and workflow · Component 0.2.0**
 
 Keep approved work durable while distinguishing queued, running and uncertain execution.
 
@@ -75,3 +75,9 @@ These links open other public project pages. The portfolio integration tests dem
 No live cloud acceptance, production capacity, independent security assurance or compliance certification is claimed. See the [validation record](../VALIDATION.md) for the evidence boundary.
 
 Copyright © 2026 Michelle L. Wu. Public materials are governed by the [showcase license](../../LICENSE); it does not grant access to private source.
+
+## Current package expansion
+
+**Active workflow lease renewal** — Renew requires job id, matching lease_token and fence, and optional lease_seconds from 1 to 3600. It extends expiry to the greater of existing expiry or current host time plus duration. The fence and worker claim remain unchanged. Expired, uncertain or completed work cannot renew.
+
+[Inspect this component’s architecture, actual observations and rejection checks](../architectures/luxleaf-workflows.md). Version 0.2.0 passed 6 component tests locally. Earlier examples and validation notes on this page remain historical snapshots; the linked architecture page describes the current expansion.

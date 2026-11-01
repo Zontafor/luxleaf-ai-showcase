@@ -2,7 +2,7 @@
 
 # Service authorization
 
-**luxleaf-service-policy · Infrastructure and delivery · Component 0.1.0**
+**luxleaf-service-policy · Infrastructure and delivery · Component 0.2.0**
 
 Make an explicit allow-or-deny decision for a service action and tenant.
 
@@ -80,3 +80,9 @@ These links open other public project pages. The portfolio integration tests dem
 No live cloud acceptance, production capacity, independent security assurance or compliance certification is claimed. See the [validation record](../VALIDATION.md) for the evidence boundary.
 
 Copyright © 2026 Michelle L. Wu. Public materials are governed by the [showcase license](../../LICENSE); it does not grant access to private source.
+
+## Current package expansion
+
+**Exact resource-scoped service rules** — A request may include a resource identifier and rules may contain resources. Scoped requests require an exact matching resource in a matching rule. Omitting the request resource cannot use a scoped rule; an unscoped rule cannot silently grant a scoped request. Explicit deny still takes precedence.
+
+[Inspect this component’s architecture, actual observations and rejection checks](../architectures/luxleaf-service-policy.md). Version 0.2.0 passed 5 component tests locally. Earlier examples and validation notes on this page remain historical snapshots; the linked architecture page describes the current expansion.

@@ -2,7 +2,7 @@
 
 # Workspace membership
 
-**luxleaf-workspace · Business knowledge · Component 0.1.0**
+**luxleaf-workspace · Business knowledge · Component 0.2.0**
 
 Decide whether a workspace member may read, edit or manage business information.
 
@@ -66,3 +66,9 @@ These links open other public project pages. The portfolio integration tests dem
 No live cloud acceptance, production capacity, independent security assurance or compliance certification is claimed. See the [validation record](../VALIDATION.md) for the evidence boundary.
 
 Copyright © 2026 Michelle L. Wu. Public materials are governed by the [showcase license](../../LICENSE); it does not grant access to private source.
+
+## Current package expansion
+
+**Membership revisions and audit** — For member updates, optional expected_revision must equal the current revision. Each accepted member update advances the revision and records actor, target, previous membership and current membership. Administrators can request op=audit. Bootstrap remains revision zero.
+
+[Inspect this component’s architecture, actual observations and rejection checks](../architectures/luxleaf-workspace.md). Version 0.2.0 passed 5 component tests locally. Earlier examples and validation notes on this page remain historical snapshots; the linked architecture page describes the current expansion.

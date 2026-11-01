@@ -2,7 +2,7 @@
 
 # Developer tooling
 
-**luxleaf-developer-kit · Infrastructure and delivery · Component 0.1.1**
+**luxleaf-developer-kit · Infrastructure and delivery · Component 0.2.0**
 
 Determine a reproducible build order for a closed component dependency graph.
 
@@ -85,3 +85,9 @@ Copyright © 2026 Michelle L. Wu. Public materials are governed by the [showcase
 ## Recovery runner expansion
 
 Version 0.1.1 adds a reproducible [event/archive recovery exercise](../demonstrations/event-delivery-recovery.md) with ten assertions and sanitized output. This extends the five-journey portfolio runner. The public pages show recorded results; the runner source remains private.
+
+## Current package expansion
+
+**Transitive rebuild planning** — The existing dependency graph accepts changed component names and returns rebuild_order containing those components and their transitive dependents in valid build order. Unknown changes fail; unrelated components are excluded.
+
+[Inspect this component’s architecture, actual observations and rejection checks](../architectures/luxleaf-developer-kit.md). Version 0.2.0 passed 5 component tests locally. Earlier examples and validation notes on this page remain historical snapshots; the linked architecture page describes the current expansion.

@@ -1,5 +1,9 @@
 # Connected LuxLeaf demonstrations
 
+**Latest: [All 31 expansion scenarios and 122 checked assertions](demonstrations/all-component-expansion.md)** · [Complete component architecture index](PORTFOLIO_ARCHITECTURE.md)
+
+The connected journey totals below describe the preserved earlier records.
+
 **Five portfolio journeys plus one recovery exercise · All 31 components exercised · 39 executable checks passed across two records**
 
 Explore how LuxLeaf components work together using synthetic business data. Each journey shows a flow, actual recorded results, rejected actions and the boundary between executed local behavior and unexecuted proposals. These are recorded demonstrations, not a live application or production measurements.

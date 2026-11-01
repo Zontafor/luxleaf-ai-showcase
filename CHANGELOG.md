@@ -54,3 +54,9 @@ Showcase versions describe this documentation repository. They do not imply a pu
 - Publish the Events 0.2.0 recovery flow, state diagram and sanitized ten-check execution record.
 - Update event/developer-kit pages and current validation totals while preserving earlier demonstration snapshots.
 - Keep implementation source and package artifacts private.
+
+## October 31, 2026 — all-component expansion
+
+- Expand all 31 packages with distinct implemented capabilities and synthetic checks.
+- Publish 31 individual architecture pages, a portfolio composition map and 122-assertion evidence record.
+- Keep original source, wheels and source distributions in private repositories.
