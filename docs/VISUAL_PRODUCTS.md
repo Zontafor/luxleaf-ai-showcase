@@ -54,7 +54,7 @@ flowchart TB
 
 These libraries are presentation packages. They do not authorize users, call model providers, issue credentials or meter usage. A host application can persist validated presets through its tenant-scoped API; that connection is an integration contract, not a completed backend integration in these four packages. Provider credentials and permission checks belong on the server.
 
-The renderers accept bounded settings, render locally and release their resources when disposed. The GPU products cap device pixel ratio at two and drawing-buffer dimensions at 4096. Those bounds limit allocations; they are not evidence of measured enterprise throughput or mobile performance.
+The renderers accept bounded settings, render locally and release their resources when disposed. Gradient Studio and Metal Mark cap device pixel ratio at two and drawing-buffer dimensions at 4096. Those bounds limit allocations; they are not evidence of measured enterprise throughput or mobile performance.
 
 ## Recorded verification
 
@@ -68,7 +68,7 @@ Observed locally on 2026-11-01:
 | Metal Mark | 7 | 8 |
 | **Total** | **27** | **27** |
 
-All four passed strict TypeScript checks, production builds, package-content review, and import/preset checks after installation into a fresh consumer. The browser assertions exercised real rendering or DOM behavior, live updates and cleanup; the GPU checks also inspected output and PNG export. The four packages resolve to one compatible React installation in that consumer.
+All four passed strict TypeScript checks, production builds, package-content review, and import/preset checks after installation into a fresh consumer. The browser assertions exercised real rendering or DOM behavior, live updates and cleanup; the gradient and logo checks also inspected output and PNG export. The four packages resolve to one compatible React installation in that consumer.
 
 Private CI repeats type checks, unit tests, builds and package inspection. Browser checks are manually run through committed verification pages; they are not automated CI coverage. Cross-browser/device validation, adversarial media testing, measured resource budgets and independent accessibility/security review remain ahead. No full upstream feature parity or production certification is claimed.
 
